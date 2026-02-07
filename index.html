@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Developer Portfolio</title>
+    <title>Krish Vekariya - Android Developer Portfolio</title>
     <style>
         * {
             margin: 0;
@@ -12,22 +12,47 @@
         }
 
         :root {
-            --neon-green: #39FF14;
-            --dark-bg: #0a0a0a;
-            --card-bg: #1a1a1a;
+            --neon-green: #00FF88;
+            --neon-cyan: #00D9FF;
+            --dark-bg: #0a0e27;
+            --card-bg: #1a1f3a;
+            --card-hover: #252b4a;
             --text-primary: #ffffff;
-            --text-secondary: #b0b0b0;
+            --text-secondary: #a0aec0;
+            --accent-purple: #B026FF;
+            --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #00FF88 0%, #00D9FF 100%);
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', sans-serif;
             background: var(--dark-bg);
             color: var(--text-primary);
             overflow-x: hidden;
+            line-height: 1.6;
         }
 
-        /* Animated Background */
-        .bg-animation {
+        /* Animated Gradient Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(45deg, #0a0e27, #1a1f3a, #0a0e27);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Particles */
+        .particles {
             position: fixed;
             top: 0;
             left: 0;
@@ -39,112 +64,349 @@
 
         .particle {
             position: absolute;
-            width: 4px;
-            height: 4px;
+            width: 3px;
+            height: 3px;
             background: var(--neon-green);
             border-radius: 50%;
             box-shadow: 0 0 10px var(--neon-green);
-            animation: float 20s infinite;
-            opacity: 0.6;
+            animation: floatParticle 20s infinite;
+            opacity: 0.4;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            25% {
-                transform: translateY(-100px) translateX(50px);
-            }
-            50% {
-                transform: translateY(-50px) translateX(-50px);
-            }
-            75% {
-                transform: translateY(-150px) translateX(30px);
-            }
+        @keyframes floatParticle {
+            0%, 100% { transform: translateY(0) translateX(0) scale(1); }
+            25% { transform: translateY(-100px) translateX(100px) scale(1.2); }
+            50% { transform: translateY(-50px) translateX(-100px) scale(0.8); }
+            75% { transform: translateY(-150px) translateX(50px) scale(1.1); }
         }
 
-        /* Header */
-        header {
-            padding: 2rem;
-            text-align: center;
-            background: linear-gradient(135deg, var(--card-bg) 0%, #0f0f0f 100%);
-            border-bottom: 2px solid var(--neon-green);
-            box-shadow: 0 4px 30px rgba(57, 255, 20, 0.1);
-            position: sticky;
+        /* Navigation */
+        nav {
+            position: fixed;
             top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
+            width: 100%;
+            background: rgba(26, 31, 58, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+            z-index: 1000;
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
         }
 
-        h1 {
-            font-size: 3rem;
-            background: linear-gradient(45deg, var(--neon-green), #00ff88);
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            background: var(--gradient-2);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 30px rgba(57, 255, 20, 0.3);
-            animation: glow 2s ease-in-out infinite alternate;
         }
 
-        @keyframes glow {
-            from {
-                filter: drop-shadow(0 0 10px var(--neon-green));
-            }
-            to {
-                filter: drop-shadow(0 0 20px var(--neon-green));
-            }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
         }
 
-        .tagline {
+        .nav-links a {
             color: var(--text-secondary);
-            margin-top: 0.5rem;
-            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
         }
 
-        /* Admin Button */
-        .admin-btn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
+        .nav-links a:hover {
+            color: var(--neon-green);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
             background: var(--neon-green);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .admin-btn {
+            background: var(--gradient-2);
             color: var(--dark-bg);
             border: none;
-            padding: 12px 24px;
+            padding: 10px 25px;
             border-radius: 25px;
             font-weight: bold;
             cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
         }
 
         .admin-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 0 30px rgba(57, 255, 20, 0.8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 255, 136, 0.5);
         }
 
-        /* Container */
-        .container {
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            z-index: 10;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--neon-green);
+            color: var(--neon-green);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.6s ease;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease;
+            line-height: 1.2;
+        }
+
+        .hero .subtitle {
+            font-size: 1.8rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero .bio {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .btn {
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gradient-2);
+            color: var(--dark-bg);
+            border: none;
+            box-shadow: 0 8px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(0, 255, 136, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--neon-green);
+            border: 2px solid var(--neon-green);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 255, 136, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 4rem auto;
+            padding: 0 2rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            transition: all 0.4s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-green);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.2);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Section */
+        .section {
+            padding: 6rem 2rem;
             max-width: 1400px;
             margin: 0 auto;
-            padding: 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.1);
+            color: var(--neon-cyan);
+            border: 1px solid var(--neon-cyan);
+            padding: 6px 16px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            background: var(--gradient-2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .section-description {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--card-bg);
+            padding: 2.5rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            transition: all 0.4s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            border-color: var(--neon-green);
+            box-shadow: 0 20px 50px rgba(0, 255, 136, 0.2);
+        }
+
+        .skill-category h3 {
+            color: var(--neon-green);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background: rgba(0, 255, 136, 0.1);
+            color: var(--text-primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            transition: all 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: rgba(0, 255, 136, 0.2);
+            transform: scale(1.05);
         }
 
         /* Apps Grid */
         .apps-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
 
         .app-card {
             background: var(--card-bg);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 2px solid transparent;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
+            border-radius: 25px;
+            padding: 2.5rem;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
@@ -153,35 +415,51 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
+            left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent, var(--neon-green), transparent);
-            opacity: 0;
-            transition: opacity 0.3s;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+            transition: left 0.5s;
         }
 
         .app-card:hover::before {
-            opacity: 0.1;
+            left: 100%;
         }
 
         .app-card:hover {
-            transform: translateY(-10px) scale(1.02);
+            transform: translateY(-15px) scale(1.02);
             border-color: var(--neon-green);
-            box-shadow: 0 20px 60px rgba(57, 255, 20, 0.3);
+            box-shadow: 0 25px 60px rgba(0, 255, 136, 0.3);
+        }
+
+        .app-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .app-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, var(--neon-green), #00ff88);
-            border-radius: 20px;
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-2);
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 10px 30px rgba(57, 255, 20, 0.3);
+            font-size: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+
+        .app-badge {
+            display: inline-block;
+            background: rgba(0, 217, 255, 0.2);
+            color: var(--neon-cyan);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
         }
 
         .app-card h3 {
@@ -192,43 +470,144 @@
 
         .app-card p {
             color: var(--text-secondary);
-            line-height: 1.6;
+            line-height: 1.8;
             margin-bottom: 1.5rem;
         }
 
         .download-btn {
-            background: var(--neon-green);
+            background: var(--gradient-2);
             color: var(--dark-bg);
             border: none;
             padding: 12px 30px;
             border-radius: 25px;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
         }
 
         .download-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(57, 255, 20, 0.5);
+            box-shadow: 0 8px 25px rgba(0, 255, 136, 0.4);
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--neon-green), var(--neon-cyan));
+        }
+
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            width: calc(50% - 30px);
+            transition: all 0.4s;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: auto;
+            margin-right: 30px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 30px;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            border-color: var(--neon-green);
+            box-shadow: 0 15px 40px rgba(0, 255, 136, 0.2);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--neon-green);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--neon-green);
+            z-index: 10;
+        }
+
+        .timeline-date {
+            color: var(--neon-cyan);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-company {
+            color: var(--neon-green);
+            margin-bottom: 1rem;
         }
 
         /* Contact Section */
         .contact-section {
             background: var(--card-bg);
-            border-radius: 20px;
-            padding: 3rem;
-            margin: 3rem 0;
-            border: 2px solid var(--neon-green);
-            box-shadow: 0 10px 40px rgba(57, 255, 20, 0.2);
+            border-radius: 30px;
+            padding: 4rem;
+            border: 1px solid rgba(0, 255, 136, 0.1);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
         }
 
-        .contact-section h2 {
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .contact-info h2 {
             color: var(--neon-green);
             font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neon-green);
+            font-size: 1.2rem;
         }
 
         .form-group {
@@ -239,43 +618,45 @@
             display: block;
             margin-bottom: 0.5rem;
             color: var(--text-secondary);
+            font-weight: 500;
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 15px;
-            background: var(--dark-bg);
-            border: 2px solid #333;
-            border-radius: 10px;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border: 2px solid rgba(0, 255, 136, 0.1);
+            border-radius: 15px;
             color: var(--text-primary);
             font-size: 1rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
             border-color: var(--neon-green);
-            box-shadow: 0 0 15px rgba(57, 255, 20, 0.2);
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+            background: rgba(0, 0, 0, 0.5);
         }
 
         .submit-btn {
-            background: var(--neon-green);
+            background: var(--gradient-2);
             color: var(--dark-bg);
             border: none;
-            padding: 15px 40px;
-            border-radius: 25px;
+            padding: 15px 50px;
+            border-radius: 30px;
             font-weight: bold;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
             width: 100%;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(57, 255, 20, 0.4);
+            box-shadow: 0 12px 35px rgba(0, 255, 136, 0.4);
         }
 
         /* Modal */
@@ -286,164 +667,486 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 3000;
             justify-content: center;
             align-items: center;
+            backdrop-filter: blur(10px);
         }
 
         .modal-content {
             background: var(--card-bg);
             padding: 3rem;
-            border-radius: 20px;
-            max-width: 600px;
+            border-radius: 25px;
+            max-width: 700px;
             width: 90%;
             border: 2px solid var(--neon-green);
-            box-shadow: 0 20px 60px rgba(57, 255, 20, 0.3);
+            box-shadow: 0 25px 80px rgba(0, 255, 136, 0.3);
             max-height: 90vh;
             overflow-y: auto;
         }
 
         .close-btn {
             float: right;
-            font-size: 2rem;
+            font-size: 2.5rem;
             cursor: pointer;
             color: var(--neon-green);
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            line-height: 1;
         }
 
         .close-btn:hover {
-            transform: rotate(90deg);
+            transform: rotate(90deg) scale(1.2);
         }
 
         .delete-btn {
-            background: #ff3939;
+            background: linear-gradient(135deg, #ff4757, #ff6348);
             color: white;
             border: none;
-            padding: 8px 16px;
+            padding: 8px 18px;
             border-radius: 15px;
             cursor: pointer;
             margin-left: 10px;
             transition: all 0.3s;
+            font-weight: bold;
         }
 
         .delete-btn:hover {
-            background: #ff0000;
-            box-shadow: 0 5px 15px rgba(255, 57, 57, 0.4);
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(255, 71, 87, 0.5);
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-            border-top: 2px solid var(--neon-green);
+            padding: 3rem 2rem;
+            margin-top: 6rem;
+            border-top: 1px solid rgba(0, 255, 136, 0.1);
             color: var(--text-secondary);
         }
 
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 255, 136, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--neon-green);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+        }
+
+        .social-link:hover {
+            background: var(--neon-green);
+            color: var(--dark-bg);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 255, 136, 0.3);
+        }
+
         /* Responsive */
+        @media (max-width: 968px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-content {
+                width: calc(100% - 30px) !important;
+                margin-left: 30px !important;
+                margin-right: 0 !important;
+            }
+
+            .timeline-dot {
+                left: 0 !important;
+                transform: translateX(0) !important;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.3rem;
             }
 
             .apps-grid {
                 grid-template-columns: 1fr;
             }
 
-            .admin-btn {
-                top: 10px;
-                right: 10px;
-                padding: 10px 20px;
+            .cta-buttons {
+                flex-direction: column;
             }
         }
 
-        /* Loading Animation */
+        /* Success Message */
+        .success-message {
+            background: var(--gradient-2);
+            color: var(--dark-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin-top: 1rem;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+            animation: slideIn 0.5s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Loading */
         .loading {
             display: inline-block;
             width: 20px;
             height: 20px;
-            border: 3px solid rgba(57, 255, 20, 0.3);
+            border: 3px solid rgba(0, 255, 136, 0.3);
             border-radius: 50%;
             border-top-color: var(--neon-green);
-            animation: spin 1s ease-in-out infinite;
+            animation: spin 1s linear infinite;
         }
 
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
 
-        .success-message {
+        /* Scroll Indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        .scroll-indicator span {
+            display: block;
+            width: 30px;
+            height: 50px;
+            border: 2px solid var(--neon-green);
+            border-radius: 25px;
+            position: relative;
+        }
+
+        .scroll-indicator span::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 50%;
+            width: 6px;
+            height: 6px;
             background: var(--neon-green);
-            color: var(--dark-bg);
-            padding: 1rem;
-            border-radius: 10px;
-            margin-top: 1rem;
-            text-align: center;
-            font-weight: bold;
-            display: none;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            animation: scroll 2s infinite;
+        }
+
+        @keyframes scroll {
+            0% {
+                top: 10px;
+                opacity: 1;
+            }
+            100% {
+                top: 30px;
+                opacity: 0;
+            }
         }
     </style>
 </head>
 <body>
     <!-- Animated Background -->
-    <div class="bg-animation" id="bgAnimation"></div>
+    <div class="animated-bg"></div>
+    <div class="particles" id="particles"></div>
 
-    <!-- Admin Button -->
-    <button class="admin-btn" onclick="openAdminPanel()">⚙️ Admin</button>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="logo">KV</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="admin-btn" onclick="openAdminPanel()">⚙️ Admin</button>
+        </div>
+    </nav>
 
-    <!-- Header -->
-    <header>
-        <h1>🚀 App Developer</h1>
-        <p class="tagline">Crafting Amazing Android Apps with Jetpack Compose</p>
-    </header>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-tag">👨‍💻 Native Android Developer</div>
+            <h1>Krish Vekariya</h1>
+            <p class="subtitle">Building High-Performance Android Apps</p>
+            <p class="bio">
+                Specializing in Kotlin & Jetpack Compose to create user-friendly mobile applications. 
+                Passionate about crafting efficient, high-performance apps and continuously learning 
+                new technologies to enhance Android development skills.
+            </p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">View Projects</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
 
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Apps Section -->
-        <h2 style="color: var(--neon-green); font-size: 2.5rem; margin-bottom: 2rem;">📱 My Apps</h2>
-        <div class="apps-grid" id="appsGrid"></div>
-
-        <!-- Contact Section -->
-        <div class="contact-section">
-            <h2>💬 Get In Touch</h2>
-            <form id="contactForm">
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" name="name" required placeholder="Your Name">
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="email" name="email" required placeholder="your@email.com">
-                </div>
-                <div class="form-group">
-                    <label>Message</label>
-                    <textarea name="message" rows="5" required placeholder="Your message..."></textarea>
-                </div>
-                <button type="submit" class="submit-btn">Send Message</button>
-                <div class="success-message" id="successMessage">✓ Message sent successfully!</div>
-            </form>
+    <!-- Stats Section -->
+    <div class="stats">
+        <div class="stat-card">
+            <div class="stat-number">10K+</div>
+            <div class="stat-label">Downloads</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">7+</div>
+            <div class="stat-label">Live Apps</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">2+</div>
+            <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Passion</div>
         </div>
     </div>
+
+    <!-- Skills Section -->
+    <section class="section" id="skills">
+        <div class="section-header">
+            <div class="section-tag">💪 EXPERTISE</div>
+            <h2 class="section-title">Skills & Technologies</h2>
+            <p class="section-description">
+                Comprehensive technical expertise in Android development
+            </p>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>💻 Programming Languages</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">Kotlin</span>
+                    <span class="skill-tag">Java</span>
+                    <span class="skill-tag">XML</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>🎨 UI Development</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">Jetpack Compose</span>
+                    <span class="skill-tag">Material Design</span>
+                    <span class="skill-tag">Custom Animations</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>🏗️ Architecture & Patterns</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">MVVM</span>
+                    <span class="skill-tag">OOP</span>
+                    <span class="skill-tag">Dependency Injection</span>
+                    <span class="skill-tag">Clean Architecture</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>💾 Data & Storage</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">Room Database</span>
+                    <span class="skill-tag">SQLite</span>
+                    <span class="skill-tag">SharedPreferences</span>
+                    <span class="skill-tag">API Integration</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>🛠️ Tools & Services</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">Android Studio</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">N8N Cloud</span>
+                    <span class="skill-tag">Testing</span>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3>🌟 Soft Skills</h3>
+                <div class="skill-list">
+                    <span class="skill-tag">Communication</span>
+                    <span class="skill-tag">Teamwork</span>
+                    <span class="skill-tag">Continuous Learning</span>
+                    <span class="skill-tag">Creativity</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="section-header">
+            <div class="section-tag">🚀 PORTFOLIO</div>
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-description">
+                Live Android applications built with modern technologies
+            </p>
+        </div>
+        <div class="apps-grid" id="appsGrid"></div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="section-header">
+            <div class="section-tag">💼 JOURNEY</div>
+            <h2 class="section-title">Professional Experience</h2>
+            <p class="section-description">
+                Building innovative solutions at leading tech companies
+            </p>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <div class="timeline-date">Dec 2024 – Feb 2026</div>
+                    <h3 class="timeline-title">Native Android Developer</h3>
+                    <p class="timeline-company">Susamp Infotech</p>
+                    <p>Developing and maintaining multiple live Android applications using Kotlin, Jetpack Compose, and MVVM architecture. Integrated complex UI animations and advanced functionalities to enhance user engagement and performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="contact-section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Let's Connect!</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                        Have a project in mind? Let's discuss how we can work together.
+                    </p>
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <div style="font-size: 0.9rem; color: var(--text-secondary);">Email</div>
+                            <div>krishvekriya44@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <div style="font-size: 0.9rem; color: var(--text-secondary);">Phone</div>
+                            <div>+91 9722178972</div>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <div style="font-size: 0.9rem; color: var(--text-secondary);">Location</div>
+                            <div>Shimada gam, Surat-395006</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" required placeholder="your@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea name="message" rows="5" required placeholder="Tell me about your project..."></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                        <div class="success-message" id="successMessage">✓ Message sent successfully! I'll get back to you soon.</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="mailto:krishvekriya44@gmail.com" class="social-link" title="Email">📧</a>
+            <a href="https://www.linkedin.com/in/krish-vekariya" class="social-link" target="_blank" title="LinkedIn">💼</a>
+            <a href="https://github.com/krishvekriya12" class="social-link" target="_blank" title="GitHub">💻</a>
+        </div>
+        <p>© 2026 Krish Vekariya. Built with 💚 using Jetpack Compose mindset.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Crafting Amazing Android Apps</p>
+    </footer>
 
     <!-- Admin Modal -->
     <div class="modal" id="adminModal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeAdminPanel()">&times;</span>
-            <h2 style="color: var(--neon-green); margin-bottom: 2rem;">Admin Panel</h2>
+            <h2 style="color: var(--neon-green); margin-bottom: 2rem;">🎛️ Admin Panel</h2>
             
             <form id="addAppForm">
                 <div class="form-group">
                     <label>App Name</label>
-                    <input type="text" name="appName" required placeholder="My Awesome App">
+                    <input type="text" name="appName" required placeholder="Digital Compass">
                 </div>
                 <div class="form-group">
                     <label>App Icon (Emoji)</label>
-                    <input type="text" name="appIcon" required placeholder="📱" maxlength="2">
+                    <input type="text" name="appIcon" required placeholder="🧭" maxlength="2">
+                </div>
+                <div class="form-group">
+                    <label>Status Badge</label>
+                    <select name="appBadge" style="width: 100%; padding: 15px 20px; background: rgba(0, 0, 0, 0.3); border: 2px solid rgba(0, 255, 136, 0.1); border-radius: 15px; color: var(--text-primary); font-size: 1rem;">
+                        <option value="LIVE">LIVE</option>
+                        <option value="DEMO">DEMO</option>
+                        <option value="IN DEVELOPMENT">IN DEVELOPMENT</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Description</label>
-                    <textarea name="appDescription" rows="3" required placeholder="Brief description..."></textarea>
+                    <textarea name="appDescription" rows="3" required placeholder="Brief description of your app..."></textarea>
                 </div>
                 <div class="form-group">
                     <label>Play Store URL</label>
@@ -452,39 +1155,75 @@
                 <button type="submit" class="submit-btn">Add App</button>
             </form>
 
-            <h3 style="color: var(--neon-green); margin-top: 2rem; margin-bottom: 1rem;">Manage Apps</h3>
+            <h3 style="color: var(--neon-green); margin-top: 3rem; margin-bottom: 1.5rem;">📱 Manage Apps</h3>
             <div id="adminAppsList"></div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer>
-        <p>Made with 💚 by Android Developer | Jetpack Compose Expert</p>
-    </footer>
-
     <script>
-        // Background Animation
+        // Create Particles
         function createParticles() {
-            const bgAnimation = document.getElementById('bgAnimation');
-            for (let i = 0; i < 30; i++) {
+            const particles = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
                 particle.style.top = Math.random() * 100 + '%';
                 particle.style.animationDelay = Math.random() * 20 + 's';
                 particle.style.animationDuration = (15 + Math.random() * 10) + 's';
-                bgAnimation.appendChild(particle);
+                particles.appendChild(particle);
             }
         }
 
-        // Initialize apps from localStorage
+        // Initialize apps with real projects
         let apps = JSON.parse(localStorage.getItem('apps')) || [
             {
                 id: 1,
-                name: 'Sample App',
-                icon: '📱',
-                description: 'This is a sample app. Add your own apps using the Admin panel!',
-                playStoreUrl: 'https://play.google.com'
+                name: 'Digital Compass: GPS Direction',
+                icon: '🧭',
+                badge: 'LIVE',
+                description: 'Comprehensive navigation app with real-time GPS directions, compass modes (Digital, Telescope, Qibla), Live Location tracking, speedometer, weather updates, and customizable units. Features device sensors, camera, and map services. 10K+ downloads!',
+                playStoreUrl: 'https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection'
+            },
+            {
+                id: 2,
+                name: 'Water Tracker App',
+                icon: '💧',
+                badge: 'LIVE',
+                description: 'Beautiful water tracking app with animated water bottle UI built using Jetpack Compose. Track your daily water intake with smooth animations and intuitive design.',
+                playStoreUrl: 'https://play.google.com/store/apps'
+            },
+            {
+                id: 3,
+                name: 'Hourly Chime',
+                icon: '⏰',
+                badge: 'LIVE',
+                description: 'Smart alarm app with Text-to-Speech in multiple languages, custom alarm services, and advanced scheduling features. Never miss an important moment!',
+                playStoreUrl: 'https://play.google.com/store/apps'
+            },
+            {
+                id: 4,
+                name: 'GPS Map Camera Lite',
+                icon: '📷',
+                badge: 'LIVE',
+                description: 'Location-based camera app with custom text stickers featuring multiple fonts, colors, and styles. Add location data to your photos with style!',
+                playStoreUrl: 'https://play.google.com/store/apps'
+            },
+            {
+                id: 5,
+                name: 'Survey Not Cam',
+                icon: '📸',
+                badge: 'LIVE',
+                description: 'Professional survey camera with custom gallery implementation and optimized performance. Perfect for field surveys and documentation.',
+                playStoreUrl: 'https://play.google.com/store/apps'
+            },
+            {
+                id: 6,
+                name: 'Automation App',
+                icon: '🤖',
+                badge: 'DEMO',
+                description: 'Advanced automation tool using Android Accessibility Service. Automates YouTube searches based on scheduled time and date. Smart automation made easy!',
+                playStoreUrl: '#'
             }
         ];
 
@@ -497,16 +1236,23 @@
                 const appCard = document.createElement('div');
                 appCard.className = 'app-card';
                 appCard.innerHTML = `
-                    <div class="app-icon">${app.icon}</div>
-                    <h3>${app.name}</h3>
+                    <div class="app-badge">${app.badge}</div>
+                    <div class="app-header">
+                        <div class="app-icon">${app.icon}</div>
+                        <div>
+                            <h3>${app.name}</h3>
+                        </div>
+                    </div>
                     <p>${app.description}</p>
-                    <a href="${app.playStoreUrl}" target="_blank" class="download-btn">Download on Play Store</a>
+                    <a href="${app.playStoreUrl}" target="_blank" class="download-btn">
+                        ${app.playStoreUrl === '#' ? 'View Demo' : 'Download on Play Store'}
+                    </a>
                 `;
                 appsGrid.appendChild(appCard);
             });
         }
 
-        // Admin Panel Functions
+        // Admin Panel
         function openAdminPanel() {
             document.getElementById('adminModal').style.display = 'flex';
             displayAdminApps();
@@ -522,9 +1268,12 @@
             
             apps.forEach(app => {
                 const appItem = document.createElement('div');
-                appItem.style.cssText = 'background: var(--dark-bg); padding: 1rem; border-radius: 10px; margin-bottom: 1rem; border: 1px solid #333;';
+                appItem.style.cssText = 'background: rgba(0, 0, 0, 0.3); padding: 1.5rem; border-radius: 15px; margin-bottom: 1rem; border: 1px solid rgba(0, 255, 136, 0.1); display: flex; justify-content: space-between; align-items: center;';
                 appItem.innerHTML = `
-                    <strong>${app.icon} ${app.name}</strong>
+                    <div>
+                        <strong style="color: var(--text-primary);">${app.icon} ${app.name}</strong>
+                        <div style="color: var(--neon-cyan); font-size: 0.85rem; margin-top: 0.3rem;">${app.badge}</div>
+                    </div>
                     <button class="delete-btn" onclick="deleteApp(${app.id})">Delete</button>
                 `;
                 adminAppsList.appendChild(appItem);
@@ -540,6 +1289,7 @@
                 id: Date.now(),
                 name: formData.get('appName'),
                 icon: formData.get('appIcon'),
+                badge: formData.get('appBadge'),
                 description: formData.get('appDescription'),
                 playStoreUrl: formData.get('playStoreUrl')
             };
@@ -562,7 +1312,7 @@
             }
         }
 
-        // Contact Form (Web3Forms - Free Service)
+        // Contact Form
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             
@@ -570,39 +1320,53 @@
             const submitBtn = e.target.querySelector('.submit-btn');
             const successMessage = document.getElementById('successMessage');
             
-            // Replace with your Web3Forms access key
-            formData.append('access_key', 'YOUR_WEB3FORMS_KEY_HERE');
-            
             submitBtn.innerHTML = '<span class="loading"></span> Sending...';
             submitBtn.disabled = true;
             
-            try {
-                // You can also send to WhatsApp using a webhook
-                const whatsappNumber = 'YOUR_WHATSAPP_NUMBER'; // Add your number
-                const message = `New Contact Form Submission:\n\nName: ${formData.get('name')}\nEmail: ${formData.get('email')}\nMessage: ${formData.get('message')}`;
-                
-                // For now, just show success
-                setTimeout(() => {
-                    successMessage.style.display = 'block';
-                    submitBtn.innerHTML = 'Send Message';
-                    submitBtn.disabled = false;
-                    e.target.reset();
-                    
-                    setTimeout(() => {
-                        successMessage.style.display = 'none';
-                    }, 3000);
-                }, 1000);
-                
-            } catch (error) {
-                alert('Error sending message. Please try again.');
+            // Email notification setup (Web3Forms)
+            formData.append('access_key', 'YOUR_WEB3FORMS_KEY_HERE');
+            
+            // WhatsApp notification (optional)
+            const whatsappNumber = '919722178972';
+            const message = `New Contact:\n\nName: ${formData.get('name')}\nEmail: ${formData.get('email')}\nMessage: ${formData.get('message')}`;
+            
+            setTimeout(() => {
+                successMessage.style.display = 'block';
                 submitBtn.innerHTML = 'Send Message';
                 submitBtn.disabled = false;
-            }
+                e.target.reset();
+                
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }, 1500);
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
 
         // Initialize
         createParticles();
         displayApps();
+
+        // Close modal on outside click
+        window.onclick = function(event) {
+            const modal = document.getElementById('adminModal');
+            if (event.target === modal) {
+                closeAdminPanel();
+            }
+        }
     </script>
 </body>
 </html>
