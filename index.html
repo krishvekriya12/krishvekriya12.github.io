@@ -3,1268 +3,288 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Krish Vekariya - Android Developer specializing in Kotlin and Jetpack Compose">
-    <title>Krish Vekariya • Android Developer</title>
+    <meta name="description" content="Setubandh Tech - Professional Android Development Agency specializing in Kotlin and Jetpack Compose">
+    <title>Setubandh Tech • Android Development Agency</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <!-- EmailJS SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <style>
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Existing Styles Retained */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
-            --blue: #1A56FF;
-            --blue-light: #EEF3FF;
-            --blue-mid: #C7D5FF;
-            --ink: #0D0D0D;
-            --ink-soft: #3A3A3A;
-            --ink-muted: #7A7A7A;
-            --ink-faint: #BDBDBD;
-            --paper: #FAFAF8;
-            --paper-warm: #F5F3EE;
-            --paper-warm2: #EDE9E0;
-            --border: #E4E1D9;
-            --border-strong: #C8C4BC;
-            --success: #1A9E6F;
-            --error: #D93025;
-
+            --blue: #1A56FF; --blue-light: #EEF3FF; --blue-mid: #C7D5FF;
+            --ink: #0D0D0D; --ink-soft: #3A3A3A; --ink-muted: #7A7A7A;
+            --ink-faint: #BDBDBD; --paper: #FAFAF8; --paper-warm: #F5F3EE;
+            --paper-warm2: #EDE9E0; --border: #E4E1D9; --border-strong: #C8C4BC;
+            --success: #1A9E6F; --error: #D93025;
             --font-display: 'DM Serif Display', Georgia, serif;
             --font-body: 'DM Sans', system-ui, sans-serif;
             --font-mono: 'JetBrains Mono', 'Courier New', monospace;
-
-            --shadow-xs: 0 1px 2px rgba(0,0,0,0.06);
-            --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
-            --shadow-md: 0 6px 20px rgba(0,0,0,0.09);
-            --shadow-lg: 0 16px 40px rgba(0,0,0,0.11);
+            --shadow-xs: 0 1px 2px rgba(0,0,0,0.06); --shadow-sm: 0 2px 8px rgba(0,0,0,0.07);
+            --shadow-md: 0 6px 20px rgba(0,0,0,0.09); --shadow-lg: 0 16px 40px rgba(0,0,0,0.11);
             --shadow-xl: 0 28px 60px rgba(0,0,0,0.14);
-
-            --r-sm: 6px;
-            --r-md: 12px;
-            --r-lg: 20px;
-            --r-xl: 28px;
-            --r-full: 999px;
+            --r-sm: 6px; --r-md: 12px; --r-lg: 20px; --r-xl: 28px; --r-full: 999px;
         }
-
-        html {
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background: var(--paper);
-            color: var(--ink);
-            line-height: 1.65;
-            overflow-x: hidden;
-        }
-
-        /* ── Noise texture overlay ── */
-        body::before {
-            content: '';
-            position: fixed;
-            inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.4;
-        }
-
-        /* ── Utility ── */
-        .container {
-            max-width: 1160px;
-            margin: 0 auto;
-            padding: 0 28px;
-        }
-
-        /* ── Navigation ── */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 900;
-            background: rgba(250, 250, 248, 0.85);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-        nav.scrolled {
-            border-color: var(--border);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .nav-inner {
-            max-width: 1160px;
-            margin: 0 auto;
-            padding: 0 28px;
-            height: 68px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .nav-logo {
-            font-family: var(--font-display);
-            font-size: 22px;
-            color: var(--ink);
-            text-decoration: none;
-            letter-spacing: -0.01em;
-        }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+        body { font-family: var(--font-body); background: var(--paper); color: var(--ink); line-height: 1.65; overflow-x: hidden; }
+        body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; opacity: 0.4; }
+        .container { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+        nav { position: fixed; top: 0; left: 0; right: 0; z-index: 900; background: rgba(250, 250, 248, 0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid transparent; transition: border-color 0.3s, box-shadow 0.3s; }
+        nav.scrolled { border-color: var(--border); box-shadow: var(--shadow-sm); }
+        .nav-inner { max-width: 1160px; margin: 0 auto; padding: 0 28px; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+        .nav-logo { font-family: var(--font-display); font-size: 22px; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
         .nav-logo span { color: var(--blue); }
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 36px;
-        }
-
-        .nav-link {
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--ink-muted);
-            text-decoration: none;
-            letter-spacing: 0.01em;
-            transition: color 0.2s;
-        }
+        .nav-links { display: flex; align-items: center; gap: 36px; }
+        .nav-link { font-size: 14px; font-weight: 500; color: var(--ink-muted); text-decoration: none; letter-spacing: 0.01em; transition: color 0.2s; }
         .nav-link:hover { color: var(--ink); }
-
-        .nav-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: var(--ink);
-            color: var(--paper);
-            padding: 9px 20px;
-            border-radius: var(--r-full);
-            font-size: 13px;
-            font-weight: 600;
-            text-decoration: none;
-            letter-spacing: 0.01em;
-            transition: background 0.2s, transform 0.2s;
-        }
-        .nav-cta:hover {
-            background: var(--blue);
-            transform: translateY(-1px);
-        }
-
-        /* Mobile */
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 6px;
-        }
-        .mobile-menu-btn span {
-            display: block;
-            width: 22px;
-            height: 1.5px;
-            background: var(--ink);
-            transition: all 0.3s;
-        }
-
-        /* ── Hero ── */
-        .hero {
-            padding: 160px 0 100px;
-            position: relative;
-        }
-
-        /* Big decorative circle in bg */
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 80px;
-            right: -200px;
-            width: 640px;
-            height: 640px;
-            border-radius: 50%;
-            background: radial-gradient(circle, var(--blue-light) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .hero-inner {
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-eyebrow {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: white;
-            border: 1px solid var(--border);
-            padding: 7px 14px 7px 10px;
-            border-radius: var(--r-full);
-            font-size: 13px;
-            font-weight: 500;
-            color: var(--ink-soft);
-            margin-bottom: 28px;
-            box-shadow: var(--shadow-xs);
-            animation: fadeUp 0.6s ease both;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--success);
-            position: relative;
-        }
-        .status-dot::after {
-            content: '';
-            position: absolute;
-            inset: -3px;
-            border-radius: 50%;
-            background: var(--success);
-            opacity: 0.25;
-            animation: ripple 2s ease infinite;
-        }
-        @keyframes ripple {
-            0%, 100% { transform: scale(1); opacity: 0.25; }
-            50% { transform: scale(1.8); opacity: 0; }
-        }
-
-        .hero-name {
-            font-family: var(--font-display);
-            font-size: clamp(52px, 7vw, 86px);
-            line-height: 1.05;
-            letter-spacing: -0.02em;
-            color: var(--ink);
-            margin-bottom: 6px;
-            animation: fadeUp 0.7s ease 0.1s both;
-        }
-
-        .hero-name em {
-            font-style: italic;
-            color: var(--blue);
-        }
-
-        .hero-role {
-            font-family: var(--font-display);
-            font-size: clamp(30px, 4vw, 50px);
-            line-height: 1.2;
-            letter-spacing: -0.015em;
-            color: var(--ink-muted);
-            margin-bottom: 32px;
-            font-style: italic;
-            animation: fadeUp 0.8s ease 0.15s both;
-        }
-
-        .hero-bio {
-            font-size: 17px;
-            line-height: 1.75;
-            color: var(--ink-soft);
-            max-width: 520px;
-            margin-bottom: 44px;
-            animation: fadeUp 0.9s ease 0.2s both;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            animation: fadeUp 1s ease 0.25s both;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 13px 26px;
-            border-radius: var(--r-full);
-            font-family: var(--font-body);
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.01em;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-            transition: all 0.22s ease;
-        }
-
-        .btn-primary {
-            background: var(--blue);
-            color: white;
-            box-shadow: 0 4px 14px rgba(26, 86, 255, 0.3);
-        }
-        .btn-primary:hover {
-            background: #0A3FCC;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(26, 86, 255, 0.35);
-        }
-
-        .btn-ghost {
-            background: white;
-            color: var(--ink);
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow-xs);
-        }
-        .btn-ghost:hover {
-            border-color: var(--border-strong);
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        /* ── Stats ── */
-        .stats-row {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1px;
-            background: var(--border);
-            border: 1px solid var(--border);
-            border-radius: var(--r-lg);
-            overflow: hidden;
-            margin-top: 72px;
-            animation: fadeUp 1.1s ease 0.35s both;
-        }
-
-        .stat-cell {
-            background: white;
-            padding: 28px 24px;
-            text-align: center;
-            transition: background 0.2s;
-        }
+        .nav-cta { display: inline-flex; align-items: center; gap: 6px; background: var(--ink); color: var(--paper); padding: 9px 20px; border-radius: var(--r-full); font-size: 13px; font-weight: 600; text-decoration: none; letter-spacing: 0.01em; transition: background 0.2s, transform 0.2s; }
+        .nav-cta:hover { background: var(--blue); transform: translateY(-1px); }
+        .mobile-menu-btn { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; }
+        .mobile-menu-btn span { display: block; width: 22px; height: 1.5px; background: var(--ink); transition: all 0.3s; }
+        .hero { padding: 160px 0 100px; position: relative; }
+        .hero::after { content: ''; position: absolute; top: 80px; right: -200px; width: 640px; height: 640px; border-radius: 50%; background: radial-gradient(circle, var(--blue-light) 0%, transparent 70%); pointer-events: none; z-index: 0; }
+        .hero-inner { position: relative; z-index: 1; }
+        .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: white; border: 1px solid var(--border); padding: 7px 14px 7px 10px; border-radius: var(--r-full); font-size: 13px; font-weight: 500; color: var(--ink-soft); margin-bottom: 28px; box-shadow: var(--shadow-xs); animation: fadeUp 0.6s ease both; }
+        .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--success); position: relative; }
+        .status-dot::after { content: ''; position: absolute; inset: -3px; border-radius: 50%; background: var(--success); opacity: 0.25; animation: ripple 2s ease infinite; }
+        @keyframes ripple { 0%, 100% { transform: scale(1); opacity: 0.25; } 50% { transform: scale(1.8); opacity: 0; } }
+        .hero-name { font-family: var(--font-display); font-size: clamp(52px, 7vw, 86px); line-height: 1.05; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 6px; animation: fadeUp 0.7s ease 0.1s both; }
+        .hero-name em { font-style: italic; color: var(--blue); }
+        .hero-role { font-family: var(--font-display); font-size: clamp(30px, 4vw, 50px); line-height: 1.2; letter-spacing: -0.015em; color: var(--ink-muted); margin-bottom: 32px; font-style: italic; animation: fadeUp 0.8s ease 0.15s both; }
+        .hero-bio { font-size: 17px; line-height: 1.75; color: var(--ink-soft); max-width: 520px; margin-bottom: 44px; animation: fadeUp 0.9s ease 0.2s both; }
+        .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; animation: fadeUp 1s ease 0.25s both; }
+        .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: var(--r-full); font-family: var(--font-body); font-size: 14px; font-weight: 600; letter-spacing: 0.01em; text-decoration: none; cursor: pointer; border: none; transition: all 0.22s ease; }
+        .btn-primary { background: var(--blue); color: white; box-shadow: 0 4px 14px rgba(26, 86, 255, 0.3); }
+        .btn-primary:hover { background: #0A3FCC; transform: translateY(-2px); box-shadow: 0 8px 22px rgba(26, 86, 255, 0.35); }
+        .btn-ghost { background: white; color: var(--ink); border: 1px solid var(--border); box-shadow: var(--shadow-xs); }
+        .btn-ghost:hover { border-color: var(--border-strong); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+        .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--r-lg); overflow: hidden; margin-top: 72px; animation: fadeUp 1.1s ease 0.35s both; }
+        .stat-cell { background: white; padding: 28px 24px; text-align: center; transition: background 0.2s; }
         .stat-cell:hover { background: var(--paper-warm); }
-
-        .stat-num {
-            font-family: var(--font-mono);
-            font-size: 36px;
-            font-weight: 600;
-            color: var(--blue);
-            line-height: 1;
-            margin-bottom: 6px;
-        }
-
-        .stat-lbl {
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--ink-muted);
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-        }
-
-        /* ── Sections ── */
-        .section {
-            padding: 100px 0;
-        }
-
-        .section-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--blue);
-            margin-bottom: 16px;
-        }
-        .section-tag::before {
-            content: '';
-            width: 20px;
-            height: 1.5px;
-            background: var(--blue);
-        }
-
-        .section-heading {
-            font-family: var(--font-display);
-            font-size: clamp(36px, 4.5vw, 52px);
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-            color: var(--ink);
-            margin-bottom: 16px;
-        }
+        .stat-num { font-family: var(--font-mono); font-size: 36px; font-weight: 600; color: var(--blue); line-height: 1; margin-bottom: 6px; }
+        .stat-lbl { font-size: 12px; font-weight: 500; color: var(--ink-muted); text-transform: uppercase; letter-spacing: 0.08em; }
+        .section { padding: 100px 0; }
+        .section-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue); margin-bottom: 16px; }
+        .section-tag::before { content: ''; width: 20px; height: 1.5px; background: var(--blue); }
+        .section-heading { font-family: var(--font-display); font-size: clamp(36px, 4.5vw, 52px); line-height: 1.1; letter-spacing: -0.02em; color: var(--ink); margin-bottom: 16px; }
         .section-heading em { font-style: italic; color: var(--ink-muted); }
-
-        .section-sub {
-            font-size: 16px;
-            color: var(--ink-muted);
-            max-width: 500px;
-        }
-
-        .section-hdr {
-            margin-bottom: 56px;
-        }
-
-        /* ── Skills ── */
-        .skills-bg {
-            background: var(--paper-warm);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 16px;
-        }
-
-        .skill-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: var(--r-lg);
-            padding: 28px;
-            transition: all 0.25s ease;
-        }
-        .skill-card:hover {
-            border-color: var(--blue);
-            box-shadow: var(--shadow-md);
-            transform: translateY(-3px);
-        }
-
-        .skill-icon-wrap {
-            width: 44px;
-            height: 44px;
-            background: var(--blue-light);
-            border-radius: var(--r-md);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            margin-bottom: 18px;
-        }
-
-        .skill-card h3 {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            letter-spacing: -0.01em;
-        }
-
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .tag {
-            background: var(--paper-warm);
-            border: 1px solid var(--border);
-            padding: 4px 11px;
-            border-radius: var(--r-full);
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--ink-soft);
-        }
-
-        /* ── Projects ── */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 24px;
-        }
-
-        .project-card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: var(--r-xl);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: all 0.28s ease;
-        }
-        .project-card:hover {
-            border-color: var(--blue-mid);
-            box-shadow: var(--shadow-lg);
-            transform: translateY(-6px);
-        }
-
-        .project-thumb {
-            aspect-ratio: 16/9;
-            background: var(--paper-warm2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 56px;
-            border-bottom: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-        }
-        .project-thumb::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(135deg, transparent 60%, rgba(26,86,255,0.06) 100%);
-        }
-
-        .project-body {
-            padding: 28px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-status {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 4px 10px;
-            border-radius: var(--r-full);
-            margin-bottom: 14px;
-            width: fit-content;
-        }
-        .project-status.live {
-            background: #D4F7EC;
-            color: #0F6646;
-        }
-        .project-status.demo {
-            background: #FEF3C7;
-            color: #92400E;
-        }
-        .project-status::before {
-            content: '';
-            width: 5px;
-            height: 5px;
-            border-radius: 50%;
-            background: currentColor;
-        }
-
-        .project-card h3 {
-            font-size: 19px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 10px;
-            line-height: 1.3;
-        }
-
-        .project-card p {
-            font-size: 14px;
-            color: var(--ink-muted);
-            line-height: 1.7;
-            margin-bottom: 22px;
-            flex: 1;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--blue);
-            text-decoration: none;
-            letter-spacing: 0.01em;
-            transition: gap 0.2s;
-        }
+        .section-sub { font-size: 16px; color: var(--ink-muted); max-width: 500px; }
+        .section-hdr { margin-bottom: 56px; }
+        .skills-bg { background: var(--paper-warm); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+        .skill-card { background: white; border: 1px solid var(--border); border-radius: var(--r-lg); padding: 28px; transition: all 0.25s ease; }
+        .skill-card:hover { border-color: var(--blue); box-shadow: var(--shadow-md); transform: translateY(-3px); }
+        .skill-icon-wrap { width: 44px; height: 44px; background: var(--blue-light); border-radius: var(--r-md); display: flex; align-items: center; justify-content: center; font-size: 20px; margin-bottom: 18px; }
+        .skill-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 12px; letter-spacing: -0.01em; }
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .tag { background: var(--paper-warm); border: 1px solid var(--border); padding: 4px 11px; border-radius: var(--r-full); font-size: 12px; font-weight: 500; color: var(--ink-soft); }
+        .projects-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+        .project-card { background: white; border: 1px solid var(--border); border-radius: var(--r-xl); overflow: hidden; display: flex; flex-direction: column; transition: all 0.28s ease; }
+        .project-card:hover { border-color: var(--blue-mid); box-shadow: var(--shadow-lg); transform: translateY(-6px); }
+        .project-thumb { aspect-ratio: 16/9; background: var(--paper-warm2); display: flex; align-items: center; justify-content: center; font-size: 56px; border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+        .project-body { padding: 28px; flex: 1; display: flex; flex-direction: column; }
+        .project-status { display: inline-flex; align-items: center; gap: 5px; font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: var(--r-full); margin-bottom: 14px; width: fit-content; }
+        .project-status.live { background: #D4F7EC; color: #0F6646; }
+        .project-status.demo { background: #FEF3C7; color: #92400E; }
+        .project-card h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px; line-height: 1.3; }
+        .project-card p { font-size: 14px; color: var(--ink-muted); line-height: 1.7; margin-bottom: 22px; flex: 1; }
+        .project-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--blue); text-decoration: none; letter-spacing: 0.01em; transition: gap 0.2s; }
         .project-link:hover { gap: 10px; }
-
-        /* ── Experience ── */
-        .exp-bg {
-            background: var(--paper-warm);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .exp-card {
-            max-width: 760px;
-            margin: 0 auto;
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: var(--r-xl);
-            padding: 44px;
-            box-shadow: var(--shadow-sm);
-        }
-
-        .exp-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-
-        .exp-role {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            margin-bottom: 4px;
-        }
-
-        .exp-company {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--blue);
-        }
-
-        .exp-date {
-            font-family: var(--font-mono);
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--ink-muted);
-            background: var(--paper-warm);
-            border: 1px solid var(--border);
-            padding: 8px 14px;
-            border-radius: var(--r-sm);
-            white-space: nowrap;
-        }
-
-        .exp-desc {
-            font-size: 15px;
-            color: var(--ink-soft);
-            line-height: 1.8;
-        }
-
-        /* ── Contact ── */
-        .contact-wrap {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: var(--r-xl);
-            overflow: hidden;
-            max-width: 1000px;
-            margin: 0 auto;
-            box-shadow: var(--shadow-md);
-            display: grid;
-            grid-template-columns: 1fr 1.4fr;
-        }
-
-        .contact-left {
-            background: var(--ink);
-            color: white;
-            padding: 52px 44px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .contact-left h2 {
-            font-family: var(--font-display);
-            font-size: 34px;
-            line-height: 1.15;
-            letter-spacing: -0.02em;
-            margin-bottom: 16px;
-        }
-        .contact-left h2 em {
-            font-style: italic;
-            opacity: 0.55;
-        }
-
-        .contact-left p {
-            font-size: 14px;
-            color: rgba(255,255,255,0.6);
-            line-height: 1.75;
-            margin-bottom: 44px;
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            margin-bottom: 20px;
-        }
-
-        .c-icon {
-            width: 38px;
-            height: 38px;
-            border-radius: var(--r-md);
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 16px;
-            flex-shrink: 0;
-        }
-
-        .c-label {
-            font-size: 10px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: rgba(255,255,255,0.4);
-            margin-bottom: 3px;
-        }
-
-        .c-value {
-            font-size: 13px;
-            font-weight: 600;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .contact-socials {
-            display: flex;
-            gap: 10px;
-            margin-top: 40px;
-        }
-
-        .soc-btn {
-            width: 38px;
-            height: 38px;
-            border-radius: var(--r-md);
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.12);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            font-size: 15px;
-            transition: all 0.2s;
-        }
-        .soc-btn:hover {
-            background: var(--blue);
-            border-color: var(--blue);
-            color: white;
-        }
-
-        /* Form side */
-        .contact-right {
-            padding: 52px 44px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 16px;
-        }
-
-        .field {
-            margin-bottom: 20px;
-        }
-
-        .field label {
-            display: block;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            color: var(--ink-muted);
-            margin-bottom: 8px;
-        }
-
-        .field input,
-        .field textarea,
-        .field select {
-            width: 100%;
-            padding: 13px 16px;
-            background: var(--paper);
-            border: 1.5px solid var(--border);
-            border-radius: var(--r-md);
-            font-family: var(--font-body);
-            font-size: 14px;
-            color: var(--ink);
-            transition: border-color 0.2s, box-shadow 0.2s;
-            outline: none;
-            -webkit-appearance: none;
-        }
-        .field input:focus,
-        .field textarea:focus {
-            border-color: var(--blue);
-            box-shadow: 0 0 0 3px rgba(26, 86, 255, 0.1);
-            background: white;
-        }
-        .field textarea {
-            resize: vertical;
-            min-height: 110px;
-            line-height: 1.6;
-        }
-
-        .field input::placeholder,
-        .field textarea::placeholder {
-            color: var(--ink-faint);
-        }
-
-        .submit-btn {
-            width: 100%;
-            background: var(--blue);
-            color: white;
-            border: none;
-            padding: 15px 28px;
-            border-radius: var(--r-full);
-            font-family: var(--font-body);
-            font-size: 15px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.22s;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            letter-spacing: 0.01em;
-            box-shadow: 0 4px 14px rgba(26, 86, 255, 0.3);
-        }
-        .submit-btn:hover:not(:disabled) {
-            background: #0A3FCC;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 22px rgba(26, 86, 255, 0.35);
-        }
-        .submit-btn:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-        }
-
-        .form-feedback {
-            margin-top: 14px;
-            padding: 13px 16px;
-            border-radius: var(--r-md);
-            font-size: 13px;
-            font-weight: 600;
-            display: none;
-            align-items: center;
-            gap: 8px;
-        }
-        .form-feedback.success {
-            background: #D4F7EC;
-            color: #0F6646;
-            border: 1px solid #A7EDD3;
-            display: flex;
-        }
-        .form-feedback.error {
-            background: #FDECEA;
-            color: var(--error);
-            border: 1px solid #F5BCBA;
-            display: flex;
-        }
-
-        /* ── Footer ── */
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 48px 28px;
-        }
-
-        .footer-inner {
-            max-width: 1160px;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 24px;
-        }
-
-        .footer-logo {
-            font-family: var(--font-display);
-            font-size: 20px;
-            color: var(--ink);
-        }
-
-        .footer-socials {
-            display: flex;
-            gap: 10px;
-        }
-
-        .social-pill {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--ink-muted);
-            text-decoration: none;
-            padding: 7px 14px;
-            border: 1px solid var(--border);
-            border-radius: var(--r-full);
-            transition: all 0.2s;
-        }
-        .social-pill:hover {
-            color: var(--blue);
-            border-color: var(--blue-mid);
-            background: var(--blue-light);
-        }
-
-        .footer-copy {
-            width: 100%;
-            border-top: 1px solid var(--border);
-            padding-top: 24px;
-            margin-top: 8px;
-            font-size: 12px;
-            color: var(--ink-faint);
-            text-align: center;
-        }
-
-        /* ── Admin Modal ── */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(13,13,13,0.55);
-            backdrop-filter: blur(6px);
-            z-index: 2000;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
-        }
-        .modal-overlay.open { display: flex; }
-
-        .modal-box {
-            background: white;
-            border-radius: var(--r-xl);
-            width: 100%;
-            max-width: 580px;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: var(--shadow-xl);
-        }
-
-        .modal-top {
-            position: sticky;
-            top: 0;
-            background: white;
-            padding: 28px 32px 20px;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 1;
-        }
-
-        .modal-top h2 {
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-        }
-
-        .close-x {
-            width: 32px;
-            height: 32px;
-            background: var(--paper-warm);
-            border: 1px solid var(--border);
-            border-radius: var(--r-sm);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 18px;
-            color: var(--ink-muted);
-            transition: all 0.2s;
-        }
-        .close-x:hover { background: #FDECEA; border-color: var(--error); color: var(--error); }
-
-        .modal-body { padding: 28px 32px; }
-
-        .admin-app-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 14px 16px;
-            background: var(--paper);
-            border: 1px solid var(--border);
-            border-radius: var(--r-md);
-            margin-bottom: 10px;
-        }
-
-        .admin-app-row h4 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
-        .admin-app-badge { font-size: 10px; font-weight: 700; color: var(--success); text-transform: uppercase; letter-spacing: 0.08em; }
-
-        .del-btn {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--error);
-            background: #FDECEA;
-            border: 1px solid #F5BCBA;
-            padding: 6px 12px;
-            border-radius: var(--r-sm);
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        .del-btn:hover { background: var(--error); color: white; }
-
-        .admin-select {
-            width: 100%;
-            padding: 13px 16px;
-            background: var(--paper);
-            border: 1.5px solid var(--border);
-            border-radius: var(--r-md);
-            font-family: var(--font-body);
-            font-size: 14px;
-            color: var(--ink);
-            outline: none;
-            -webkit-appearance: none;
-        }
-
-        /* ── Animations ── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 900px) {
-            .skills-grid { grid-template-columns: repeat(2, 1fr); }
-            .projects-grid { grid-template-columns: 1fr; }
-            .contact-wrap { grid-template-columns: 1fr; }
-            .contact-left { padding: 40px 32px; }
-            .nav-links { display: none; }
-            .mobile-menu-btn { display: flex; }
-            .stats-row { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 600px) {
-            .hero { padding: 130px 0 80px; }
-            .stats-row { grid-template-columns: 1fr 1fr; }
-            .skills-grid { grid-template-columns: 1fr; }
-            .hero-actions { flex-direction: column; }
-            .btn { width: 100%; justify-content: center; }
-            .form-row { grid-template-columns: 1fr; }
-            .exp-card { padding: 28px 24px; }
-            .contact-right { padding: 36px 28px; }
-        }
+        .exp-bg { background: var(--paper-warm); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .exp-card { max-width: 760px; margin: 0 auto; background: white; border: 1px solid var(--border); border-radius: var(--r-xl); padding: 44px; box-shadow: var(--shadow-sm); }
+        .exp-top { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; margin-bottom: 24px; }
+        .exp-role { font-size: 22px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 4px; }
+        .exp-company { font-size: 15px; font-weight: 600; color: var(--blue); }
+        .exp-date { font-family: var(--font-mono); font-size: 12px; font-weight: 500; color: var(--ink-muted); background: var(--paper-warm); border: 1px solid var(--border); padding: 8px 14px; border-radius: var(--r-sm); white-space: nowrap; }
+        .exp-desc { font-size: 15px; color: var(--ink-soft); line-height: 1.8; }
+        .contact-wrap { background: white; border: 1px solid var(--border); border-radius: var(--r-xl); overflow: hidden; max-width: 1000px; margin: 0 auto; box-shadow: var(--shadow-md); display: grid; grid-template-columns: 1fr 1.4fr; }
+        .contact-left { background: var(--ink); color: white; padding: 52px 44px; display: flex; flex-direction: column; justify-content: space-between; }
+        .contact-left h2 { font-family: var(--font-display); font-size: 34px; line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 16px; }
+        .contact-left p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.75; margin-bottom: 44px; }
+        .contact-detail { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+        .c-icon { width: 38px; height: 38px; border-radius: var(--r-md); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+        .c-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 3px; }
+        .c-value { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.9); }
+        .contact-socials { display: flex; gap: 10px; margin-top: 40px; }
+        .soc-btn { width: 38px; height: 38px; border-radius: var(--r-md); background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 15px; transition: all 0.2s; }
+        .soc-btn:hover { background: var(--blue); border-color: var(--blue); color: white; }
+        .contact-right { padding: 52px 44px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .field { margin-bottom: 20px; }
+        .field label { display: block; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px; }
+        .field input, .field textarea, .field select { width: 100%; padding: 13px 16px; background: var(--paper); border: 1.5px solid var(--border); border-radius: var(--r-md); font-family: var(--font-body); font-size: 14px; color: var(--ink); outline: none; }
+        .submit-btn { width: 100%; background: var(--blue); color: white; border: none; padding: 15px 28px; border-radius: var(--r-full); font-size: 15px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; }
+        .footer-logo { font-family: var(--font-display); font-size: 20px; color: var(--ink); }
+        .footer-copy { width: 100%; border-top: 1px solid var(--border); padding-top: 24px; margin-top: 8px; font-size: 12px; color: var(--ink-faint); text-align: center; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav id="nav">
     <div class="nav-inner">
-        <a href="#home" class="nav-logo">K<span>.</span>V</a>
+        <a href="#home" class="nav-logo">S<span>.</span>T</a>
         <div class="nav-links">
-            <a href="#skills" class="nav-link">Skills</a>
-            <a href="#projects" class="nav-link">Projects</a>
-            <a href="#experience" class="nav-link">Experience</a>
-            <a href="#contact" class="nav-cta">
-                Hire Me
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
+            <a href="#skills" class="nav-link">Expertise</a>
+            <a href="#projects" class="nav-link">Products</a>
+            <a href="#experience" class="nav-link">Journey</a>
+            <a href="#contact" class="nav-cta">Collaborate</a>
         </div>
-        <button class="mobile-menu-btn" onclick="toggleAdminModal()" aria-label="Menu">
-            <span></span><span></span><span></span>
-        </button>
     </div>
 </nav>
 
-<!-- HERO -->
 <section class="hero" id="home">
     <div class="container">
         <div class="hero-inner">
             <div class="hero-eyebrow">
                 <span class="status-dot"></span>
-                Available for freelance projects
+                Official Business Account
             </div>
 
-            <h1 class="hero-name">Krish <em>Vekariya</em></h1>
-            <div class="hero-role">Android Developer</div>
+            <h1 class="hero-name">Setubandh <em>Tech</em></h1>
+            <div class="hero-role">Premium Android Solutions</div>
 
             <p class="hero-bio">
-                Specializing in Kotlin and Jetpack Compose to craft user-friendly, 
-                high-performance mobile applications. Passionate about clean architecture 
-                and continuously pushing the boundaries of what's possible on Android.
+                At Setubandh Tech, we specialize in high-performance Android development. 
+                Using Kotlin and Jetpack Compose, we deliver secure, scalable, and 
+                user-centric mobile applications for global enterprises.
             </p>
 
             <div class="hero-actions">
-                <a href="#projects" class="btn btn-primary">
-                    View My Work
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M5 11L9 7L5 3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </a>
-                <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+                <a href="#projects" class="btn btn-primary">Our Ecosystem</a>
+                <a href="#contact" class="btn btn-ghost">Business Inquiry</a>
             </div>
 
             <div class="stats-row">
                 <div class="stat-cell">
                     <div class="stat-num">10K+</div>
-                    <div class="stat-lbl">Downloads</div>
+                    <div class="stat-lbl">Active Users</div>
                 </div>
                 <div class="stat-cell">
                     <div class="stat-num">7+</div>
-                    <div class="stat-lbl">Live Apps</div>
+                    <div class="stat-lbl">Live Products</div>
                 </div>
                 <div class="stat-cell">
-                    <div class="stat-num">2+</div>
-                    <div class="stat-lbl">Years Exp.</div>
+                    <div class="stat-num">2026</div>
+                    <div class="stat-lbl">Reg. Year</div>
                 </div>
                 <div class="stat-cell">
                     <div class="stat-num">100%</div>
-                    <div class="stat-lbl">Satisfaction</div>
+                    <div class="stat-lbl">Clean Code</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- SKILLS -->
 <section class="section skills-bg" id="skills">
     <div class="container">
         <div class="section-hdr reveal">
-            <div class="section-tag">Expertise</div>
-            <h2 class="section-heading">Skills &amp; <em>Technologies</em></h2>
-            <p class="section-sub">Comprehensive technical expertise in modern Android development</p>
+            <div class="section-tag">Core Competency</div>
+            <h2 class="section-heading">Innovation &amp; <em>Quality</em></h2>
+            <p class="section-sub">Setubandh Tech leverages modern architecture for enterprise-grade mobile apps.</p>
         </div>
         <div class="skills-grid">
-            <div class="skill-card reveal">
-                <div class="skill-icon-wrap">💻</div>
-                <h3>Languages</h3>
-                <div class="tags">
-                    <span class="tag">Kotlin</span>
-                    <span class="tag">Java</span>
-                    <span class="tag">XML</span>
-                </div>
-            </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon-wrap">🎨</div>
-                <h3>UI Development</h3>
-                <div class="tags">
-                    <span class="tag">Jetpack Compose</span>
-                    <span class="tag">Material Design</span>
-                    <span class="tag">Animations</span>
-                </div>
-            </div>
             <div class="skill-card reveal">
                 <div class="skill-icon-wrap">🏗️</div>
                 <h3>Architecture</h3>
                 <div class="tags">
                     <span class="tag">MVVM</span>
                     <span class="tag">Clean Architecture</span>
-                    <span class="tag">DI</span>
+                    <span class="tag">Solid Principles</span>
                 </div>
             </div>
             <div class="skill-card reveal">
-                <div class="skill-icon-wrap">💾</div>
-                <h3>Data & Storage</h3>
+                <div class="skill-icon-wrap">🎨</div>
+                <h3>Modern UI</h3>
                 <div class="tags">
-                    <span class="tag">Room Database</span>
-                    <span class="tag">SQLite</span>
-                    <span class="tag">API Integration</span>
+                    <span class="tag">Jetpack Compose</span>
+                    <span class="tag">Material 3</span>
+                    <span class="tag">Motion Layout</span>
                 </div>
             </div>
             <div class="skill-card reveal">
-                <div class="skill-icon-wrap">🛠️</div>
-                <h3>Tools</h3>
+                <div class="skill-icon-wrap">🛡️</div>
+                <h3>Reliability</h3>
                 <div class="tags">
-                    <span class="tag">Android Studio</span>
-                    <span class="tag">Git</span>
-                    <span class="tag">Testing</span>
-                </div>
-            </div>
-            <div class="skill-card reveal">
-                <div class="skill-icon-wrap">🌟</div>
-                <h3>Soft Skills</h3>
-                <div class="tags">
-                    <span class="tag">Communication</span>
-                    <span class="tag">Teamwork</span>
-                    <span class="tag">Problem Solving</span>
+                    <span class="tag">Unit Testing</span>
+                    <span class="tag">API Security</span>
+                    <span class="tag">Firebase</span>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- PROJECTS -->
 <section class="section" id="projects">
     <div class="container">
         <div class="section-hdr reveal">
-            <div class="section-tag">Portfolio</div>
-            <h2 class="section-heading">Featured <em>Projects</em></h2>
-            <p class="section-sub">Live Android applications built with modern technologies</p>
+            <div class="section-tag">Ecosystem</div>
+            <h2 class="section-heading">Featured <em>Deployment</em></h2>
+            <p class="section-sub">Explore our production-ready applications on Google Play Store.</p>
         </div>
         <div class="projects-grid" id="projectsGrid"></div>
     </div>
 </section>
 
-<!-- EXPERIENCE -->
-<section class="section exp-bg" id="experience">
-    <div class="container">
-        <div class="section-hdr reveal" style="text-align:center">
-            <div class="section-tag">Journey</div>
-            <h2 class="section-heading">Work <em>Experience</em></h2>
-        </div>
-        <div class="exp-card reveal">
-            <div class="exp-top">
-                <div>
-                    <div class="exp-role">Native Android Developer</div>
-                    <div class="exp-company">Susamp Infotech</div>
-                </div>
-                <div class="exp-date">Dec 2024 – Present</div>
-            </div>
-            <p class="exp-desc">
-                Developing and maintaining multiple live Android applications using Kotlin, 
-                Jetpack Compose, and MVVM architecture. Integrated complex UI animations and 
-                advanced functionalities to enhance user engagement and performance.
-            </p>
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT -->
 <section class="section" id="contact">
     <div class="container">
         <div class="section-hdr reveal" style="text-align:center; margin-bottom:48px">
-            <div class="section-tag">Contact</div>
-            <h2 class="section-heading">Let's Work <em>Together</em></h2>
+            <div class="section-tag">Get in Touch</div>
+            <h2 class="section-heading">Business <em>Communication</em></h2>
         </div>
         <div class="contact-wrap reveal">
-            <!-- Left Info Panel -->
             <div class="contact-left">
                 <div>
-                    <h2>Have a project<br><em>in mind?</em></h2>
-                    <p>Drop me a message and let's build something amazing together. I typically respond within 24 hours.</p>
+                    <h2>Setubandh<br><em>Tech Support</em></h2>
+                    <p>For project inquiries or legal verification, please use the official channels below.</p>
 
                     <div class="contact-detail">
                         <div class="c-icon">📧</div>
                         <div>
-                            <div class="c-label">Email</div>
-                            <div class="c-value">krishvekriya44@gmail.com</div>
-                        </div>
-                    </div>
-                    <div class="contact-detail">
-                        <div class="c-icon">📱</div>
-                        <div>
-                            <div class="c-label">Phone</div>
-                            <div class="c-value">+91 9722178972</div>
+                            <div class="c-label">Official Email</div>
+                            <div class="c-value">setubandhtech@gmail.com</div>
                         </div>
                     </div>
                     <div class="contact-detail">
                         <div class="c-icon">📍</div>
                         <div>
-                            <div class="c-label">Location</div>
-                            <div class="c-value">Surat, Gujarat</div>
+                            <div class="c-label">Registered Office</div>
+                            <div class="c-value">235, Dhramraj Park Society, Lajai Ratanpar, Morbi - 363641</div>
                         </div>
                     </div>
-                </div>
-
-                <div class="contact-socials">
-                    <a href="mailto:krishvekriya44@gmail.com" class="soc-btn" title="Email">📧</a>
-                    <a href="https://www.linkedin.com/in/krish-vekariya" target="_blank" class="soc-btn" title="LinkedIn">💼</a>
-                    <a href="https://github.com/krishvekriya12" target="_blank" class="soc-btn" title="GitHub">💻</a>
                 </div>
             </div>
 
-            <!-- Right Form Panel -->
             <div class="contact-right">
-                <form id="contactForm" novalidate>
+                <form id="contactForm">
                     <div class="form-row">
                         <div class="field">
-                            <label>Your Name</label>
-                            <input type="text" id="f-name" placeholder="Rahul Sharma" required>
+                            <label>Contact Person</label>
+                            <input type="text" id="f-name" required>
                         </div>
                         <div class="field">
-                            <label>Email Address</label>
-                            <input type="email" id="f-email" placeholder="you@example.com" required>
+                            <label>Company Email</label>
+                            <input type="email" id="f-email" required>
                         </div>
                     </div>
                     <div class="field">
-                        <label>Subject</label>
-                        <input type="text" id="f-subject" placeholder="Android app project">
+                        <label>Message Type</label>
+                        <select id="f-subject">
+                            <option>New Project Inquiry</option>
+                            <option>Partnership Proposal</option>
+                            <option>Verification Request</option>
+                        </select>
                     </div>
                     <div class="field">
-                        <label>Message</label>
-                        <textarea id="f-message" placeholder="Tell me about your project, timeline, and budget..." required></textarea>
+                        <label>Requirements</label>
+                        <textarea id="f-message" required></textarea>
                     </div>
-                    <button type="submit" class="submit-btn" id="submitBtn">
-                        <span id="btnText">Send Message</span>
-                        <svg id="btnIcon" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M2 8H14M14 8L8 2M14 8L8 14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </button>
+                    <button type="submit" class="submit-btn" id="submitBtn">Submit Request</button>
                     <div class="form-feedback" id="formFeedback"></div>
                 </form>
             </div>
@@ -1272,93 +292,19 @@
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-    <div class="footer-inner">
-        <div class="footer-logo">Krish Vekariya</div>
-        <div class="footer-socials">
-            <a href="mailto:krishvekriya44@gmail.com" class="social-pill">📧 Email</a>
-            <a href="https://www.linkedin.com/in/krish-vekariya" target="_blank" class="social-pill">💼 LinkedIn</a>
-            <a href="https://github.com/krishvekriya12" target="_blank" class="social-pill">💻 GitHub</a>
-        </div>
-        <div class="footer-copy">© 2026 Krish Vekariya · Crafting amazing Android apps with passion.</div>
+    <div class="footer-inner" style="max-width: 1160px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; padding: 48px 28px;">
+        <div class="footer-logo">Setubandh Tech</div>
+        <div class="footer-copy">© 2026 Setubandh Tech · Registered MSME (Udyam-GJ-22-0617181)</div>
     </div>
 </footer>
 
-<!-- ADMIN MODAL -->
-<div class="modal-overlay" id="adminModal">
-    <div class="modal-box">
-        <div class="modal-top">
-            <h2>Manage Apps</h2>
-            <button class="close-x" onclick="toggleAdminModal()">×</button>
-        </div>
-        <div class="modal-body">
-            <form id="addAppForm">
-                <div class="field">
-                    <label>App Name</label>
-                    <input type="text" name="appName" required placeholder="Digital Compass">
-                </div>
-                <div class="form-row">
-                    <div class="field">
-                        <label>App Icon (Emoji)</label>
-                        <input type="text" name="appIcon" required placeholder="🧭" maxlength="2">
-                    </div>
-                    <div class="field">
-                        <label>Status</label>
-                        <select name="appBadge" class="admin-select">
-                            <option value="LIVE">LIVE</option>
-                            <option value="DEMO">DEMO</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="field">
-                    <label>Description</label>
-                    <textarea name="appDescription" required placeholder="Brief description..."></textarea>
-                </div>
-                <div class="field">
-                    <label>Play Store URL</label>
-                    <input type="url" name="playStoreUrl" required placeholder="https://play.google.com/store/apps/details?id=...">
-                </div>
-                <button type="submit" class="submit-btn">Add App</button>
-            </form>
-
-            <div style="margin-top:36px">
-                <p style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-muted);margin-bottom:14px">Your Apps</p>
-                <div id="adminAppsList"></div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script>
-    // ── EmailJS Init ──────────────────────────────────────────────
-    // SETUP STEPS:
-    // 1. Go to https://www.emailjs.com/ and create a FREE account
-    // 2. Add an Email Service (Gmail) → copy your Service ID
-    // 3. Create an Email Template → copy your Template ID
-    // 4. Go to Account → copy your Public Key
-    // 5. Replace the 3 values below:
-    const EMAILJS_PUBLIC_KEY  = 'MB6_mWwTgCvQjddYc';   // e.g. 'abc123XYZ'
-    const EMAILJS_SERVICE_ID  = 'service_k8oxfwm';   // e.g. 'service_xxxxxx'
-    const EMAILJS_TEMPLATE_ID = 'template_osasvx4';  // e.g. 'template_xxxxxx'
-
-    // EmailJS template variables to set in dashboard:
-    // {{from_name}}   → sender's name
-    // {{from_email}}  → sender's email
-    // {{subject}}     → subject line
-    // {{message}}     → message body
-    // {{to_name}}     → Krish Vekariya  (set as fixed in template or pass below)
-
-    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
-
-    // ── Projects Data ─────────────────────────────────────────────
-    let projects = JSON.parse(localStorage.getItem('kv_projects')) || [
-        { id: 1, name: 'Digital Compass: GPS Direction', icon: '🧭', badge: 'LIVE', description: 'Comprehensive navigation app with real-time GPS directions, multiple compass modes, live tracking, and weather updates. Achieved 10K+ downloads on Play Store.', url: 'https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection' },
-        { id: 2, name: 'Water Tracker App', icon: '💧', badge: 'LIVE', description: 'Beautiful water tracking app with animated bottle UI built using Jetpack Compose. Features smooth animations and intuitive design.', url: 'https://play.google.com/store/apps' },
-        { id: 3, name: 'Hourly Chime', icon: '⏰', badge: 'LIVE', description: 'Smart alarm app with multilingual Text-to-Speech, custom alarm services, and advanced scheduling features.', url: 'https://play.google.com/store/apps' },
-        { id: 4, name: 'GPS Map Camera Lite', icon: '📷', badge: 'LIVE', description: 'Location-based camera with custom text stickers, multiple fonts, colors, and styles for professional geotagged photos.', url: 'https://play.google.com/store/apps' },
-        { id: 5, name: 'Survey Not Cam', icon: '📸', badge: 'LIVE', description: 'Professional survey camera with custom gallery implementation and optimized performance for field documentation.', url: 'https://play.google.com/store/apps' },
-        { id: 6, name: 'Automation App', icon: '🤖', badge: 'DEMO', description: 'Advanced automation tool using Android Accessibility Service for scheduled task automation.', url: '#' }
+    // Project Data with Business Context
+    let projects = [
+        { id: 1, name: 'Digital Compass: GPS Direction', icon: '🧭', badge: 'LIVE', description: 'Advanced navigation tool with real-time GPS tracking. Developed by Setubandh Tech.', url: 'https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection' },
+        { id: 2, name: 'CashFlow Tracker', icon: '💰', badge: 'LIVE', description: 'Enterprise-grade financial tracking with Jetpack Compose animations.', url: '#' },
+        { id: 3, name: 'SafeTap SOS', icon: '🛡️', badge: 'LIVE', description: 'High-security safety check-in and emergency SOS system.', url: '#' }
     ];
 
     function renderProjects() {
@@ -1373,136 +319,13 @@
                     <span class="project-status ${p.badge.toLowerCase()}">${p.badge}</span>
                     <h3>${p.name}</h3>
                     <p>${p.description}</p>
-                    <a href="${p.url}" target="_blank" class="project-link">
-                        ${p.url === '#' ? 'View Demo' : 'View on Play Store'}
-                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 12L12 2M12 2H5M12 2V9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </a>
+                    <a href="${p.url}" target="_blank" class="project-link">Official Link</a>
                 </div>
             `;
             grid.appendChild(card);
         });
         observeReveal();
     }
-
-    // ── Admin Panel ───────────────────────────────────────────────
-    function toggleAdminModal() {
-        const m = document.getElementById('adminModal');
-        m.classList.toggle('open');
-        if (m.classList.contains('open')) renderAdminList();
-    }
-
-    function renderAdminList() {
-        const list = document.getElementById('adminAppsList');
-        list.innerHTML = '';
-        projects.forEach(p => {
-            const row = document.createElement('div');
-            row.className = 'admin-app-row';
-            row.innerHTML = `
-                <div>
-                    <h4>${p.icon} ${p.name}</h4>
-                    <div class="admin-app-badge">${p.badge}</div>
-                </div>
-                <button class="del-btn" onclick="deleteApp(${p.id})">Delete</button>
-            `;
-            list.appendChild(row);
-        });
-    }
-
-    document.getElementById('addAppForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        const fd = new FormData(e.target);
-        projects.push({
-            id: Date.now(),
-            name: fd.get('appName'),
-            icon: fd.get('appIcon'),
-            badge: fd.get('appBadge'),
-            description: fd.get('appDescription'),
-            url: fd.get('playStoreUrl')
-        });
-        localStorage.setItem('kv_projects', JSON.stringify(projects));
-        renderProjects();
-        renderAdminList();
-        e.target.reset();
-        alert('✓ App added!');
-    });
-
-    function deleteApp(id) {
-        if (!confirm('Delete this app?')) return;
-        projects = projects.filter(p => p.id !== id);
-        localStorage.setItem('kv_projects', JSON.stringify(projects));
-        renderProjects();
-        renderAdminList();
-    }
-
-    // Close modal on outside click
-    document.getElementById('adminModal').addEventListener('click', function(e) {
-        if (e.target === this) toggleAdminModal();
-    });
-
-    // ── Contact Form with EmailJS ─────────────────────────────────
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
-        e.preventDefault();
-
-        const name    = document.getElementById('f-name').value.trim();
-        const email   = document.getElementById('f-email').value.trim();
-        const subject = document.getElementById('f-subject').value.trim();
-        const message = document.getElementById('f-message').value.trim();
-        const feedback = document.getElementById('formFeedback');
-        const btn      = document.getElementById('submitBtn');
-        const btnText  = document.getElementById('btnText');
-
-        // Basic validation
-        if (!name || !email || !message) {
-            showFeedback('error', '⚠ Please fill in all required fields.');
-            return;
-        }
-
-        // Loading state
-        btn.disabled = true;
-        btnText.textContent = 'Sending…';
-
-        try {
-            await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-                from_name:  name,
-                from_email: email,
-                subject:    subject || 'Portfolio Contact',
-                message:    message,
-                to_name:    'Krish Vekariya',
-                reply_to:   email
-            });
-
-            showFeedback('success', '✓ Message sent! I\'ll get back to you within 24 hours.');
-            this.reset();
-
-        } catch (err) {
-            console.error('EmailJS error:', err);
-            // Fallback: open mail client if EmailJS not configured yet
-            if (EMAILJS_PUBLIC_KEY === 'YOUR_PUBLIC_KEY') {
-                const mailBody = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-                const mailSubj = encodeURIComponent(subject || 'Portfolio Contact');
-                window.location.href = `mailto:krishvekriya44@gmail.com?subject=${mailSubj}&body=${mailBody}`;
-                showFeedback('success', '✓ Opening your email client…');
-            } else {
-                showFeedback('error', '✗ Something went wrong. Please email me directly at krishvekriya44@gmail.com');
-            }
-        } finally {
-            btn.disabled = false;
-            btnText.textContent = 'Send Message';
-        }
-    });
-
-    function showFeedback(type, msg) {
-        const el = document.getElementById('formFeedback');
-        el.className = `form-feedback ${type}`;
-        el.textContent = msg;
-        el.style.display = 'flex';
-        if (type === 'success') setTimeout(() => el.style.display = 'none', 6000);
-    }
-
-    // ── Scroll Effects ────────────────────────────────────────────
-    window.addEventListener('scroll', () => {
-        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
-    });
 
     function observeReveal() {
         const io = new IntersectionObserver((entries) => {
@@ -1516,17 +339,11 @@
         document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     }
 
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', function(e) {
-            const t = document.querySelector(this.getAttribute('href'));
-            if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth' }); }
-        });
+    window.addEventListener('scroll', () => {
+        document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
     });
 
-    // Init
     renderProjects();
-    observeReveal();
 </script>
 </body>
 </html>
