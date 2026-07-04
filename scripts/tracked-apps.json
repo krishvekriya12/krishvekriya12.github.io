@@ -1,11 +1,11 @@
 {
   "comment": "Apps built professionally (past company work), grouped by company. Live-fetched from Play Store daily. Add { appId, company } here to show a new app in the Professional Work section.",
   "workApps": [
-    { "appId": "com.gpsmapcameralite.geotagphotolocation", "company": "SusampInfotech" },
-    { "appId": "com.hourlychime.easytimereminder", "company": "SusampInfotech" },
-    { "appId": "com.fieldsurveyingwithtimestamp.gpsmapcamera", "company": "SusampInfotech" },
-    { "appId": "com.compass.digitalcompass.gpsdirection", "company": "SusampInfotech" },
-    { "appId": "com.sharemylocation.printgpscoordinatesonimage", "company": "SusampInfotech" },
-    { "appId": "com.cardswallet.nfcreader", "company": "SmartonSolution" }
+    { "appId": "com.gpsmapcameralite.geotagphotolocation", "company": "Susamp Infotech" },
+    { "appId": "com.hourlychime.easytimereminder", "company": "Susamp Infotech" },
+    { "appId": "com.fieldsurveyingwithtimestamp.gpsmapcamera", "company": "Susamp Infotech" },
+    { "appId": "com.compass.digitalcompass.gpsdirection", "company": "Susamp Infotech" },
+    { "appId": "com.sharemylocation.printgpscoordinatesonimage", "company": "Susamp Infotech" },
+    { "appId": "com.cardswallet.nfcreader", "company": "SmartOnSolution" }
   ]
 }

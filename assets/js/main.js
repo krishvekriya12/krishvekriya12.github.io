@@ -122,7 +122,7 @@
   };
 
   /* ---------- work apps grouped by company ---------- */
-  const COMPANY_ORDER = ['SusampInfotech', 'SmartonSolution'];
+  const COMPANY_ORDER = ['Susamp Infotech', 'SmartOnSolution'];
 
   const workGroups = (apps) => {
     const groups = new Map();
@@ -146,7 +146,7 @@
           <span class="work-co-tag">Company</span>
           <span class="work-co-meta">${list.length} app${list.length > 1 ? 's' : ''}${installsTxt ? ' · ' + installsTxt : ''}</span>
         </div>
-        <div class="apps-grid compact">${list.map((a) => appCard(a)).join('')}</div>
+        <div class="apps-grid">${list.map((a) => appCard(a, { shots: true })).join('')}</div>
       </div>`;
     }).join('');
   };
@@ -217,7 +217,8 @@
 
     slides.forEach(({ shot }, i) => {
       const img = new Image();
-      img.src = shot;
+      // request a sharper render for the mockup (play-lh supports size params)
+      img.src = shot.includes('=') ? shot : shot + '=w640';
       img.alt = '';
       if (i === 0) img.classList.add('on');
       screen.appendChild(img);
@@ -275,6 +276,57 @@
     console.error(err);
     $('#myApps').innerHTML = '<p style="color:var(--muted);font-family:var(--font-jakarta);font-size:0.85rem">Could not load app data — see them all on <a href="https://play.google.com/store/apps/dev?id=7084161944711464301">Google Play</a>.</p>';
   });
+
+  /* ---------- nav inverts over the dark tail ---------- */
+  const darkTail = $('.dark-tail');
+  const navWrap = $('#nav');
+  if (darkTail && navWrap) {
+    const navInvert = () => {
+      const r = darkTail.getBoundingClientRect();
+      navWrap.classList.toggle('nav-dark', r.top < 92 && r.bottom > 36);
+    };
+    window.addEventListener('scroll', navInvert, { passive: true });
+    window.addEventListener('resize', navInvert, { passive: true });
+    navInvert();
+  }
+
+  /* ---------- contact form (FormSubmit AJAX) ---------- */
+  const form = $('#contactForm');
+  const formMsg = $('#formMsg');
+  const formBtn = $('#formBtn');
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+      formBtn.disabled = true;
+      formBtn.firstChild.textContent = 'Sending… ';
+      formMsg.className = 'form-msg';
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/krishvekriya44@gmail.com', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+          body: JSON.stringify({
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value,
+            _subject: `Portfolio inquiry from ${form.name.value}`,
+            _template: 'table',
+            _captcha: 'false',
+          }),
+        });
+        if (!res.ok) throw new Error('send failed');
+        formMsg.textContent = '✓ Message sent — I usually reply within a day.';
+        formMsg.classList.add('ok');
+        form.reset();
+      } catch {
+        formMsg.innerHTML = 'Could not send right now — email me directly at <a href="mailto:krishvekriya44@gmail.com">krishvekriya44@gmail.com</a>.';
+        formMsg.classList.add('err');
+      } finally {
+        formBtn.disabled = false;
+        formBtn.firstChild.textContent = 'Send message ';
+      }
+    });
+  }
 
   /* ---------- footer year ---------- */
   $('#year').textContent = new Date().getFullYear();

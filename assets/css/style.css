@@ -154,6 +154,22 @@ button { font: inherit; color: inherit; background: none; border: none; cursor: 
   padding: 10px;
 }
 .nav-menu[hidden] { display: none; }
+
+/* nav over dark sections — inverted text */
+.nav-wrap.nav-dark .brand-name,
+.nav-wrap.nav-dark .nav-links a { color: #fafaf9; }
+.nav-wrap.nav-dark .nav-links a:hover { color: rgba(255, 255, 255, 0.55); }
+.nav-wrap.nav-dark .nav-links a.nav-cta { border-color: rgba(255, 255, 255, 0.35); }
+.nav-wrap.nav-dark .nav-links a.nav-cta:hover { background: #fafaf9; color: #1a1a1a; border-color: #fafaf9; }
+.nav-wrap.nav-dark .glass-pill { border-color: rgba(255, 255, 255, 0.22); }
+.nav-wrap.nav-dark .glass-pill::after {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.10) 0%, rgba(255, 255, 255, 0.03) 100%);
+  box-shadow: inset 0 1.5px 0 rgba(255, 255, 255, 0.28), inset 1.5px 0 0 rgba(255, 255, 255, 0.14);
+}
+.nav-wrap.nav-dark .avatar { background: #fafaf9; color: #1a1a1a; }
+.nav-wrap.nav-dark .nav-burger span { background: #fafaf9; }
+.nav-wrap.nav-dark .nav-menu a { color: #fafaf9; }
+.nav-wrap.nav-dark .nav-menu a:hover { background: rgba(255, 255, 255, 0.08); }
 .nav-menu a {
   font-size: 15px; font-weight: 600; text-decoration: none;
   padding: 10px 16px; border-radius: 14px; text-align: center;
@@ -295,9 +311,10 @@ section { position: relative; padding: clamp(64px, 9vw, 120px) 0; }
 .hero-device { display: flex; flex-direction: column; align-items: center; position: relative; }
 .phone {
   position: relative;
-  width: min(280px, 64vw);
-  aspect-ratio: 1 / 2;
-  border-radius: 44px;
+  width: min(276px, 62vw);
+  /* matches Play Store screenshot ratio (9:16) so shots fit without cropping */
+  aspect-ratio: 9 / 16;
+  border-radius: 40px;
   background: #111;
   border: 1px solid #2c2c2c;
   box-shadow:
@@ -310,21 +327,24 @@ section { position: relative; padding: clamp(64px, 9vw, 120px) 0; }
   width: 10px; height: 10px; border-radius: 50%;
   background: #000; border: 1px solid rgba(255, 255, 255, 0.14); z-index: 6;
 }
-.phone-screen { position: absolute; inset: 7px; border-radius: 37px; overflow: hidden; background: #0d0d0d; }
+.phone-screen { position: absolute; inset: 7px; border-radius: 33px; overflow: hidden; background: #0d0d0d; }
 .phone-screen img {
   position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
   opacity: 0; transition: opacity 0.9s ease;
 }
 .phone-screen img.on { opacity: 1; }
 .phone-chip {
-  display: flex; align-items: center; gap: 9px;
+  display: flex; align-items: center; gap: 10px;
+  width: 252px; flex-shrink: 0;
   margin-top: -24px; z-index: 8;
-  padding: 8px 15px 8px 9px; white-space: nowrap;
+  padding: 8px 16px 8px 10px; white-space: nowrap;
   box-shadow: 0 12px 34px rgba(24, 24, 22, 0.18);
 }
-.phone-chip img { width: 26px; height: 26px; border-radius: 7px; }
-.phone-chip .t { font-family: var(--font-jakarta); font-size: 0.78rem; font-weight: 700; }
-.phone-chip .s { font-family: var(--font-jakarta); font-size: 0.66rem; font-weight: 600; color: #6b6b6b; }
+.phone-chip img { width: 28px; height: 28px; border-radius: 8px; flex-shrink: 0; }
+.phone-chip > span { min-width: 0; flex: 1; }
+.phone-chip .t, .phone-chip .s { display: block; overflow: hidden; text-overflow: ellipsis; }
+.phone-chip .t { font-family: var(--font-jakarta); font-size: 0.78rem; font-weight: 700; line-height: 1.3; }
+.phone-chip .s { font-family: var(--font-jakarta); font-size: 0.66rem; font-weight: 600; color: #6b6b6b; line-height: 1.3; }
 
 .scroll-hint { position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 2; }
 .mouse {
@@ -489,6 +509,8 @@ section { position: relative; padding: clamp(64px, 9vw, 120px) 0; }
 
 /* --- journey -------------------------------------------------------------- */
 
+.resume-wrap { margin-top: 34px; }
+
 .journey-grid {
   display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: clamp(40px, 6vw, 84px); margin-top: clamp(36px, 6vw, 64px); align-items: start;
@@ -626,7 +648,8 @@ section { position: relative; padding: clamp(64px, 9vw, 120px) 0; }
   border-radius: 24px;
   overflow: hidden;
   min-height: 400px;
-  display: flex; align-items: center;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
+  align-items: center;
   border: 1px solid rgba(255, 255, 255, 0.07);
 }
 .cta-glow {
@@ -677,6 +700,40 @@ section { position: relative; padding: clamp(64px, 9vw, 120px) 0; }
 }
 .cta-btn-ghost:hover { border-color: rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.06); transform: translateY(-2px); }
 
+/* contact form (dark, inside CTA card) */
+.cta-form {
+  position: relative; z-index: 2;
+  padding: clamp(28px, 4vw, 52px);
+  display: flex; flex-direction: column; gap: 15px;
+}
+.cta-form label {
+  display: block;
+  font-family: var(--font-jakarta); font-size: 0.62rem; font-weight: 700;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.42); margin-bottom: 8px;
+}
+.cta-form input, .cta-form textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  color: #fafaf9; font: inherit;
+  font-family: var(--font-jakarta); font-size: 0.9rem;
+  padding: 12px 14px;
+  transition: border-color 0.2s, background 0.2s;
+}
+.cta-form input::placeholder, .cta-form textarea::placeholder { color: rgba(255, 255, 255, 0.3); }
+.cta-form input:focus, .cta-form textarea:focus {
+  outline: none; border-color: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.09);
+}
+.cta-form textarea { min-height: 104px; resize: vertical; }
+.cta-form .cta-btn-primary { width: 100%; justify-content: center; border: none; cursor: pointer; }
+.form-msg { display: none; font-family: var(--font-jakarta); font-size: 0.84rem; margin-top: -4px; }
+.form-msg.ok { display: block; color: #34d399; }
+.form-msg.err { display: block; color: #f87171; }
+.form-msg a { color: #fafaf9; }
+
 footer {
   padding: 48px 20px 56px;
   display: flex; flex-direction: column; align-items: center; gap: 14px;
@@ -722,4 +779,9 @@ footer {
   .work-co-meta { margin-left: 0; width: 100%; }
   .m-play { width: 100%; justify-content: center; }
   .cta-card { min-height: 0; }
+}
+
+@media (max-width: 1020px) {
+  .cta-card { grid-template-columns: 1fr; }
+  .cta-form { padding-top: 0; }
 }
