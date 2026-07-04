@@ -1,0 +1,11 @@
+{
+  "comment": "Apps built professionally (past company work). Live-fetched from Play Store daily. Add a package ID here to show a new app in the Professional Work section.",
+  "workApps": [
+    "com.compass.digitalcompass.gpsdirection",
+    "com.hourlychime.easytimereminder",
+    "com.fieldsurveyingwithtimestamp.gpsmapcamera",
+    "com.gpsmapcameralite.geotagphotolocation",
+    "com.sharemylocation.printgpscoordinatesonimage",
+    "com.cardswallet.nfcreader"
+  ]
+}

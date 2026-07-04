@@ -1,0 +1,13 @@
+{
+  "name": "krish-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio site for Krish Vekariya with auto-fetched Play Store & GitHub data",
+  "scripts": {
+    "fetch-data": "node scripts/fetch-data.mjs"
+  },
+  "dependencies": {
+    "google-play-scraper": "^10.0.0"
+  }
+}
