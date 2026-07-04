@@ -206,45 +206,6 @@
     if (card) openModal(card.dataset.app);
   });
 
-  /* ---------- phone mockup carousel ---------- */
-  const startPhone = (apps) => {
-    const screen = $('#phoneScreen');
-    const chip = $('#phoneChip');
-    const slides = apps
-      .filter((a) => a.screenshots?.length)
-      .map((a) => ({ app: a, shot: a.screenshots[0] }));
-    if (!slides.length) return;
-
-    slides.forEach(({ shot }, i) => {
-      const img = new Image();
-      // request a sharper render for the mockup (play-lh supports size params)
-      img.src = shot.includes('=') ? shot : shot + '=w640';
-      img.alt = '';
-      if (i === 0) img.classList.add('on');
-      screen.appendChild(img);
-    });
-
-    const setChip = (i) => {
-      $('#chipIcon').src = slides[i].app.icon;
-      $('#chipTitle').textContent = decode(slides[i].app.title).split(':')[0];
-      $('#chipSub').textContent = slides[i].app.installsText
-        ? `${shortInstalls(slides[i].app.installsText)} installs · Google Play`
-        : 'Google Play';
-    };
-    chip.hidden = false;
-    setChip(0);
-
-    if (slides.length < 2) return;
-    let cur = 0;
-    setInterval(() => {
-      const imgs = $$('.phone-screen img');
-      imgs[cur].classList.remove('on');
-      cur = (cur + 1) % slides.length;
-      imgs[cur].classList.add('on');
-      setChip(cur);
-    }, 3800);
-  };
-
   /* ---------- data loading ---------- */
   const loadApps = async () => {
     const res = await fetch('data/apps.json');
@@ -268,8 +229,6 @@
     $('#workApps').innerHTML = workGroups(data.workApps || []);
     observeReveals($('#myApps'));
     observeReveals($('#workApps'));
-
-    startPhone(allApps);
   };
 
   loadApps().catch((err) => {
