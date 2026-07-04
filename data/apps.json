@@ -72,7 +72,8 @@
       ],
       "released": "Jun 22, 2020",
       "updated": 1775624012000,
-      "free": true
+      "free": true,
+      "company": "SusampInfotech"
     },
     {
       "appId": "com.hourlychime.easytimereminder",
@@ -95,7 +96,8 @@
       ],
       "released": "Jun 27, 2021",
       "updated": 1780403888000,
-      "free": true
+      "free": true,
+      "company": "SusampInfotech"
     },
     {
       "appId": "com.fieldsurveyingwithtimestamp.gpsmapcamera",
@@ -118,7 +120,8 @@
       ],
       "released": "Dec 23, 2020",
       "updated": 1782890616000,
-      "free": true
+      "free": true,
+      "company": "SusampInfotech"
     },
     {
       "appId": "com.compass.digitalcompass.gpsdirection",
@@ -141,7 +144,8 @@
       ],
       "released": "Dec 11, 2025",
       "updated": 1779788714000,
-      "free": true
+      "free": true,
+      "company": "SusampInfotech"
     },
     {
       "appId": "com.sharemylocation.printgpscoordinatesonimage",
@@ -164,7 +168,8 @@
       ],
       "released": "Apr 10, 2020",
       "updated": 1766985275000,
-      "free": true
+      "free": true,
+      "company": "SusampInfotech"
     },
     {
       "appId": "com.cardswallet.nfcreader",
@@ -187,7 +192,8 @@
       ],
       "released": "Apr 21, 2025",
       "updated": 1781616135000,
-      "free": true
+      "free": true,
+      "company": "SmartonSolution"
     }
   ]
 }

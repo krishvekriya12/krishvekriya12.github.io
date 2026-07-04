@@ -1,4 +1,4 @@
-name: Update Play Store & GitHub data
+name: Update Play Store data
 
 on:
   schedule:
@@ -30,9 +30,7 @@ jobs:
       - name: Install dependencies
         run: npm install --no-audit --no-fund
 
-      - name: Fetch Play Store & GitHub data
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Fetch Play Store data
         run: node scripts/fetch-data.mjs
 
       - name: Commit updated data
@@ -43,6 +41,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No data changes today."
           else
-            git commit -m "chore: sync Play Store & GitHub data [skip ci]"
+            git commit -m "chore: sync Play Store data [skip ci]"
             git push
           fi

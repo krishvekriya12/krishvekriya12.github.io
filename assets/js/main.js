@@ -1,5 +1,5 @@
 /* Krish Vekariya — portfolio
-   Renders live Play Store + GitHub data from /data/*.json
+   Renders live Play Store data from /data/apps.json
    (refreshed daily by .github/workflows/update-data.yml) */
 
 (() => {
@@ -42,6 +42,12 @@
   const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
+  // Play Store strings arrive HTML-encoded — decode before re-escaping
+  const decode = (s) => String(s ?? '')
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"').replace(/&#39;/g, "'")
+    .replace(/&amp;/g, '&');
+
   // "1,000,000+" -> "1M+", "50+" -> "50+"
   const shortInstalls = (txt) => {
     if (!txt) return null;
@@ -78,7 +84,7 @@
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 17 17 7M9 7h8v8"/></svg>
         </span>
       </div>
-      <p class="app-sum">${esc(app.summary)}</p>
+      <p class="app-sum">${esc(decode(app.summary))}</p>
       ${shots && app.screenshots?.length ? `
       <div class="app-shots">
         ${app.screenshots.slice(0, 4).map((s) => `<img src="${esc(s)}" alt="${esc(app.title)} screenshot" loading="lazy">`).join('')}
@@ -89,6 +95,36 @@
         <span class="free-tag">${app.free ? 'Free' : 'Paid'}</span>
       </div>
     </button>`;
+  };
+
+  /* ---------- work apps grouped by company ---------- */
+  const COMPANY_ORDER = ['SusampInfotech', 'SmartonSolution'];
+
+  const workGroups = (apps) => {
+    const groups = new Map();
+    for (const app of apps) {
+      const co = app.company || 'Other companies';
+      if (!groups.has(co)) groups.set(co, []);
+      groups.get(co).push(app);
+    }
+    const ordered = [
+      ...COMPANY_ORDER.filter((c) => groups.has(c)),
+      ...[...groups.keys()].filter((c) => !COMPANY_ORDER.includes(c)),
+    ];
+    return ordered.map((company) => {
+      const list = groups.get(company);
+      const installs = list.reduce((s, a) => s + (a.installs ?? 0), 0);
+      const installsTxt = installs ? `${shortInstalls(String(installs))}+ installs` : '';
+      return `
+      <div class="work-group">
+        <div class="work-co reveal">
+          <span class="work-co-name">${esc(company)}</span>
+          <span class="work-co-tag">Company</span>
+          <span class="work-co-meta">${list.length} app${list.length > 1 ? 's' : ''}${installsTxt ? ' · ' + installsTxt : ''}</span>
+        </div>
+        <div class="apps-grid compact">${list.map((a) => appCard(a)).join('')}</div>
+      </div>`;
+    }).join('');
   };
 
   /* ---------- modal ---------- */
@@ -113,8 +149,9 @@
         <span class="mstat">★ <b>${app.score ? app.score.toFixed(1) : 'New'}</b>${app.ratings ? ` · ${app.ratings.toLocaleString()} ratings` : ''}</span>
         ${app.installsText ? `<span class="mstat"><b>${esc(app.installsText)}</b> installs</span>` : ''}
         ${app.released ? `<span class="mstat">Released <b>${esc(app.released)}</b></span>` : ''}
+        ${app.company ? `<span class="mstat">Built at <b>${esc(app.company)}</b></span>` : ''}
       </div>
-      <p class="modal-desc">${esc(app.summary)}</p>
+      <p class="modal-desc">${esc(decode(app.summary))}</p>
       ${app.screenshots?.length ? `
       <div class="modal-shots">
         ${app.screenshots.map((s) => `<img src="${esc(s)}" alt="${esc(app.title)} screenshot" loading="lazy">`).join('')}
@@ -143,44 +180,6 @@
     if (card) openModal(card.dataset.app);
   });
 
-  /* ---------- phone mockup carousel ---------- */
-  const startPhone = (apps) => {
-    const screen = $('#phoneScreen');
-    const chip = $('#phoneChip');
-    const slides = apps
-      .filter((a) => a.screenshots?.length)
-      .map((a) => ({ app: a, shot: a.screenshots[0] }));
-    if (!slides.length) return;
-
-    slides.forEach(({ shot }, i) => {
-      const img = new Image();
-      img.src = shot;
-      img.alt = '';
-      if (i === 0) img.classList.add('on');
-      screen.appendChild(img);
-    });
-
-    const setChip = (i) => {
-      $('#chipIcon').src = slides[i].app.icon;
-      $('#chipTitle').textContent = slides[i].app.title.split(':')[0];
-      $('#chipSub').textContent = slides[i].app.installsText
-        ? `${shortInstalls(slides[i].app.installsText)} installs · Google Play`
-        : 'Google Play';
-    };
-    chip.hidden = false;
-    setChip(0);
-
-    if (slides.length < 2) return;
-    let cur = 0;
-    setInterval(() => {
-      const imgs = $$('.phone-screen img');
-      imgs[cur].classList.remove('on');
-      cur = (cur + 1) % slides.length;
-      imgs[cur].classList.add('on');
-      setChip(cur);
-    }, 3800);
-  };
-
   /* ---------- data loading ---------- */
   const loadApps = async () => {
     const res = await fetch('data/apps.json');
@@ -201,40 +200,14 @@
 
     // grids
     $('#myApps').innerHTML = (data.myApps || []).map((a) => appCard(a, { shots: true })).join('');
-    $('#workApps').innerHTML = (data.workApps || []).map((a) => appCard(a)).join('');
+    $('#workApps').innerHTML = workGroups(data.workApps || []);
     observeReveals($('#myApps'));
     observeReveals($('#workApps'));
-
-    startPhone(allApps);
-  };
-
-  const loadGithub = async () => {
-    const res = await fetch('data/github.json');
-    if (!res.ok) throw new Error('github.json missing');
-    const { repos = [] } = await res.json();
-    $('#ghGrid').innerHTML = repos.map((r) => `
-      <a class="gh-card reveal" href="${esc(r.url)}" target="_blank" rel="noopener">
-        <span class="gh-name">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4a2 2 0 0 1 2-2h11a1 1 0 0 1 1 1v18l-4-3-4 3V4"/></svg>
-          ${esc(r.name)}
-        </span>
-        <span class="gh-desc">${esc(r.description || 'No description yet.')}</span>
-        <span class="gh-meta">
-          ${r.language ? `<span><span class="gh-dot" style="${r.languageColor ? `background:${esc(r.languageColor)}` : ''}"></span>${esc(r.language)}</span>` : ''}
-          <span>★ ${r.stars ?? 0}</span>
-          ${r.pinned ? '<span>📌 pinned</span>' : ''}
-        </span>
-      </a>`).join('');
-    observeReveals($('#ghGrid'));
   };
 
   loadApps().catch((err) => {
     console.error(err);
     $('#myApps').innerHTML = '<p style="color:var(--muted);font-family:var(--font-mono);font-size:0.8rem">Could not load app data — see them all on <a href="https://play.google.com/store/apps/dev?id=7084161944711464301" style="color:var(--green)">Google Play</a>.</p>';
-  });
-  loadGithub().catch((err) => {
-    console.error(err);
-    $('#ghGrid').innerHTML = '<p style="color:var(--muted);font-family:var(--font-mono);font-size:0.8rem">Could not load repos — visit <a href="https://github.com/krishvekriya12" style="color:var(--green)">github.com/krishvekriya12</a>.</p>';
   });
 
   /* ---------- marquee (duplicate track for seamless loop) ---------- */

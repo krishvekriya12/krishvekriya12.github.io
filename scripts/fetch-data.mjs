@@ -1,13 +1,12 @@
 /**
  * Auto-fetch pipeline for krishvekriya12.github.io
  *
- * 1. Scrapes the Setubandh Tech developer profile on Google Play and pulls
- *    full details for every published app (icon, rating, installs,
- *    screenshots, description, category).
- * 2. Fetches pinned GitHub repos via the GraphQL API (falls back to
- *    top-starred repos when nothing is pinned).
+ * Scrapes the Setubandh Tech developer profile on Google Play and pulls
+ * full details for every published app (icon, rating, installs,
+ * screenshots, description, category), plus tracked professional-work
+ * apps grouped by the company they were built at.
  *
- * Outputs: data/apps.json, data/github.json
+ * Outputs: data/apps.json
  * Run daily by .github/workflows/update-data.yml
  */
 import gplay from 'google-play-scraper';
@@ -16,7 +15,6 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const DEV_ID = '7084161944711464301';
-const GITHUB_USER = 'krishvekriya12';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const DATA_DIR = path.join(ROOT, 'data');
 
@@ -79,18 +77,21 @@ async function fetchApps() {
     await sleep(600); // be polite to Play's servers
   }
 
-  // Professional work: apps built at previous companies, tracked by package ID.
+  // Professional work: apps built at previous companies, tracked by package ID
+  // and tagged with the company they were built at.
   const tracked = JSON.parse(
     await readFile(path.join(ROOT, 'scripts', 'tracked-apps.json'), 'utf8')
   );
   const mine = new Set(myApps.map((a) => a.appId));
   const workApps = [];
-  for (const appId of tracked.workApps) {
+  for (const entry of tracked.workApps) {
+    const appId = typeof entry === 'string' ? entry : entry.appId;
+    const company = typeof entry === 'string' ? null : entry.company ?? null;
     if (mine.has(appId)) continue; // moved to own profile — don't duplicate
     const app = await fetchAppDetail(appId);
     if (app) {
-      workApps.push(app);
-      console.log(`  ✓ [work] ${app.title}`);
+      workApps.push({ ...app, company });
+      console.log(`  ✓ [work · ${company ?? 'unknown'}] ${app.title}`);
     }
     await sleep(600);
   }
@@ -101,122 +102,39 @@ async function fetchApps() {
   return { myApps, workApps };
 }
 
-async function fetchGithub() {
-  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
-  let repos = [];
-
-  if (token) {
-    try {
-      const query = `query {
-        user(login: "${GITHUB_USER}") {
-          pinnedItems(first: 6, types: REPOSITORY) {
-            nodes {
-              ... on Repository {
-                name description url stargazerCount forkCount
-                primaryLanguage { name color }
-                pushedAt
-              }
-            }
-          }
-        }
-      }`;
-      const res = await fetch('https://api.github.com/graphql', {
-        method: 'POST',
-        headers: {
-          Authorization: `Bearer ${token}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ query }),
-      });
-      const json = await res.json();
-      repos = (json?.data?.user?.pinnedItems?.nodes ?? [])
-        .filter(Boolean)
-        .map((r) => ({
-          name: r.name,
-          description: r.description,
-          url: r.url,
-          stars: r.stargazerCount,
-          forks: r.forkCount,
-          language: r.primaryLanguage?.name ?? null,
-          languageColor: r.primaryLanguage?.color ?? null,
-          pushedAt: r.pushedAt,
-          pinned: true,
-        }));
-      console.log(`Fetched ${repos.length} pinned repos`);
-    } catch (err) {
-      console.warn('Pinned repo fetch failed:', err.message);
-    }
-  } else {
-    console.warn('No GITHUB_TOKEN available — skipping pinned repos');
-  }
-
-  if (repos.length === 0) {
-    // Fallback: top-starred public repos via unauthenticated REST.
-    console.log('Falling back to top-starred repos');
-    const res = await fetch(
-      `https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=pushed`,
-      { headers: { Accept: 'application/vnd.github+json' } }
-    );
-    const all = await res.json();
-    if (Array.isArray(all)) {
-      repos = all
-        .filter((r) => !r.fork)
-        .sort((a, b) => b.stargazers_count - a.stargazers_count)
-        .slice(0, 6)
-        .map((r) => ({
-          name: r.name,
-          description: r.description,
-          url: r.html_url,
-          stars: r.stargazers_count,
-          forks: r.forks_count,
-          language: r.language,
-          languageColor: null,
-          pushedAt: r.pushed_at,
-          pinned: false,
-        }));
-    }
-  }
-  return repos;
-}
-
 async function main() {
   await mkdir(DATA_DIR, { recursive: true });
 
-  const [{ myApps, workApps }, repos] = await Promise.all([fetchApps(), fetchGithub()]);
+  const { myApps, workApps } = await fetchApps();
 
   if (myApps.length === 0 && workApps.length === 0) {
     // Never wipe good data with an empty scrape (Play layout change, block, etc.)
     console.error('Scrape returned 0 apps — keeping existing data/apps.json');
     process.exitCode = 1;
-  } else {
-    const all = [...myApps, ...workApps];
-    const totalInstalls = all.reduce((s, a) => s + (a.installs ?? 0), 0);
-    await writeFile(
-      path.join(DATA_DIR, 'apps.json'),
-      JSON.stringify(
-        {
-          developer: 'Setubandh Tech',
-          devUrl: `https://play.google.com/store/apps/dev?id=${DEV_ID}`,
-          fetchedAt: new Date().toISOString(),
-          totalApps: all.length,
-          totalInstalls,
-          myApps,
-          workApps,
-        },
-        null,
-        2
-      )
-    );
-    console.log(
-      `Wrote data/apps.json (${myApps.length} own + ${workApps.length} work apps, ~${totalInstalls} installs)`
-    );
+    return;
   }
 
+  const all = [...myApps, ...workApps];
+  const totalInstalls = all.reduce((s, a) => s + (a.installs ?? 0), 0);
   await writeFile(
-    path.join(DATA_DIR, 'github.json'),
-    JSON.stringify({ fetchedAt: new Date().toISOString(), user: GITHUB_USER, repos }, null, 2)
+    path.join(DATA_DIR, 'apps.json'),
+    JSON.stringify(
+      {
+        developer: 'Setubandh Tech',
+        devUrl: `https://play.google.com/store/apps/dev?id=${DEV_ID}`,
+        fetchedAt: new Date().toISOString(),
+        totalApps: all.length,
+        totalInstalls,
+        myApps,
+        workApps,
+      },
+      null,
+      2
+    )
   );
-  console.log(`Wrote data/github.json (${repos.length} repos)`);
+  console.log(
+    `Wrote data/apps.json (${myApps.length} own + ${workApps.length} work apps, ~${totalInstalls} installs)`
+  );
 }
 
 main().catch((err) => {
