@@ -9,11 +9,13 @@
 <meta property="og:description" content="Founder of Setubandh Tech. 8 apps on Google Play, 1.5M+ combined downloads.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://krishvekriya12.github.io/">
-<meta name="theme-color" content="#ffffff">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ffffff'/%3E%3Crect width='62' height='62' x='1' y='1' rx='15' fill='none' stroke='%23191d1a' stroke-opacity='0.18' stroke-width='2'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' font-weight='bold' fill='%230e8f57' text-anchor='middle'%3EKV%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#FAFAF9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='32' fill='%231a1a1a'/%3E%3Ctext x='32' y='42' font-family='sans-serif' font-size='24' font-weight='bold' fill='%23fafaf9' text-anchor='middle'%3EKV%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Smooch+Sans:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600,700,800&f[]=cabinet-grotesk@700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <script type="application/ld+json">
 {
@@ -34,220 +36,284 @@
 </head>
 <body>
 
-<nav class="nav" id="nav">
-  <a class="brand" href="#top" aria-label="Krish Vekariya — home">
-    <span class="monogram">KV</span>
-    <span class="brand-name">Krish Vekariya<small>Setubandh Tech</small></span>
-  </a>
-  <ul class="nav-links" id="navLinks">
-    <li><a href="#apps">My Apps</a></li>
-    <li><a href="#work">Professional Work</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact" class="cta">Let's Talk</a></li>
-  </ul>
-  <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-</nav>
-
-<header class="hero" id="top">
-  <div class="hero-copy">
-    <p class="hero-status"><span class="pulse"></span> Available for freelance · Surat, IN</p>
-    <h1>
-      Apps that<br>
-      <span class="outline">people</span> <span class="serif-a">actually</span><br>
-      use.
-    </h1>
-    <p class="hero-sub">
-      I'm Krish — Flutter &amp; Android developer and founder of <strong>Setubandh Tech</strong>.
-      I take apps from idea to Google Play: architecture, UI, release, growth.
-      The numbers below aren't a template — they sync from Play Store <strong>every day</strong>.
-    </p>
-    <div class="hero-ctas">
-      <a class="btn btn-solid" href="#apps">
-        See my apps
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a class="btn btn-ghost" href="https://www.upwork.com/freelancers/~0174d0c9916b1143d2" target="_blank" rel="noopener">Hire me on Upwork</a>
-    </div>
-    <div class="hero-stats" id="heroStats">
-      <div class="stat"><div class="num" data-stat="apps">–</div><div class="lbl">Apps on Play Store</div></div>
-      <div class="stat"><div class="num" data-stat="installs">–</div><div class="lbl">Combined downloads</div></div>
-      <div class="stat"><div class="num" data-stat="years">3<em>+</em></div><div class="lbl">Years building</div></div>
-    </div>
+<!-- preloader -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pre-half pre-top">
+    <div class="pre-count"><span id="preNum">0</span><span class="pre-pct">%</span></div>
   </div>
-
-  <div class="hero-visual" aria-hidden="true">
-    <div class="person-badge">
-      <img src="assets/img/person-3d.png" alt="" width="256" height="256" fetchpriority="high">
-    </div>
-  </div>
-</header>
-
-<div class="marquee" aria-hidden="true">
-  <div class="marquee-track" id="marqueeTrack">
-    <span>Flutter <i>✦</i> Kotlin <i>✦</i> Jetpack Compose <i>✦</i> Dart <i>✦</i> Firebase <i>✦</i> Material 3 <i>✦</i> Clean Architecture <i>✦</i> Play Console <i>✦</i> RevenueCat <i>✦</i> AdMob <i>✦</i> REST APIs <i>✦</i> MVVM <i>✦</i></span>
+  <div class="pre-half pre-bottom">
+    <div class="pre-progress"><div class="pre-bar" id="preBar"></div></div>
+    <span class="pre-text">Crafting your experience</span>
   </div>
 </div>
 
-<main>
-
-<section id="apps">
-  <div class="sec-head reveal">
-    <span class="sec-index">01</span>
-    <span class="sec-label">Setubandh Tech</span>
-    <span class="sec-rule"></span>
-  </div>
-  <h2 class="sec-title reveal">My own <span class="serif-a">apps</span></h2>
-  <p class="sec-sub reveal">Built, owned and maintained by me under my studio, Setubandh Tech. Privacy-first products with no dark patterns.</p>
-  <p class="sync-note reveal">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-2.64-6.36M21 3v6h-6"/></svg>
-    Auto-synced from <b>Google Play</b> — <span id="syncTime1">daily</span>
-  </p>
-  <div class="apps-grid" id="myApps"></div>
-</section>
-
-<section id="work" style="background:var(--bg-2); border-block:1px solid var(--line);">
-  <div class="sec-head reveal">
-    <span class="sec-index">02</span>
-    <span class="sec-label">Client &amp; company work</span>
-    <span class="sec-rule"></span>
-  </div>
-  <h2 class="sec-title reveal">Professional <span class="serif-a">work</span></h2>
-  <p class="sec-sub reveal">Apps I engineered end-to-end for companies I've worked with — live on Google Play, serving real users at scale.</p>
-  <p class="sync-note reveal">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-2.64-6.36M21 3v6h-6"/></svg>
-    Live stats from <b>Google Play</b> — <span id="syncTime2">daily</span>
-  </p>
-  <div class="work-groups" id="workApps"></div>
-</section>
-
-<section id="about">
-  <div class="sec-head reveal">
-    <span class="sec-index">03</span>
-    <span class="sec-label">About &amp; journey</span>
-    <span class="sec-rule"></span>
-  </div>
-  <h2 class="sec-title reveal">From first <span class="serif-a">line</span> to first <span class="serif-a">million</span></h2>
-
-  <div class="about-grid">
-    <div class="about-copy reveal">
-      <p>I build mobile apps the way I'd want them built for me: <strong>fast, honest, and finished</strong>. No half-shipped features, no spammy permissions, no bloat.</p>
-      <p>Over the last three years I've taken <strong>eight apps to Google Play</strong> — GPS field tools used by surveyors and site engineers, productivity utilities, and finance apps. Together they've crossed <strong>1.5 million downloads</strong>.</p>
-      <p>In 2026 I started <strong>Setubandh Tech</strong> — my own studio. "Setubandh" means <em>building a bridge</em>: between an idea and a product people actually keep on their phone.</p>
-      <p>If you need someone who can own the whole journey — architecture, UI, Play Store release, monetization — that's exactly what I do.</p>
-      <p class="sig">— Krish</p>
-    </div>
-    <div class="timeline reveal">
-      <div class="tl-item">
-        <div class="tl-year">2022 — 2023</div>
-        <div class="tl-title">Java roots</div>
-        <p class="tl-body">Started with core Java and Android fundamentals. Wrote a lot of ugly code, read a lot of documentation, and got hooked on shipping.</p>
+<!-- floating glass nav -->
+<div class="nav-wrap" id="nav">
+  <div class="glass-pill">
+    <div class="nav-inner">
+      <a class="brand" href="#top" aria-label="Krish Vekariya — home">
+        <span class="avatar">KV</span>
+        <span class="brand-name">Krish Vekariya</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#apps">My Apps</a>
+        <a href="#work">Work</a>
+        <a href="#contact" class="nav-cta">Let's Talk</a>
       </div>
-      <div class="tl-item">
-        <div class="tl-year">2023</div>
-        <div class="tl-title">Professional Android development</div>
-        <p class="tl-body">Joined a product team in Surat. Moved from tutorials to production: Kotlin, Flutter, release pipelines, crash-free sessions and real user reviews.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">2024 — 2025</div>
-        <div class="tl-title">Apps at scale</div>
-        <p class="tl-body">Shipped GPS &amp; camera tools that grew past 100K installs — one crossed <b>1M+ downloads</b>. Learned what keeps ratings up when the user base gets big.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-year">2026</div>
-        <div class="tl-title">Founded Setubandh Tech</div>
-        <p class="tl-body">Launched my own studio and released SafeTap (safety check-ins &amp; SOS) and CashFlow (offline budget tracker). This portfolio auto-updates as new apps go live.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="skills-band reveal">
-    <div class="skill-row">
-      <div class="skill-cat">Core mobile</div>
-      <div class="skill-tags"><span>Flutter</span><span>Dart</span><span>Kotlin</span><span>Java</span><span>Jetpack Compose</span><span>Android SDK</span></div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-cat">Architecture</div>
-      <div class="skill-tags"><span>MVVM</span><span>Clean Architecture</span><span>Material 3</span><span>Motion Layout</span><span>Unit Testing</span></div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-cat">Backend &amp; growth</div>
-      <div class="skill-tags"><span>Firebase</span><span>REST APIs</span><span>RevenueCat</span><span>AdMob</span><span>Play Console</span><span>API Security</span></div>
-    </div>
-    <div class="skill-row">
-      <div class="skill-cat">Tools</div>
-      <div class="skill-tags"><span>Android Studio</span><span>VS Code</span><span>Git &amp; GitHub</span><span>Google Colab</span><span>Hugging Face</span></div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="sec-head reveal">
-    <span class="sec-index">04</span>
-    <span class="sec-label">Contact</span>
-    <span class="sec-rule"></span>
-  </div>
-  <h2 class="sec-title reveal">Got an app <span class="serif-a">in mind?</span></h2>
-  <p class="sec-sub reveal">Freelance projects, remote roles, or just an idea you want a second opinion on — my inbox is open.</p>
-
-  <div class="contact-wrap">
-    <div class="reveal">
-      <div class="contact-links">
-        <a class="clink" href="mailto:krishvekriya44@gmail.com">
-          <span class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg></span>
-          <span><span class="lbl">Email</span><br><span class="val">krishvekriya44@gmail.com</span></span>
-        </a>
-        <a class="clink" href="https://www.upwork.com/freelancers/~0174d0c9916b1143d2" target="_blank" rel="noopener">
-          <span class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></span>
-          <span><span class="lbl">Upwork</span><br><span class="val">Hire me for your project</span></span>
-        </a>
-        <a class="clink" href="https://github.com/krishvekriya12" target="_blank" rel="noopener">
-          <span class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5.1 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 4-2.4 4.8-4.7 5.1.4.3.7 1 .7 2v2.9c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg></span>
-          <span><span class="lbl">GitHub</span><br><span class="val">github.com/krishvekriya12</span></span>
-        </a>
-        <a class="clink" href="https://www.linkedin.com/in/krish-vekriya-aa7a72311/" target="_blank" rel="noopener">
-          <span class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.9v8.2h-4.6v-7.3c0-1.7 0-4-2.4-4s-2.8 1.9-2.8 3.9v7.4H7.8V8z"/></svg></span>
-          <span><span class="lbl">LinkedIn</span><br><span class="val">Krish Vekariya</span></span>
-        </a>
-        <a class="clink" href="https://play.google.com/store/apps/dev?id=7084161944711464301" target="_blank" rel="noopener">
-          <span class="ic"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2zm11.5 8.7L5.9 1.3l11.6 6.7-2.4 2.5zm2.4 1.5 3 1.7c.9.5.9 1.7 0 2.2l-3 1.7-2.7-2.8 2.7-2.8zm-2.4 4.5 2.4 2.5L5.9 22.7l9.2-9.2 2.4 2.5-2.4-2.5z" transform="translate(1.5 0)"/></svg></span>
-          <span><span class="lbl">Play Store</span><br><span class="val">Setubandh Tech</span></span>
-        </a>
-      </div>
-    </div>
-
-    <form class="form reveal" id="contactForm" novalidate>
-      <div class="form-row">
-        <label for="fName">Your name</label>
-        <input id="fName" name="name" type="text" required autocomplete="name" placeholder="What should I call you?">
-      </div>
-      <div class="form-row">
-        <label for="fEmail">Email</label>
-        <input id="fEmail" name="email" type="email" required autocomplete="email" placeholder="Where do I reply?">
-      </div>
-      <div class="form-row">
-        <label for="fMsg">Project / message</label>
-        <textarea id="fMsg" name="message" required placeholder="Tell me about the app you want to build…"></textarea>
-      </div>
-      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-      <button class="btn btn-solid" type="submit" id="formBtn">
-        Send message
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="m22 2-7 20-4-9-9-4 20-7z"/></svg>
+      <button class="nav-burger" id="navBurger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span>
       </button>
-      <p class="form-msg" id="formMsg" role="status"></p>
-    </form>
+    </div>
+  </div>
+  <div class="glass-pill nav-menu" id="navMenu" hidden>
+    <a href="#about">About</a>
+    <a href="#apps">My Apps</a>
+    <a href="#work">Work</a>
+    <a href="#contact">Let's Talk</a>
+  </div>
+</div>
+
+<main id="top">
+
+<!-- hero -->
+<div class="framed">
+<section class="hero">
+  <div class="blob blob-a" aria-hidden="true"></div>
+  <div class="blob blob-b" aria-hidden="true"></div>
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <div class="status-pill reveal">
+        <span class="ping"><span class="ping-ring"></span><span class="ping-dot"></span></span>
+        Available for Inquiries
+      </div>
+      <h1 class="reveal">I build apps<br>people <em>actually</em><br>use.</h1>
+      <p class="hero-kick reveal">Perhaps yours next &#128238;</p>
+      <p class="hero-sub reveal">I'm <strong>Krish</strong> — a Flutter &amp; Android developer shaping mobile experiences. Founder of <strong>Setubandh Tech</strong>, Surat, IN.</p>
+      <div class="reveal">
+        <a class="vp-btn" href="#apps">
+          <span class="vp-inner">
+            <span class="vp-label">
+              <span class="vp-top">View Projects</span>
+              <span class="vp-bot">See my work</span>
+            </span>
+            <span class="vp-icon">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-device" aria-hidden="true">
+      <div class="phone">
+        <span class="punch"></span>
+        <div class="phone-screen" id="phoneScreen"></div>
+      </div>
+      <div class="phone-chip glass-pill" id="phoneChip" hidden>
+        <img alt="" id="chipIcon">
+        <span>
+          <span class="t" id="chipTitle"></span><br>
+          <span class="s" id="chipSub"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint" aria-hidden="true">
+    <div class="mouse"><span></span></div>
   </div>
 </section>
+</div>
+
+<!-- about -->
+<div class="framed">
+<section id="about">
+  <div class="wrap">
+    <h2 class="two-tone reveal">
+      <span class="tt-muted">A product-minded approach</span><br>
+      <span class="tt-bold">to building mobile apps.</span>
+    </h2>
+    <div class="about-grid">
+      <div class="about-photo reveal">
+        <div class="photo-frame">
+          <div class="photo-shadow"></div>
+          <div class="photo-label">Setubandh Tech</div>
+          <div class="photo-area">
+            <span class="photo-mark">KV</span>
+            <div class="photo-socials">
+              <a href="https://github.com/krishvekriya12" target="_blank" rel="noopener" aria-label="GitHub">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5.1 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 4-2.4 4.8-4.7 5.1.4.3.7 1 .7 2v2.9c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/krish-vekriya-aa7a72311/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.9v8.2h-4.6v-7.3c0-1.7 0-4-2.4-4s-2.8 1.9-2.8 3.9v7.4H7.8V8z"/></svg>
+              </a>
+              <a href="https://play.google.com/store/apps/dev?id=7084161944711464301" target="_blank" rel="noopener" aria-label="Play Store">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2zm11.5 8.7L5.9 1.3l11.6 6.7-2.4 2.5zm2.4 1.5 3 1.7c.9.5.9 1.7 0 2.2l-3 1.7-2.7-2.8 2.7-2.8zm-2.4 4.5 2.4 2.5L5.9 22.7l9.2-9.2 2.4 2.5-2.4-2.5z" transform="translate(1.5 0)"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <h3 class="about-name">Krish Vekariya</h3>
+        <p class="about-role">Flutter &amp; Android Developer &rarr; building mobile apps</p>
+      </div>
+      <div class="about-copy reveal">
+        <p class="bold-line">I wrote my first line of code three years ago — and never looked back.</p>
+        <p>What started as Java tutorials grew into <strong>eight apps on Google Play</strong> — GPS field tools used by surveyors and site engineers, productivity utilities, and privacy-first finance apps. Together they've crossed <strong>1.5 million downloads</strong>.</p>
+        <p class="bold-line">Fast, honest, and finished.</p>
+        <p>No half-shipped features, no spammy permissions, no bloat. In 2026 I founded <strong>Setubandh Tech</strong> — "Setubandh" means building a bridge: between an idea and a product people actually keep on their phone.</p>
+        <div class="stat-row">
+          <div class="stat"><span class="num" data-stat="apps">–</span><span class="lbl">Apps on Play Store</span></div>
+          <div class="stat"><span class="num" data-stat="installs">–</span><span class="lbl">Downloads</span></div>
+          <div class="stat"><span class="num" data-stat="years">3+</span><span class="lbl">Years building</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- my apps -->
+<div class="framed">
+<section id="apps">
+  <div class="wrap">
+    <h2 class="two-tone reveal">
+      <span class="tt-muted">My own products —</span><br>
+      <span class="tt-bold">built under Setubandh Tech.</span>
+    </h2>
+    <p class="sec-sub reveal">Privacy-first apps with no dark patterns. Owned, designed and maintained end-to-end by me.</p>
+    <p class="sync-note reveal">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-2.64-6.36M21 3v6h-6"/></svg>
+      Auto-synced from <b>Google Play</b> — <span id="syncTime1">daily</span>
+    </p>
+    <div class="apps-grid" id="myApps"></div>
+  </div>
+</section>
+</div>
+
+<!-- professional work -->
+<div class="framed">
+<section id="work">
+  <div class="wrap">
+    <h2 class="two-tone reveal">
+      <span class="tt-muted">Professional work —</span><br>
+      <span class="tt-bold">apps shipped at companies.</span>
+    </h2>
+    <p class="sec-sub reveal">Apps I engineered end-to-end for companies I've worked with — live on Google Play, serving real users at scale.</p>
+    <p class="sync-note reveal">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-2.64-6.36M21 3v6h-6"/></svg>
+      Live stats from <b>Google Play</b> — <span id="syncTime2">daily</span>
+    </p>
+    <div class="work-groups" id="workApps"></div>
+  </div>
+</section>
+</div>
+
+<!-- journey -->
+<div class="framed">
+<section id="journey">
+  <div class="wrap">
+    <h2 class="two-tone reveal">
+      <span class="tt-muted">From first line of code</span><br>
+      <span class="tt-bold">to 1.5M downloads.</span>
+    </h2>
+    <div class="journey-grid">
+      <div class="timeline reveal">
+        <div class="tl-item">
+          <div class="tl-year">2022 — 2023</div>
+          <div class="tl-title">Java roots</div>
+          <p class="tl-body">Started with core Java and Android fundamentals. Wrote a lot of ugly code, read a lot of documentation, and got hooked on shipping.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2023</div>
+          <div class="tl-title">Professional Android development</div>
+          <p class="tl-body">Joined a product team in Surat. Moved from tutorials to production: Kotlin, Flutter, release pipelines, crash-free sessions and real user reviews.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2024 — 2025</div>
+          <div class="tl-title">Apps at scale</div>
+          <p class="tl-body">Shipped GPS &amp; camera tools that grew past 100K installs — one crossed <b>1M+ downloads</b>. Learned what keeps ratings up when the user base gets big.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-year">2026</div>
+          <div class="tl-title">Founded Setubandh Tech</div>
+          <p class="tl-body">Launched my own studio and released SafeTap (safety check-ins &amp; SOS) and CashFlow (offline budget tracker). This portfolio auto-updates as new apps go live.</p>
+        </div>
+      </div>
+      <div class="skills reveal">
+        <div class="skill-row">
+          <div class="skill-cat">Core mobile</div>
+          <div class="skill-tags"><span>Flutter</span><span>Dart</span><span>Kotlin</span><span>Java</span><span>Jetpack Compose</span><span>Android SDK</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-cat">Architecture</div>
+          <div class="skill-tags"><span>MVVM</span><span>Clean Architecture</span><span>Material 3</span><span>Motion Layout</span><span>Unit Testing</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-cat">Backend &amp; growth</div>
+          <div class="skill-tags"><span>Firebase</span><span>REST APIs</span><span>RevenueCat</span><span>AdMob</span><span>Play Console</span><span>API Security</span></div>
+        </div>
+        <div class="skill-row">
+          <div class="skill-cat">Tools</div>
+          <div class="skill-tags"><span>Android Studio</span><span>VS Code</span><span>Git &amp; GitHub</span><span>Google Colab</span><span>Hugging Face</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
 
 </main>
 
-<footer>
-  <span>© <span id="year">2026</span> Krish Vekariya · Setubandh Tech</span>
-  <span class="f-sync"><i>●</i> App data auto-synced from Google Play · <span id="syncFooter">…</span></span>
-  <span><a href="https://github.com/krishvekriya12/krishvekriya12.github.io" target="_blank" rel="noopener">View source</a></span>
-</footer>
+<!-- CTA + footer (dark) -->
+<div class="dark-tail" id="contact">
+  <section class="cta-section">
+    <div class="wrap">
+      <div class="cta-card reveal">
+        <div class="cta-glow" aria-hidden="true"></div>
+        <div class="cta-content">
+          <div class="cta-pill">
+            <span class="cta-dot"></span>
+            Available for Inquiries
+          </div>
+          <h2 class="cta-headline">Got an app in mind? <span>Let's ship it.</span></h2>
+          <p class="cta-sub">Tell me what you're building — I'll reply within a day with honest feedback and a clear plan to get it on the Play Store.</p>
+          <div class="cta-actions">
+            <a class="cta-btn-primary" href="mailto:krishvekriya44@gmail.com">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg>
+              Email me
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a class="cta-btn-ghost" href="https://www.upwork.com/freelancers/~0174d0c9916b1143d2" target="_blank" rel="noopener">Hire me on Upwork</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <footer>
+    <p class="foot-name">Krish Vekariya</p>
+    <p class="foot-copy">© <span id="year">2026</span>, Krish Vekariya · Setubandh Tech. All Rights Reserved.</p>
+    <p class="foot-sync"><i>●</i> App data auto-synced from Google Play · <span id="syncFooter">…</span></p>
+    <div class="foot-socials">
+      <a href="https://github.com/krishvekriya12" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5.1 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 4-2.4 4.8-4.7 5.1.4.3.7 1 .7 2v2.9c0 .3.2.6.7.5 4-1.4 6.8-5.2 6.8-9.7C22 6.6 17.5 2 12 2z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/krish-vekriya-aa7a72311/" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.9v8.2h-4.6v-7.3c0-1.7 0-4-2.4-4s-2.8 1.9-2.8 3.9v7.4H7.8V8z"/></svg>
+      </a>
+      <a href="https://play.google.com/store/apps/dev?id=7084161944711464301" target="_blank" rel="noopener" aria-label="Play Store">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2zm11.5 8.7L5.9 1.3l11.6 6.7-2.4 2.5zm2.4 1.5 3 1.7c.9.5.9 1.7 0 2.2l-3 1.7-2.7-2.8 2.7-2.8zm-2.4 4.5 2.4 2.5L5.9 22.7l9.2-9.2 2.4 2.5-2.4-2.5z" transform="translate(1.5 0)"/></svg>
+      </a>
+      <a href="https://www.upwork.com/freelancers/~0174d0c9916b1143d2" target="_blank" rel="noopener" aria-label="Upwork">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+      </a>
+      <a href="mailto:krishvekriya44@gmail.com" aria-label="Email">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m3 6 9 7 9-7"/></svg>
+      </a>
+    </div>
+  </footer>
+</div>
+
+<!-- app modal -->
 <div class="modal" id="appModal" role="dialog" aria-modal="true" aria-label="App details">
   <div class="modal-box">
     <button class="modal-close" id="modalClose" aria-label="Close">✕</button>

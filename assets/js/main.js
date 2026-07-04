@@ -8,23 +8,47 @@
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
-  /* ---------- nav ---------- */
-  const nav = $('#nav');
-  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  /* ---------- preloader ---------- */
+  const pre = $('#preloader');
+  if (pre) {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduced) {
+      pre.remove();
+    } else {
+      document.body.classList.add('locked');
+      const num = $('#preNum');
+      const bar = $('#preBar');
+      let p = 0;
+      const tick = setInterval(() => {
+        p = Math.min(100, p + 6 + Math.random() * 16);
+        num.textContent = Math.floor(p);
+        bar.style.width = p + '%';
+        if (p >= 100) {
+          clearInterval(tick);
+          setTimeout(() => {
+            pre.classList.add('done');
+            document.body.classList.remove('locked');
+            setTimeout(() => pre.remove(), 850);
+          }, 200);
+        }
+      }, 70);
+    }
+  }
 
+  /* ---------- nav (mobile dropdown) ---------- */
   const burger = $('#navBurger');
-  const links = $('#navLinks');
+  const menu = $('#navMenu');
   burger.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
+    const open = menu.hidden;
+    menu.hidden = !open;
     burger.classList.toggle('open', open);
     burger.setAttribute('aria-expanded', String(open));
   });
-  links.addEventListener('click', (e) => {
+  menu.addEventListener('click', (e) => {
     if (e.target.tagName === 'A') {
-      links.classList.remove('open');
+      menu.hidden = true;
       burger.classList.remove('open');
+      burger.setAttribute('aria-expanded', 'false');
     }
   });
 
@@ -77,7 +101,7 @@
       <div class="app-top">
         <img class="app-icon" src="${esc(app.icon)}" alt="" loading="lazy" width="58" height="58">
         <div class="app-id">
-          <div class="app-name">${esc(app.title)}</div>
+          <div class="app-name">${esc(decode(app.title))}</div>
           <div class="app-genre">${esc(app.genre || 'Android app')}</div>
         </div>
         <span class="app-open" aria-hidden="true">
@@ -138,11 +162,17 @@
     if (!app) return;
     lastFocus = document.activeElement;
     modalBody.innerHTML = `
-      <div class="modal-head">
-        <img src="${esc(app.icon)}" alt="">
-        <div>
-          <h3>${esc(app.title)}</h3>
-          <div class="app-genre">${esc(app.genre || '')}</div>
+      <div class="modal-hero">
+        <div class="modal-head">
+          <img src="${esc(app.icon)}" alt="">
+          <div class="m-id">
+            <h3>${esc(decode(app.title))}</h3>
+            <div class="app-genre">${esc(app.genre || '')}</div>
+          </div>
+          <a class="m-play" href="${esc(app.url)}" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2zm11.5 8.7L5.9 1.3l11.6 6.7-2.4 2.5zm2.4 1.5 3 1.7c.9.5.9 1.7 0 2.2l-3 1.7-2.7-2.8 2.7-2.8zm-2.4 4.5 2.4 2.5L5.9 22.7l9.2-9.2 2.4 2.5-2.4-2.5z"/></svg>
+            Get it on Google Play
+          </a>
         </div>
       </div>
       <div class="modal-stats">
@@ -155,11 +185,7 @@
       ${app.screenshots?.length ? `
       <div class="modal-shots">
         ${app.screenshots.map((s) => `<img src="${esc(s)}" alt="${esc(app.title)} screenshot" loading="lazy">`).join('')}
-      </div>` : ''}
-      <a class="btn btn-solid" href="${esc(app.url)}" target="_blank" rel="noopener">
-        Get it on Google Play
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M9 7h8v8"/></svg>
-      </a>`;
+      </div>` : ''}`;
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
     $('#modalClose').focus();
@@ -180,6 +206,44 @@
     if (card) openModal(card.dataset.app);
   });
 
+  /* ---------- phone mockup carousel ---------- */
+  const startPhone = (apps) => {
+    const screen = $('#phoneScreen');
+    const chip = $('#phoneChip');
+    const slides = apps
+      .filter((a) => a.screenshots?.length)
+      .map((a) => ({ app: a, shot: a.screenshots[0] }));
+    if (!slides.length) return;
+
+    slides.forEach(({ shot }, i) => {
+      const img = new Image();
+      img.src = shot;
+      img.alt = '';
+      if (i === 0) img.classList.add('on');
+      screen.appendChild(img);
+    });
+
+    const setChip = (i) => {
+      $('#chipIcon').src = slides[i].app.icon;
+      $('#chipTitle').textContent = decode(slides[i].app.title).split(':')[0];
+      $('#chipSub').textContent = slides[i].app.installsText
+        ? `${shortInstalls(slides[i].app.installsText)} installs · Google Play`
+        : 'Google Play';
+    };
+    chip.hidden = false;
+    setChip(0);
+
+    if (slides.length < 2) return;
+    let cur = 0;
+    setInterval(() => {
+      const imgs = $$('.phone-screen img');
+      imgs[cur].classList.remove('on');
+      cur = (cur + 1) % slides.length;
+      imgs[cur].classList.add('on');
+      setChip(cur);
+    }, 3800);
+  };
+
   /* ---------- data loading ---------- */
   const loadApps = async () => {
     const res = await fetch('data/apps.json');
@@ -188,10 +252,10 @@
 
     allApps = [...(data.myApps || []), ...(data.workApps || [])];
 
-    // hero stats
-    $('[data-stat="apps"]').innerHTML = `${allApps.length}<em>+</em>`;
+    // stats
+    $('[data-stat="apps"]').textContent = `${allApps.length}+`;
     const installs = shortInstalls(String(data.totalInstalls)) || '1M+';
-    $('[data-stat="installs"]').innerHTML = `${installs.replace('+', '')}<em>+</em>`;
+    $('[data-stat="installs"]').textContent = `${installs.replace('+', '')}+`;
 
     // sync badges
     const when = fmtDate(data.fetchedAt);
@@ -203,51 +267,13 @@
     $('#workApps').innerHTML = workGroups(data.workApps || []);
     observeReveals($('#myApps'));
     observeReveals($('#workApps'));
+
+    startPhone(allApps);
   };
 
   loadApps().catch((err) => {
     console.error(err);
-    $('#myApps').innerHTML = '<p style="color:var(--muted);font-family:var(--font-mono);font-size:0.8rem">Could not load app data — see them all on <a href="https://play.google.com/store/apps/dev?id=7084161944711464301" style="color:var(--green)">Google Play</a>.</p>';
-  });
-
-  /* ---------- marquee (duplicate track for seamless loop) ---------- */
-  const track = $('#marqueeTrack');
-  track.innerHTML += track.innerHTML;
-
-  /* ---------- contact form (FormSubmit AJAX) ---------- */
-  const form = $('#contactForm');
-  const formMsg = $('#formMsg');
-  const formBtn = $('#formBtn');
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (!form.reportValidity()) return;
-    formBtn.disabled = true;
-    formBtn.firstChild.textContent = 'Sending… ';
-    formMsg.className = 'form-msg';
-    try {
-      const res = await fetch('https://formsubmit.co/ajax/krishvekriya44@gmail.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          name: form.name.value,
-          email: form.email.value,
-          message: form.message.value,
-          _subject: `Portfolio inquiry from ${form.name.value}`,
-          _template: 'table',
-          _captcha: 'false',
-        }),
-      });
-      if (!res.ok) throw new Error('send failed');
-      formMsg.textContent = '✓ Message sent — I usually reply within a day.';
-      formMsg.classList.add('ok');
-      form.reset();
-    } catch {
-      formMsg.innerHTML = 'Could not send right now — email me directly at <a href="mailto:krishvekriya44@gmail.com" style="color:var(--green)">krishvekriya44@gmail.com</a>.';
-      formMsg.classList.add('err');
-    } finally {
-      formBtn.disabled = false;
-      formBtn.firstChild.textContent = 'Send message ';
-    }
+    $('#myApps').innerHTML = '<p style="color:var(--muted);font-family:var(--font-jakarta);font-size:0.85rem">Could not load app data — see them all on <a href="https://play.google.com/store/apps/dev?id=7084161944711464301">Google Play</a>.</p>';
   });
 
   /* ---------- footer year ---------- */
