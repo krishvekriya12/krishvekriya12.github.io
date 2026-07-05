@@ -7,12 +7,12 @@
 
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- preloader ---------- */
   const pre = $('#preloader');
   if (pre) {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduced) {
+    if (REDUCED) {
       pre.remove();
     } else {
       document.body.classList.add('locked');
@@ -89,9 +89,12 @@
     } catch { return ''; }
   };
 
+  const STAR_ICON = '<svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="m12 2 3.1 6.7 7.4.8-5.5 5 1.6 7.3L12 18.2 5.4 21.8 7 14.5l-5.5-5 7.4-.8z"/></svg>';
+  const DOWNLOAD_ICON = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13m0 0-4.5-4.5M12 16l4.5-4.5"/><path d="M4 20h16"/></svg>';
+
   const starRow = (score) => score
-    ? `<span class="star">★</span> ${score.toFixed(1)}`
-    : `<span class="star">★</span> New`;
+    ? `<span class="star">${STAR_ICON}</span> ${score.toFixed(1)}`
+    : `<span class="star">${STAR_ICON}</span> New`;
 
   /* ---------- app cards ---------- */
   const appCard = (app, { shots = false } = {}) => {
@@ -115,7 +118,7 @@
       </div>` : ''}
       <div class="app-meta">
         <span>${starRow(app.score)}</span>
-        ${installs ? `<span>⤓ ${esc(installs)} installs</span>` : ''}
+        ${installs ? `<span>${DOWNLOAD_ICON} ${esc(installs)} installs</span>` : ''}
         <span class="free-tag">${app.free ? 'Free' : 'Paid'}</span>
       </div>
     </button>`;
@@ -176,19 +179,46 @@
         </div>
       </div>
       <div class="modal-stats">
-        <span class="mstat">★ <b>${app.score ? app.score.toFixed(1) : 'New'}</b>${app.ratings ? ` · ${app.ratings.toLocaleString()} ratings` : ''}</span>
+        <span class="mstat">${STAR_ICON} <b>${app.score ? app.score.toFixed(1) : 'New'}</b>${app.ratings ? ` · ${app.ratings.toLocaleString()} ratings` : ''}</span>
         ${app.installsText ? `<span class="mstat"><b>${esc(app.installsText)}</b> installs</span>` : ''}
         ${app.released ? `<span class="mstat">Released <b>${esc(app.released)}</b></span>` : ''}
         ${app.company ? `<span class="mstat">Built at <b>${esc(app.company)}</b></span>` : ''}
       </div>
       <p class="modal-desc">${esc(decode(app.summary))}</p>
       ${app.screenshots?.length ? `
-      <div class="modal-shots">
-        ${app.screenshots.map((s) => `<img src="${esc(s)}" alt="${esc(app.title)} screenshot" loading="lazy">`).join('')}
+      <div class="modal-shots-wrap">
+        <div class="modal-shots">
+          ${app.screenshots.map((s) => `<img src="${esc(s)}" alt="${esc(app.title)} screenshot" loading="lazy">`).join('')}
+        </div>
+        ${app.screenshots.length > 1 ? `
+        <button class="shots-nav prev" type="button" aria-label="Previous screenshot"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+        <button class="shots-nav next" type="button" aria-label="Next screenshot"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>` : ''}
       </div>` : ''}`;
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
     $('#modalClose').focus();
+
+    const shotsTrack = $('.modal-shots', modalBody);
+    if (shotsTrack) {
+      const prevBtn = $('.shots-nav.prev', modalBody);
+      const nextBtn = $('.shots-nav.next', modalBody);
+      const step = () => (shotsTrack.querySelector('img')?.offsetWidth || 260) + 10;
+      const updateNav = () => {
+        const max = shotsTrack.scrollWidth - shotsTrack.clientWidth - 2;
+        prevBtn.classList.toggle('hide', shotsTrack.scrollLeft <= 2);
+        nextBtn.classList.toggle('hide', shotsTrack.scrollLeft >= max);
+      };
+      prevBtn?.addEventListener('click', () => shotsTrack.scrollBy({ left: -step(), behavior: 'smooth' }));
+      nextBtn?.addEventListener('click', () => shotsTrack.scrollBy({ left: step(), behavior: 'smooth' }));
+      shotsTrack.addEventListener('scroll', updateNav, { passive: true });
+      $$('img', shotsTrack).forEach((img) => img.addEventListener('load', updateNav));
+      updateNav();
+    }
+
+    $$('.modal-shots img', modalBody).forEach((img, i) => {
+      img.style.transitionDelay = `${i * 0.05}s`;
+      requestAnimationFrame(() => requestAnimationFrame(() => img.classList.add('shot-in')));
+    });
   };
 
   const closeModal = () => {
@@ -206,6 +236,46 @@
     if (card) openModal(card.dataset.app);
   });
 
+  /* ---------- animated stat count-up ---------- */
+  const animateNum = (el, finalText) => {
+    const m = String(finalText).match(/^([\d.]+)(.*)$/);
+    if (!m || REDUCED) { el.textContent = finalText; return; }
+    const target = parseFloat(m[1]);
+    const suffix = m[2];
+    const decimals = (m[1].split('.')[1] || '').length;
+    const dur = 1100;
+    const t0 = performance.now();
+    const tick = (t) => {
+      const p = Math.min(1, (t - t0) / dur);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = (target * eased).toFixed(decimals) + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+
+  let statsFinal = null;
+  let statRowSeen = false;
+  let statsDone = false;
+  const yearsEl = $('[data-stat="years"]');
+  const yearsTarget = yearsEl.textContent;
+  const maybeRunStats = () => {
+    if (statsDone || !statsFinal || !statRowSeen) return;
+    statsDone = true;
+    animateNum($('[data-stat="apps"]'), statsFinal.apps);
+    animateNum($('[data-stat="installs"]'), statsFinal.installs);
+    animateNum(yearsEl, yearsTarget);
+  };
+  const statRow = $('.stat-row');
+  if (statRow) {
+    const statIO = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { statRowSeen = true; maybeRunStats(); statIO.disconnect(); }
+      });
+    }, { threshold: 0.3 });
+    statIO.observe(statRow);
+  }
+
   /* ---------- data loading ---------- */
   const loadApps = async () => {
     const res = await fetch('data/apps.json');
@@ -215,9 +285,9 @@
     allApps = [...(data.myApps || []), ...(data.workApps || [])];
 
     // stats
-    $('[data-stat="apps"]').textContent = `${allApps.length}+`;
     const installs = shortInstalls(String(data.totalInstalls)) || '1M+';
-    $('[data-stat="installs"]').textContent = `${installs.replace('+', '')}+`;
+    statsFinal = { apps: `${allApps.length}+`, installs: `${installs.replace('+', '')}+` };
+    maybeRunStats();
 
     // sync badges
     const when = fmtDate(data.fetchedAt);
@@ -274,7 +344,7 @@
           }),
         });
         if (!res.ok) throw new Error('send failed');
-        formMsg.textContent = '✓ Message sent — I usually reply within a day.';
+        formMsg.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Message sent — I usually reply within a day.';
         formMsg.classList.add('ok');
         form.reset();
       } catch {
@@ -289,4 +359,58 @@
 
   /* ---------- footer year ---------- */
   $('#year').textContent = new Date().getFullYear();
+
+  /* ---------- hero phone: live clock ---------- */
+  const feedClock = $('#feedClock');
+  if (feedClock) {
+    const tickClock = () => {
+      feedClock.textContent = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+    };
+    tickClock();
+    setInterval(tickClock, 30000);
+  }
+
+  /* ---------- hero phone: like counts drift up slowly ---------- */
+  if (!REDUCED) {
+    const likeEls = $$('.like-count');
+    if (likeEls.length) {
+      setInterval(() => {
+        const el = likeEls[Math.floor(Math.random() * likeEls.length)];
+        const base = parseInt(el.dataset.base, 10);
+        const cur = parseInt(el.textContent, 10);
+        if (cur < base + 9) {
+          el.textContent = cur + 1;
+          el.classList.add('bump');
+          setTimeout(() => el.classList.remove('bump'), 350);
+        }
+      }, 5000);
+    }
+  }
+
+  /* ---------- hero phone: magnetic tilt ---------- */
+  const phone = $('.phone');
+  const heroDevice = $('.hero-device');
+  if (phone && heroDevice && !REDUCED && window.matchMedia('(pointer: fine)').matches) {
+    heroDevice.addEventListener('mousemove', (e) => {
+      const r = heroDevice.getBoundingClientRect();
+      const px = (e.clientX - r.left) / r.width - 0.5;
+      const py = (e.clientY - r.top) / r.height - 0.5;
+      phone.style.transform = `rotateY(${(px * 14).toFixed(2)}deg) rotateX(${(-py * 14).toFixed(2)}deg)`;
+    });
+    heroDevice.addEventListener('mouseleave', () => { phone.style.transform = ''; });
+  }
+
+  /* ---------- hero blobs: scroll parallax ---------- */
+  const blobs = $$('.blob');
+  if (blobs.length && !REDUCED) {
+    let ticking = false;
+    const parallax = () => {
+      const y = window.scrollY;
+      blobs.forEach((b, i) => { b.style.transform = `translateY(${(y * (0.06 + i * 0.03)).toFixed(1)}px)`; });
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) { requestAnimationFrame(parallax); ticking = true; }
+    }, { passive: true });
+  }
 })();
