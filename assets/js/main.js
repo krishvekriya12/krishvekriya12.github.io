@@ -173,7 +173,7 @@
             <div class="app-genre">${esc(app.genre || '')}</div>
           </div>
           <a class="m-play" href="${esc(app.url)}" target="_blank" rel="noopener">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2zm11.5 8.7L5.9 1.3l11.6 6.7-2.4 2.5zm2.4 1.5 3 1.7c.9.5.9 1.7 0 2.2l-3 1.7-2.7-2.8 2.7-2.8zm-2.4 4.5 2.4 2.5L5.9 22.7l9.2-9.2 2.4 2.5-2.4-2.5z"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6 3.2c0-1.16 1.26-1.87 2.26-1.28l11.3 6.8c.98.59.98 2.05 0 2.64l-11.3 6.8C7.26 18.68 6 17.97 6 16.8V3.2z"/></svg>
             Get it on Google Play
           </a>
         </div>
@@ -359,6 +359,61 @@
 
   /* ---------- footer year ---------- */
   $('#year').textContent = new Date().getFullYear();
+
+  /* ---------- hero phone: code -> build -> app story loop ---------- */
+  const phases = $$('.phase');
+  if (phases.length) {
+    const dots = $$('.phone-dots .dot');
+    const showNow = (name) => {
+      phases.forEach((p) => p.classList.toggle('active', p.dataset.phase === name));
+      dots.forEach((d) => d.classList.toggle('active', d.dataset.dot === name));
+    };
+    // fade the outgoing phase out fully before fading the next one in, so the
+    // two very different screens (editor vs. app UI) never show ghosted together
+    const setActive = (name, cb) => {
+      const current = phases.find((p) => p.classList.contains('active'));
+      if (!current) { showNow(name); cb?.(); return; }
+      current.classList.remove('active');
+      setTimeout(() => { showNow(name); cb?.(); }, 380);
+    };
+
+    const playCode = () => {
+      const lines = $$('.phase-code .code-line');
+      lines.forEach((l) => l.classList.remove('shown'));
+      lines.forEach((l, i) => setTimeout(() => l.classList.add('shown'), 200 * i));
+    };
+
+    const playBuild = () => {
+      const lines = $$('.phase-build .build-line');
+      const fill = $('.build-bar-fill');
+      lines.forEach((l) => l.classList.remove('shown'));
+      fill.style.transition = 'none';
+      fill.style.width = '0%';
+      lines.forEach((l, i) => setTimeout(() => l.classList.add('shown'), 240 * i));
+      setTimeout(() => {
+        fill.style.transition = 'width 1.3s ease';
+        fill.style.width = '100%';
+      }, 900);
+    };
+
+    if (REDUCED) {
+      showNow('app');
+    } else {
+      const order = ['code', 'build', 'app'];
+      const durations = { code: 4400, build: 3600, app: 5600 };
+      let i = 0;
+      const advance = () => {
+        const name = order[i];
+        i = (i + 1) % order.length;
+        setActive(name, () => {
+          if (name === 'code') playCode();
+          if (name === 'build') playBuild();
+        });
+        setTimeout(advance, durations[name]);
+      };
+      advance();
+    }
+  }
 
   /* ---------- hero phone: live clock ---------- */
   const feedClock = $('#feedClock');

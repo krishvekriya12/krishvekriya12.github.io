@@ -111,6 +111,39 @@
         <span class="phone-btn power"></span>
         <span class="punch"></span>
         <div class="phone-screen">
+          <div class="phone-phases">
+          <div class="phase phase-code" data-phase="code">
+            <div class="code-bar">
+              <span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span>
+              <span class="code-file">home_screen.dart</span>
+            </div>
+            <div class="code-body">
+              <div class="code-line"><span class="tok-kw">class</span> <span class="tok-cls">HomeScreen</span> <span class="tok-kw">extends</span> <span class="tok-cls">StatelessWidget</span> {</div>
+              <div class="code-line ind1"><span class="tok-ann">@override</span></div>
+              <div class="code-line ind1"><span class="tok-cls">Widget</span> build(<span class="tok-cls">BuildContext</span> context) {</div>
+              <div class="code-line ind2"><span class="tok-kw">return</span> <span class="tok-cls">Scaffold</span>(</div>
+              <div class="code-line ind3">appBar: <span class="tok-cls">FeedAppBar</span>(),</div>
+              <div class="code-line ind3">body: <span class="tok-cls">FeedList</span>(),</div>
+              <div class="code-line ind2">);</div>
+              <div class="code-line ind1">}</div>
+              <div class="code-line">}<span class="code-cursor"></span></div>
+            </div>
+          </div>
+          <div class="phase phase-build" data-phase="build">
+            <div class="code-bar">
+              <span class="code-dot r"></span><span class="code-dot y"></span><span class="code-dot g"></span>
+              <span class="code-file">terminal</span>
+            </div>
+            <div class="build-body">
+              <div class="build-line">$ flutter build apk --release</div>
+              <div class="build-line">Running Gradle task 'assembleRelease'…</div>
+              <div class="build-line ok">Compiling Dart to native code</div>
+              <div class="build-line">Building APK…</div>
+              <div class="build-progress"><div class="build-bar-fill"></div></div>
+              <div class="build-line ok final">Build successful — ready to ship</div>
+            </div>
+          </div>
+          <div class="phase phase-app" data-phase="app">
           <div class="feed-mock">
             <div class="feed-status">
               <span class="fs-time" id="feedClock">8:37 PM</span>
@@ -174,11 +207,14 @@
               <span class="nav-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></span>
             </div>
           </div>
+          </div>
+          </div>
         </div>
       </div>
       <div class="phone-dots">
-        <span class="dot"></span>
-        <span class="dot active"></span>
+        <span class="dot" data-dot="code"></span>
+        <span class="dot" data-dot="build"></span>
+        <span class="dot" data-dot="app"></span>
       </div>
     </div>
   </div>
@@ -211,7 +247,7 @@
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.9v8.2h-4.6v-7.3c0-1.7 0-4-2.4-4s-2.8 1.9-2.8 3.9v7.4H7.8V8z"/></svg>
               </a>
               <a href="https://play.google.com/store/apps/dev?id=7084161944711464301" target="_blank" rel="noopener" aria-label="Play Store">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2zm11.5 8.7L5.9 1.3l11.6 6.7-2.4 2.5zm2.4 1.5 3 1.7c.9.5.9 1.7 0 2.2l-3 1.7-2.7-2.8 2.7-2.8zm-2.4 4.5 2.4 2.5L5.9 22.7l9.2-9.2 2.4 2.5-2.4-2.5z"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M6 3.2c0-1.16 1.26-1.87 2.26-1.28l11.3 6.8c.98.59.98 2.05 0 2.64l-11.3 6.8C7.26 18.68 6 17.97 6 16.8V3.2z"/></svg>
               </a>
             </div>
           </div>
@@ -398,7 +434,7 @@
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.2 8h4.6v14.8H.2V8zm7.6 0h4.4v2h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.4 3 5.4 6.9v8.2h-4.6v-7.3c0-1.7 0-4-2.4-4s-2.8 1.9-2.8 3.9v7.4H7.8V8z"/></svg>
       </a>
       <a href="https://play.google.com/store/apps/dev?id=7084161944711464301" target="_blank" rel="noopener" aria-label="Play Store">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3.6 1.8 13.7 12 3.6 22.2c-.4-.2-.6-.7-.6-1.2V3c0-.5.2-1 .6-1.2zm11.5 8.7L5.9 1.3l11.6 6.7-2.4 2.5zm2.4 1.5 3 1.7c.9.5.9 1.7 0 2.2l-3 1.7-2.7-2.8 2.7-2.8zm-2.4 4.5 2.4 2.5L5.9 22.7l9.2-9.2 2.4 2.5-2.4-2.5z"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M6 3.2c0-1.16 1.26-1.87 2.26-1.28l11.3 6.8c.98.59.98 2.05 0 2.64l-11.3 6.8C7.26 18.68 6 17.97 6 16.8V3.2z"/></svg>
       </a>
       <a href="https://www.upwork.com/freelancers/~0174d0c9916b1143d2" target="_blank" rel="noopener" aria-label="Upwork">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="7" width="20" height="14" rx="3"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
