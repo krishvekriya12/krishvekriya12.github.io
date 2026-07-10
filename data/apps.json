@@ -1,14 +1,14 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-07-09T06:59:37.797Z",
+  "fetchedAt": "2026-07-10T06:59:40.436Z",
   "totalApps": 8,
   "totalInstalls": 1559647,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
-      "title": "CashFlow: Budget & Expenses",
-      "summary": "Free offline expense tracker. Budget planner, money manager &amp; spending analyzer.",
+      "title": "CashFlow: Expense Tracker",
+      "summary": "Expense tracker &amp; budget planner. Free money manager, works 100% offline.",
       "icon": "https://play-lh.googleusercontent.com/0cG36BcGCOKrhPcZafInVz79rlfhi31qTYlyOPQOS1Y1frTN-MGifDmEcuSRuerAZF1uu-wD3i2vp_j7xgU3yA",
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.cashflow",
       "score": null,
@@ -17,14 +17,13 @@
       "installsText": "50+",
       "genre": "Finance",
       "screenshots": [
-        "https://play-lh.googleusercontent.com/YAgpbqUpIo1sisZWeCvnzsZBgtgscJ22gZxVfBXD56E7Y8jFHQCchT6cFySYLGF4-8vJNIkXbZWwWt1muZCG9A",
-        "https://play-lh.googleusercontent.com/pKNoqjUyJsKRAqsGIeReYqwQr9Zgpd50_uuDN4RiaE0LF3vSXwziXW-IKJB1jd8k25mN205P9ygWNNsxDm7hyQ",
         "https://play-lh.googleusercontent.com/MADUlV6BYudiBkw4MrpRJPvW8HTGxOTXVVFpmEMmucvozBdzgnB4jAxM-ly3-PKa8tUkThJc9OeLd7H61xY3jg",
+        "https://play-lh.googleusercontent.com/pKNoqjUyJsKRAqsGIeReYqwQr9Zgpd50_uuDN4RiaE0LF3vSXwziXW-IKJB1jd8k25mN205P9ygWNNsxDm7hyQ",
         "https://play-lh.googleusercontent.com/XH89PZjKiwoWqFO-EoovrC3ORHfNfz2MJ3703twhB2klHWfoDnUxG-lamCiwGeoMnJd5rGPrwoTmqH6kg998tg",
-        "https://play-lh.googleusercontent.com/cFGqU9zS60WGYUvHkVriNRtRGXECKJXadz6EmLvkBbiGE4krB_NVQxcyBfBY31QPSBl9LXNqn8OiwevlR_hKvg"
+        "https://play-lh.googleusercontent.com/YAgpbqUpIo1sisZWeCvnzsZBgtgscJ22gZxVfBXD56E7Y8jFHQCchT6cFySYLGF4-8vJNIkXbZWwWt1muZCG9A"
       ],
       "released": "May 7, 2026",
-      "updated": 1779818987000,
+      "updated": 1783597782000,
       "free": true
     },
     {
@@ -58,7 +57,7 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3749,
+      "ratings": 3750,
       "installs": 1223187,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
