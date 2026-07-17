@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-07-16T05:58:29.402Z",
+  "fetchedAt": "2026-07-17T05:59:00.829Z",
   "totalApps": 8,
-  "totalInstalls": 1565447,
+  "totalInstalls": 1565448,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -13,7 +13,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.cashflow",
       "score": null,
       "ratings": null,
-      "installs": 83,
+      "installs": 84,
       "installsText": "50+",
       "genre": "Finance",
       "screenshots": [
@@ -57,7 +57,7 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3761,
+      "ratings": 3763,
       "installs": 1226714,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
@@ -81,7 +81,7 @@
       "icon": "https://play-lh.googleusercontent.com/JtpN1YkW3k3-ZEQ30Z6yNk8jQ2lwyJCeBrma_1piu_uJbXeqtwuWe2GjcBH85_S8JW0D5mQybynsCrgAHUvX",
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.4,
-      "ratings": 2392,
+      "ratings": 2395,
       "installs": 144735,
       "installsText": "100,000+",
       "genre": "Productivity",
