@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-07-21T06:10:01.972Z",
-  "totalApps": 8,
-  "totalInstalls": 1567346,
+  "fetchedAt": "2026-07-22T06:08:54.902Z",
+  "totalApps": 9,
+  "totalInstalls": 1569533,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -47,6 +47,29 @@
       "released": "Apr 13, 2026",
       "updated": 1776515793000,
       "free": true
+    },
+    {
+      "appId": "com.setubandhtech.water_reminder",
+      "title": "Water Reminder: Drink Tracker",
+      "summary": "Daily Water Tracker &amp; Reminder App – Log water, set goals, drink more",
+      "icon": "https://play-lh.googleusercontent.com/7xiCKGRen23B2eE6WPehJdHsfRbn0HU5V6fAo72TadgxhxpRR7amv6la-gSaO-7Vt4CWWIA78ccUDC2EhipXsg",
+      "url": "https://play.google.com/store/apps/details?id=com.setubandhtech.water_reminder",
+      "score": null,
+      "ratings": null,
+      "installs": 0,
+      "installsText": "0+",
+      "genre": "Health & Fitness",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/-OQ4Znm_mqAXozPRig06glbHhL-apGKGmhd7BuTqb-PIbsjVUpS7j-Z27B-RU4N9AUf1PfCt3tG4XqZ3qCuQ8nQ",
+        "https://play-lh.googleusercontent.com/QATMJCWtAOlhi9RDckTgcwkm3SbvFJfDQf3FBt7CIJpcbkgyvJJKrDQYBtJrr92BaVVGONLiTpE5DvG5dGfX",
+        "https://play-lh.googleusercontent.com/KJLb2a-d8N_SPY5VjUKCriNFGmZFeslCZr-0eSD3TiQ_vEDgt7Uf-j7jkeiEpk8Yxva92G3Ir-2zBzcS1sQrXHk",
+        "https://play-lh.googleusercontent.com/AevgJ_0DjnjwB1COQgy04dIa1vpwcUKQiz3cOqPiM0vNKj7hmKS23ycTZMQKOrG1o8WfeSj9COBfjIIy2i20Vw",
+        "https://play-lh.googleusercontent.com/aCEGBJg8yw59nBC2PSWenzxZ0g8XuHZnSgEpSQ5zrmYu2LDA-s6XEdTJX7vsIQKGl3wojs5hemRfo_1psIbiNjg",
+        "https://play-lh.googleusercontent.com/2oNDjmfckn9ORh_iy5dsThcGJdRGpWTIDwo0zqYD4R1UakC184whD6BDRgiIAC3DPnDCPBYyWEcZdNx962MM2w"
+      ],
+      "released": "Jul 21, 2026",
+      "updated": 1784687432000,
+      "free": true
     }
   ],
   "workApps": [
@@ -58,7 +81,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
       "ratings": 3765,
-      "installs": 1227905,
+      "installs": 1229331,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -81,8 +104,8 @@
       "icon": "https://play-lh.googleusercontent.com/JtpN1YkW3k3-ZEQ30Z6yNk8jQ2lwyJCeBrma_1piu_uJbXeqtwuWe2GjcBH85_S8JW0D5mQybynsCrgAHUvX",
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
-      "ratings": 2400,
-      "installs": 144925,
+      "ratings": 2401,
+      "installs": 145127,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -106,7 +129,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.1,
       "ratings": 410,
-      "installs": 108358,
+      "installs": 108412,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -129,8 +152,8 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
-      "ratings": 218,
-      "installs": 50658,
+      "ratings": 219,
+      "installs": 50840,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -154,7 +177,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.sharemylocation.printgpscoordinatesonimage",
       "score": null,
       "ratings": null,
-      "installs": 24007,
+      "installs": 24010,
       "installsText": "10,000+",
       "genre": "Tools",
       "screenshots": [
@@ -178,7 +201,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.9,
       "ratings": 336,
-      "installs": 11369,
+      "installs": 11689,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
