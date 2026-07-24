@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-07-23T06:14:36.108Z",
+  "fetchedAt": "2026-07-24T06:07:41.551Z",
   "totalApps": 9,
-  "totalInstalls": 1569533,
+  "totalInstalls": 1570822,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -13,7 +13,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.cashflow",
       "score": null,
       "ratings": null,
-      "installs": 84,
+      "installs": 85,
       "installsText": "50+",
       "genre": "Finance",
       "screenshots": [
@@ -51,7 +51,7 @@
     {
       "appId": "com.setubandhtech.water_reminder",
       "title": "Water Reminder: Drink Tracker",
-      "summary": "Daily Water Tracker &amp; Reminder App – Log water, set goals, drink more",
+      "summary": "Water Reminder &amp; Drink Tracker – Log Water Intake, Set Goals, Stay Hydrated",
       "icon": "https://play-lh.googleusercontent.com/7xiCKGRen23B2eE6WPehJdHsfRbn0HU5V6fAo72TadgxhxpRR7amv6la-gSaO-7Vt4CWWIA78ccUDC2EhipXsg",
       "url": "https://play.google.com/store/apps/details?id=com.setubandhtech.water_reminder",
       "score": null,
@@ -80,8 +80,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3766,
-      "installs": 1229331,
+      "ratings": 3767,
+      "installs": 1230440,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -104,8 +104,8 @@
       "icon": "https://play-lh.googleusercontent.com/JtpN1YkW3k3-ZEQ30Z6yNk8jQ2lwyJCeBrma_1piu_uJbXeqtwuWe2GjcBH85_S8JW0D5mQybynsCrgAHUvX",
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
-      "ratings": 2402,
-      "installs": 145127,
+      "ratings": 2404,
+      "installs": 145306,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
