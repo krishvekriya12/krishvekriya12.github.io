@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-07-26T06:19:30.006Z",
+  "fetchedAt": "2026-07-27T06:47:30.870Z",
   "totalApps": 9,
-  "totalInstalls": 1571318,
+  "totalInstalls": 1571761,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -13,7 +13,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.cashflow",
       "score": null,
       "ratings": null,
-      "installs": 85,
+      "installs": 87,
       "installsText": "50+",
       "genre": "Finance",
       "screenshots": [
@@ -105,7 +105,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2406,
-      "installs": 145306,
+      "installs": 145491,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -129,7 +129,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.1,
       "ratings": 410,
-      "installs": 108459,
+      "installs": 108526,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -153,7 +153,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
       "ratings": 219,
-      "installs": 50990,
+      "installs": 51179,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
