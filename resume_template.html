@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Krish Vekriya — Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: #1E293B;
+    background: #FFFFFF;
+    width: 210mm;
+    height: 297mm;
+    padding: 12mm 14mm;
+    font-size: 9.5pt;
+    line-height: 1.45;
+  }
+
+  /* Header Section */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 12px;
+    border-bottom: 2.5px solid #1E40AF;
+    margin-bottom: 14px;
+  }
+  .header-left {
+    flex: 1;
+  }
+  .name {
+    font-size: 24pt;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.6px;
+    line-height: 1.1;
+    margin-bottom: 4px;
+  }
+  .role-subtitle {
+    font-size: 11.5pt;
+    font-weight: 700;
+    color: #1E40AF;
+    margin-bottom: 8px;
+  }
+  .badges {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-size: 7.5pt;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .badge-blue { background: #EFF6FF; color: #1E40AF; border: 1px solid #BFDBFE; }
+  .badge-green { background: #F0FDF4; color: #166534; border: 1px solid #BBF7D0; }
+  .badge-purple { background: #FAF5FF; color: #6B21A8; border: 1px solid #E9D5FF; }
+
+  .contact-box {
+    text-align: right;
+    font-size: 8.5pt;
+    color: #475569;
+    line-height: 1.55;
+  }
+  .contact-box strong {
+    color: #0F172A;
+  }
+  .contact-box a {
+    color: #1E40AF;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  /* Grid Layout */
+  .layout-grid {
+    display: grid;
+    grid-template-columns: 66% 31%;
+    gap: 3%;
+  }
+
+  /* Section Styles */
+  .section-title {
+    font-size: 10.5pt;
+    font-weight: 800;
+    color: #0F172A;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 9px;
+    padding-bottom: 4px;
+    border-bottom: 1.5px solid #E2E8F0;
+  }
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 14px;
+    background: #1E40AF;
+    border-radius: 2px;
+  }
+
+  .summary-text {
+    font-size: 9.2pt;
+    color: #334155;
+    line-height: 1.5;
+    margin-bottom: 14px;
+    background: #F8FAFC;
+    padding: 9px 12px;
+    border-radius: 6px;
+    border-left: 3.5px solid #1E40AF;
+  }
+  .summary-text strong {
+    color: #0F172A;
+  }
+
+  /* Experience Cards */
+  .exp-item {
+    margin-bottom: 12px;
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 4px;
+  }
+  .exp-title {
+    font-size: 10pt;
+    font-weight: 700;
+    color: #0F172A;
+  }
+  .exp-company {
+    color: #1E40AF;
+    font-weight: 700;
+  }
+  .exp-date {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #475569;
+    background: #F1F5F9;
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid #E2E8F0;
+  }
+
+  .bullet-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .bullet-list li {
+    position: relative;
+    padding-left: 12px;
+    font-size: 8.8pt;
+    color: #334155;
+    line-height: 1.42;
+    margin-bottom: 4.5px;
+  }
+  .bullet-list li::before {
+    content: '▪';
+    position: absolute;
+    left: 0;
+    top: -1px;
+    color: #1E40AF;
+    font-size: 9pt;
+  }
+  .bullet-list strong {
+    color: #0F172A;
+  }
+  .highlight-tag {
+    background: #EFF6FF;
+    color: #1E40AF;
+    font-weight: 700;
+    font-size: 8pt;
+    padding: 1px 5px;
+    border-radius: 3px;
+    border: 1px solid #BFDBFE;
+  }
+
+  /* Sidebar Section */
+  .sidebar-block {
+    margin-bottom: 13px;
+  }
+  .skill-group {
+    margin-bottom: 9px;
+  }
+  .skill-cat {
+    font-size: 8.5pt;
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 4px;
+  }
+  .skill-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5px;
+  }
+  .chip {
+    font-size: 7.5pt;
+    font-weight: 600;
+    color: #334155;
+    background: #F1F5F9;
+    padding: 2.5px 6.5px;
+    border-radius: 4px;
+    border: 1px solid #E2E8F0;
+  }
+  .chip-bold {
+    background: #EFF6FF;
+    color: #1E40AF;
+    border-color: #BFDBFE;
+    font-weight: 700;
+  }
+
+  .edu-item {
+    margin-bottom: 6px;
+  }
+  .edu-degree {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #0F172A;
+    line-height: 1.25;
+  }
+  .edu-school {
+    font-size: 8pt;
+    color: #475569;
+    margin-top: 2px;
+  }
+  .edu-date {
+    font-size: 7.8pt;
+    font-weight: 700;
+    color: #1E40AF;
+    margin-top: 2px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <h1 class="name">KRISH VEKRIYA</h1>
+      <div class="role-subtitle">Senior Android & Flutter Developer</div>
+      <div class="badges">
+        <span class="badge badge-blue">2+ Years Experience</span>
+        <span class="badge badge-green">1.5M+ Downloads</span>
+        <span class="badge badge-purple">8 Published Apps</span>
+      </div>
+    </div>
+    <div class="contact-box">
+      <div><strong>Email:</strong> krishvekriya44@gmail.com</div>
+      <div><strong>Phone:</strong> +91 9722178972</div>
+      <div><strong>Location:</strong> Surat, Gujarat, India</div>
+      <div><strong>Portfolio:</strong> <a href="https://krishvekriya12.github.io">krishvekriya12.github.io</a></div>
+      <div><strong>GitHub:</strong> <a href="https://github.com/krishvekriya12">github.com/krishvekriya12</a></div>
+      <div><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/krish-vekriya-aa7a72311">krish-vekriya</a></div>
+    </div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="layout-grid">
+
+    <!-- LEFT COLUMN (EXPERIENCE & SUMMARY) -->
+    <div class="main-col">
+      
+      <!-- SUMMARY -->
+      <div class="section-title">Executive Summary</div>
+      <div class="summary-text">
+        Product-focused <strong>Android Developer with 2+ years of experience</strong> engineering high-performance mobile apps with <strong>Kotlin, Java & Jetpack Compose</strong>. Founder of <strong>Setubandh Tech</strong> with 8 live apps on Google Play Store crossing <strong>1.5M+ downloads</strong>. Skilled in MVVM, NFC hardware reading, Room DB, custom camera pipelines & real-time GPS navigation.
+      </div>
+
+      <!-- EXPERIENCE -->
+      <div class="section-title">Professional Experience</div>
+
+      <!-- Job 1 -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Android Developer · <span class="exp-company">SmartOnSolution</span></div>
+          <div class="exp-date">Feb 2026 — Present</div>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>Digital Card Wallet — NFC Reader [Live App]</strong>: Independently built complete native Android app with <strong>Jetpack Compose</strong>, implementing hardware NFC card scanning, ISO 7816 APDU protocol reading, local encrypted vault & Material 3 design.</li>
+          <li>Optimized state management using <strong>Kotlin Coroutines & Flow</strong>, reducing memory consumption by 25% and ensuring 60fps animations.</li>
+        </ul>
+      </div>
+
+      <!-- Job 2 -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Native Android Developer · <span class="exp-company">Susamp Infotech</span></div>
+          <div class="exp-date">Mid 2024 — Feb 2026</div>
+        </div>
+        <ul class="bullet-list">
+          <li>Architected 5+ production Android apps using <b>Kotlin, Jetpack Compose & MVVM</b> serving 500k+ active users.</li>
+          <li><strong>Digital Compass: GPS Direction <span class="highlight-tag">10k+ Downloads</span></strong>: Built real-time GPS navigation suite with sensor fusion (magnetometer/accelerometer), telescope/Qibla compass, live speedometer & Google Maps overlays.</li>
+          <li><strong>GPS Map Camera Lite</strong>: Created custom camera rendering with real-time GPS location timestamps, reverse geocoding & text sticker overlays.</li>
+          <li><strong>Hourly Chime & Survey Not Cam</strong>: Integrated Foreground Services, AlarmManager, Multi-lingual TTS & custom survey gallery storage.</li>
+        </ul>
+      </div>
+
+      <!-- Job 3 -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Founder & Lead Developer · <span class="exp-company">Setubandh Tech</span></div>
+          <div class="exp-date">2026 — Present</div>
+        </div>
+        <ul class="bullet-list">
+          <li><strong>CashFlow Expense Tracker</strong>: Developed privacy-first budget tracker with Room DB, dynamic charts & spending alerts.</li>
+          <li><strong>SafeTap Safety Check-In & SOS</strong>: Built emergency check-in app with automated background SMS/location dispatch & 1-tap SOS trigger.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- RIGHT COLUMN (SKILLS & EDUCATION) -->
+    <div class="side-col">
+
+      <!-- SKILLS -->
+      <div class="sidebar-block">
+        <div class="section-title">Technical Skills</div>
+
+        <div class="skill-group">
+          <div class="skill-cat">Core Languages</div>
+          <div class="skill-chips">
+            <span class="chip chip-bold">Kotlin</span>
+            <span class="chip chip-bold">Java</span>
+            <span class="chip">Dart</span>
+            <span class="chip">OOP</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-cat">Android Architecture</div>
+          <div class="skill-chips">
+            <span class="chip chip-bold">Jetpack Compose</span>
+            <span class="chip chip-bold">MVVM</span>
+            <span class="chip">Clean Arch</span>
+            <span class="chip">Material 3</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-cat">Data & Async</div>
+          <div class="skill-chips">
+            <span class="chip chip-bold">Room DB</span>
+            <span class="chip">SQLite</span>
+            <span class="chip chip-bold">Coroutines</span>
+            <span class="chip">StateFlow</span>
+            <span class="chip">Retrofit / APIs</span>
+            <span class="chip">Dependency Inj</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-cat">Hardware & Integrations</div>
+          <div class="skill-chips">
+            <span class="chip chip-bold">NFC Scanning</span>
+            <span class="chip chip-bold">GPS & Maps API</span>
+            <span class="chip">CameraX</span>
+            <span class="chip">Sensors</span>
+            <span class="chip">TTS Service</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-cat">Tools & Ecosystem</div>
+          <div class="skill-chips">
+            <span class="chip chip-bold">Android Studio</span>
+            <span class="chip chip-bold">Git / GitHub</span>
+            <span class="chip">Play Console</span>
+            <span class="chip">Flutter</span>
+            <span class="chip">N8N Cloud</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="sidebar-block">
+        <div class="section-title">Education</div>
+        <div class="edu-item">
+          <div class="edu-degree">Bachelor of Computer Applications (B.C.A)</div>
+          <div class="edu-school">Swarrnim Startup & Innovation University</div>
+          <div class="edu-date">2023 — 2026</div>
+        </div>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="sidebar-block">
+        <div class="section-title">Languages</div>
+        <div class="skill-chips">
+          <span class="chip">English (Proficient)</span>
+          <span class="chip">Hindi (Fluent)</span>
+          <span class="chip">Gujarati (Native)</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
