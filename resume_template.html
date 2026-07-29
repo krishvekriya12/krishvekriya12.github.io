@@ -24,9 +24,9 @@
     background: #FFFFFF;
     width: 210mm;
     height: 297mm;
-    padding: 12mm 14mm;
-    font-size: 9.5pt;
-    line-height: 1.45;
+    padding: 11mm 14mm;
+    font-size: 9pt;
+    line-height: 1.4;
   }
 
   /* Header Section */
@@ -34,9 +34,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-bottom: 12px;
+    padding-bottom: 10px;
     border-bottom: 2.5px solid #1E40AF;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
   }
   .header-left {
     flex: 1;
@@ -47,13 +47,13 @@
     color: #0F172A;
     letter-spacing: -0.6px;
     line-height: 1.1;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .role-subtitle {
-    font-size: 11.5pt;
+    font-size: 11pt;
     font-weight: 700;
     color: #1E40AF;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .badges {
     display: flex;
@@ -63,7 +63,7 @@
   .badge {
     font-size: 7.5pt;
     font-weight: 700;
-    padding: 3px 8px;
+    padding: 2.5px 8px;
     border-radius: 4px;
     text-transform: uppercase;
     letter-spacing: 0.4px;
@@ -76,7 +76,7 @@
     text-align: right;
     font-size: 8.5pt;
     color: #475569;
-    line-height: 1.55;
+    line-height: 1.5;
   }
   .contact-box strong {
     color: #0F172A;
@@ -87,16 +87,14 @@
     font-weight: 600;
   }
 
-  /* Grid Layout */
-  .layout-grid {
-    display: grid;
-    grid-template-columns: 66% 31%;
-    gap: 3%;
+  /* Full Width Single Column Layout */
+  .main-container {
+    width: 100%;
   }
 
   /* Section Styles */
   .section-title {
-    font-size: 10.5pt;
+    font-size: 10pt;
     font-weight: 800;
     color: #0F172A;
     text-transform: uppercase;
@@ -104,26 +102,27 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-bottom: 9px;
-    padding-bottom: 4px;
+    margin-top: 10px;
+    margin-bottom: 7px;
+    padding-bottom: 3px;
     border-bottom: 1.5px solid #E2E8F0;
   }
   .section-title::before {
     content: '';
     display: inline-block;
     width: 4px;
-    height: 14px;
+    height: 13px;
     background: #1E40AF;
     border-radius: 2px;
   }
 
   .summary-text {
-    font-size: 9.2pt;
+    font-size: 8.8pt;
     color: #334155;
-    line-height: 1.5;
-    margin-bottom: 14px;
+    line-height: 1.45;
+    margin-bottom: 10px;
     background: #F8FAFC;
-    padding: 9px 12px;
+    padding: 8px 11px;
     border-radius: 6px;
     border-left: 3.5px solid #1E40AF;
   }
@@ -131,18 +130,18 @@
     color: #0F172A;
   }
 
-  /* Experience Cards */
+  /* Experience Section */
   .exp-item {
-    margin-bottom: 12px;
+    margin-bottom: 9px;
   }
   .exp-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .exp-title {
-    font-size: 10pt;
+    font-size: 9.8pt;
     font-weight: 700;
     color: #0F172A;
   }
@@ -155,7 +154,7 @@
     font-weight: 700;
     color: #475569;
     background: #F1F5F9;
-    padding: 2px 7px;
+    padding: 1.5px 7px;
     border-radius: 4px;
     border: 1px solid #E2E8F0;
   }
@@ -167,10 +166,10 @@
   .bullet-list li {
     position: relative;
     padding-left: 12px;
-    font-size: 8.8pt;
+    font-size: 8.5pt;
     color: #334155;
-    line-height: 1.42;
-    margin-bottom: 4.5px;
+    line-height: 1.38;
+    margin-bottom: 3.5px;
   }
   .bullet-list li::before {
     content: '▪';
@@ -178,7 +177,7 @@
     left: 0;
     top: -1px;
     color: #1E40AF;
-    font-size: 9pt;
+    font-size: 8.5pt;
   }
   .bullet-list strong {
     color: #0F172A;
@@ -187,26 +186,33 @@
     background: #EFF6FF;
     color: #1E40AF;
     font-weight: 700;
-    font-size: 8pt;
+    font-size: 7.8pt;
     padding: 1px 5px;
     border-radius: 3px;
     border: 1px solid #BFDBFE;
   }
 
-  /* Sidebar Section */
-  .sidebar-block {
-    margin-bottom: 13px;
+  /* Bottom Full-Width Technical Skills Table */
+  .skills-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 8px;
   }
-  .skill-group {
-    margin-bottom: 9px;
+  .skills-table tr {
+    border-bottom: 1px solid #F1F5F9;
   }
-  .skill-cat {
+  .skills-table td {
+    padding: 3.5px 0;
+    vertical-align: top;
+  }
+  .skill-label {
+    width: 22%;
     font-size: 8.5pt;
     font-weight: 700;
     color: #0F172A;
-    margin-bottom: 4px;
   }
   .skill-chips {
+    width: 78%;
     display: flex;
     flex-wrap: wrap;
     gap: 3.5px;
@@ -216,7 +222,7 @@
     font-weight: 600;
     color: #334155;
     background: #F1F5F9;
-    padding: 2.5px 6.5px;
+    padding: 2px 6px;
     border-radius: 4px;
     border: 1px solid #E2E8F0;
   }
@@ -227,24 +233,37 @@
     font-weight: 700;
   }
 
-  .edu-item {
-    margin-bottom: 6px;
+  /* Bottom Row (Education & Languages Side by Side) */
+  .bottom-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 4px;
   }
+  .bottom-left {
+    flex: 1.4;
+  }
+  .bottom-right {
+    flex: 1;
+  }
+
   .edu-degree {
-    font-size: 9pt;
+    font-size: 8.8pt;
     font-weight: 700;
     color: #0F172A;
-    line-height: 1.25;
   }
   .edu-school {
     font-size: 8pt;
     color: #475569;
-    margin-top: 2px;
   }
   .edu-date {
     font-size: 7.8pt;
     font-weight: 700;
     color: #1E40AF;
+    display: inline-block;
+    background: #EFF6FF;
+    padding: 1px 5px;
+    border-radius: 3px;
     margin-top: 2px;
   }
 </style>
@@ -272,143 +291,137 @@
     </div>
   </div>
 
-  <!-- MAIN GRID -->
-  <div class="layout-grid">
+  <div class="main-container">
 
-    <!-- LEFT COLUMN (EXPERIENCE & SUMMARY) -->
-    <div class="main-col">
-      
-      <!-- SUMMARY -->
-      <div class="section-title">Executive Summary</div>
-      <div class="summary-text">
-        Product-focused <strong>Android Developer with 2+ years of experience</strong> engineering high-performance mobile apps with <strong>Kotlin, Java & Jetpack Compose</strong>. Founder of <strong>Setubandh Tech</strong> with 8 live apps on Google Play Store crossing <strong>1.5M+ downloads</strong>. Skilled in MVVM, NFC hardware reading, Room DB, custom camera pipelines & real-time GPS navigation.
-      </div>
-
-      <!-- EXPERIENCE -->
-      <div class="section-title">Professional Experience</div>
-
-      <!-- Job 1 -->
-      <div class="exp-item">
-        <div class="exp-header">
-          <div class="exp-title">Android Developer · <span class="exp-company">SmartOnSolution</span></div>
-          <div class="exp-date">Feb 2026 — Present</div>
-        </div>
-        <ul class="bullet-list">
-          <li><strong>Digital Card Wallet — NFC Reader [Live App]</strong>: Independently built complete native Android app with <strong>Jetpack Compose</strong>, implementing hardware NFC card scanning, ISO 7816 APDU protocol reading, local encrypted vault & Material 3 design.</li>
-          <li>Optimized state management using <strong>Kotlin Coroutines & Flow</strong>, reducing memory consumption by 25% and ensuring 60fps animations.</li>
-        </ul>
-      </div>
-
-      <!-- Job 2 -->
-      <div class="exp-item">
-        <div class="exp-header">
-          <div class="exp-title">Native Android Developer · <span class="exp-company">Susamp Infotech</span></div>
-          <div class="exp-date">Mid 2024 — Feb 2026</div>
-        </div>
-        <ul class="bullet-list">
-          <li>Architected 5+ production Android apps using <b>Kotlin, Jetpack Compose & MVVM</b> serving 500k+ active users.</li>
-          <li><strong>Digital Compass: GPS Direction <span class="highlight-tag">10k+ Downloads</span></strong>: Built real-time GPS navigation suite with sensor fusion (magnetometer/accelerometer), telescope/Qibla compass, live speedometer & Google Maps overlays.</li>
-          <li><strong>GPS Map Camera Lite</strong>: Created custom camera rendering with real-time GPS location timestamps, reverse geocoding & text sticker overlays.</li>
-          <li><strong>Hourly Chime & Survey Not Cam</strong>: Integrated Foreground Services, AlarmManager, Multi-lingual TTS & custom survey gallery storage.</li>
-        </ul>
-      </div>
-
-      <!-- Job 3 -->
-      <div class="exp-item">
-        <div class="exp-header">
-          <div class="exp-title">Founder & Lead Developer · <span class="exp-company">Setubandh Tech</span></div>
-          <div class="exp-date">2026 — Present</div>
-        </div>
-        <ul class="bullet-list">
-          <li><strong>CashFlow Expense Tracker</strong>: Developed privacy-first budget tracker with Room DB, dynamic charts & spending alerts.</li>
-          <li><strong>SafeTap Safety Check-In & SOS</strong>: Built emergency check-in app with automated background SMS/location dispatch & 1-tap SOS trigger.</li>
-        </ul>
-      </div>
-
+    <!-- EXECUTIVE SUMMARY -->
+    <div class="section-title">Executive Summary</div>
+    <div class="summary-text">
+      Product-focused <strong>Android Developer with 2+ years of experience</strong> engineering high-performance mobile apps with <strong>Kotlin, Java & Jetpack Compose</strong>. Founder of <strong>Setubandh Tech</strong> with 8 live apps on Google Play Store crossing <strong>1.5M+ downloads</strong>. Skilled in MVVM, NFC hardware reading, Room DB, custom camera pipelines & real-time GPS navigation.
     </div>
 
-    <!-- RIGHT COLUMN (SKILLS & EDUCATION) -->
-    <div class="side-col">
+    <!-- PROFESSIONAL EXPERIENCE -->
+    <div class="section-title">Professional Experience</div>
 
-      <!-- SKILLS -->
-      <div class="sidebar-block">
-        <div class="section-title">Technical Skills</div>
+    <!-- Job 1 -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">Android Developer · <span class="exp-company">SmartOnSolution</span></div>
+        <div class="exp-date">Feb 2026 — Present</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>Digital Card Wallet — NFC Reader [Live App]</strong>: Independently built complete native Android app with <strong>Jetpack Compose</strong>, implementing hardware NFC card scanning, ISO 7816 APDU protocol reading, local encrypted vault & Material 3 design.</li>
+        <li>Optimized state management using <strong>Kotlin Coroutines & Flow</strong>, reducing memory consumption by 25% and ensuring 60fps smooth UI animations.</li>
+      </ul>
+    </div>
 
-        <div class="skill-group">
-          <div class="skill-cat">Core Languages</div>
+    <!-- Job 2 -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">Native Android Developer · <span class="exp-company">Susamp Infotech</span></div>
+        <div class="exp-date">Mid 2024 — Feb 2026</div>
+      </div>
+      <ul class="bullet-list">
+        <li>Architected 5+ production Android apps using <b>Kotlin, Jetpack Compose & MVVM</b> serving 500k+ active users.</li>
+        <li><strong>Digital Compass: GPS Direction <span class="highlight-tag">10k+ Downloads</span></strong>: Built real-time GPS navigation suite with sensor fusion (magnetometer/accelerometer), telescope/Qibla compass, live speedometer & Google Maps overlays.</li>
+        <li><strong>GPS Map Camera Lite</strong>: Created custom camera rendering with real-time GPS location timestamps, reverse geocoding & text sticker overlays.</li>
+        <li><strong>Hourly Chime & Survey Not Cam</strong>: Integrated Foreground Services, AlarmManager, Multi-lingual TTS & custom survey photo gallery storage.</li>
+      </ul>
+    </div>
+
+    <!-- Job 3 -->
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-title">Founder & Lead Developer · <span class="exp-company">Setubandh Tech</span></div>
+        <div class="exp-date">2026 — Present</div>
+      </div>
+      <ul class="bullet-list">
+        <li><strong>CashFlow Expense Tracker</strong>: Developed privacy-first budget tracker with Room DB, dynamic category charts & spending limit alerts.</li>
+        <li><strong>SafeTap Safety Check-In & SOS</strong>: Built emergency check-in app with automated background SMS/location dispatch & 1-tap SOS trigger.</li>
+      </ul>
+    </div>
+
+    <!-- TECHNICAL SKILLS (FULL WIDTH BELOW EXPERIENCE) -->
+    <div class="section-title">Technical Expertise</div>
+    <table class="skills-table">
+      <tr>
+        <td class="skill-label">Core Languages</td>
+        <td>
           <div class="skill-chips">
             <span class="chip chip-bold">Kotlin</span>
             <span class="chip chip-bold">Java</span>
             <span class="chip">Dart</span>
-            <span class="chip">OOP</span>
+            <span class="chip">Object-Oriented Programming (OOP)</span>
+            <span class="chip">Data Structures</span>
           </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="skill-cat">Android Architecture</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="skill-label">Android Architecture</td>
+        <td>
           <div class="skill-chips">
             <span class="chip chip-bold">Jetpack Compose</span>
             <span class="chip chip-bold">MVVM</span>
-            <span class="chip">Clean Arch</span>
-            <span class="chip">Material 3</span>
+            <span class="chip">Clean Architecture</span>
+            <span class="chip">Material Design 3</span>
+            <span class="chip">XML Layouts</span>
           </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="skill-cat">Data & Async</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="skill-label">Data & Async</td>
+        <td>
           <div class="skill-chips">
             <span class="chip chip-bold">Room DB</span>
             <span class="chip">SQLite</span>
-            <span class="chip chip-bold">Coroutines</span>
-            <span class="chip">StateFlow</span>
-            <span class="chip">Retrofit / APIs</span>
-            <span class="chip">Dependency Inj</span>
+            <span class="chip chip-bold">Coroutines & Flow</span>
+            <span class="chip">Retrofit / REST APIs</span>
+            <span class="chip">Dependency Injection (Hilt)</span>
           </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="skill-cat">Hardware & Integrations</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="skill-label">Hardware & Services</td>
+        <td>
           <div class="skill-chips">
-            <span class="chip chip-bold">NFC Scanning</span>
-            <span class="chip chip-bold">GPS & Maps API</span>
+            <span class="chip chip-bold">NFC Scanning (ISO 7816)</span>
+            <span class="chip chip-bold">GPS & Google Maps API</span>
             <span class="chip">CameraX</span>
-            <span class="chip">Sensors</span>
-            <span class="chip">TTS Service</span>
+            <span class="chip">Device Sensors</span>
+            <span class="chip">Foreground Services</span>
           </div>
-        </div>
-
-        <div class="skill-group">
-          <div class="skill-cat">Tools & Ecosystem</div>
+        </td>
+      </tr>
+      <tr>
+        <td class="skill-label">Tools & Workflow</td>
+        <td>
           <div class="skill-chips">
             <span class="chip chip-bold">Android Studio</span>
             <span class="chip chip-bold">Git / GitHub</span>
-            <span class="chip">Play Console</span>
+            <span class="chip">Google Play Console</span>
             <span class="chip">Flutter</span>
             <span class="chip">N8N Cloud</span>
+            <span class="chip">Figma</span>
           </div>
-        </div>
-      </div>
+        </td>
+      </tr>
+    </table>
 
-      <!-- EDUCATION -->
-      <div class="sidebar-block">
-        <div class="section-title">Education</div>
-        <div class="edu-item">
-          <div class="edu-degree">Bachelor of Computer Applications (B.C.A)</div>
-          <div class="edu-school">Swarrnim Startup & Innovation University</div>
-          <div class="edu-date">2023 — 2026</div>
-        </div>
+    <!-- BOTTOM ROW: EDUCATION & LANGUAGES -->
+    <div class="bottom-row">
+      <div class="bottom-left">
+        <div class="section-title">Education & Credentials</div>
+        <div class="edu-degree">Bachelor of Computer Applications (B.C.A)</div>
+        <div class="edu-school">Swarrnim Startup & Innovation University — Gandhinagar, Gujarat</div>
+        <div class="edu-date">2023 — 2026</div>
       </div>
-
-      <!-- LANGUAGES -->
-      <div class="sidebar-block">
+      <div class="bottom-right">
         <div class="section-title">Languages</div>
-        <div class="skill-chips">
+        <div class="skill-chips" style="margin-top: 4px;">
           <span class="chip">English (Proficient)</span>
           <span class="chip">Hindi (Fluent)</span>
           <span class="chip">Gujarati (Native)</span>
         </div>
       </div>
-
     </div>
 
   </div>
