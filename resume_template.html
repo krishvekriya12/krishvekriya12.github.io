@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Krish Vekriya — Resume</title>
+<title>Krish Vekriya - Resume</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -24,9 +24,9 @@
     background: #FFFFFF;
     width: 210mm;
     height: 297mm;
-    padding: 11mm 14mm;
-    font-size: 9pt;
-    line-height: 1.4;
+    padding: 10mm 13mm;
+    font-size: 8.8pt;
+    line-height: 1.45;
   }
 
   /* Header Section */
@@ -35,25 +35,25 @@
     justify-content: space-between;
     align-items: flex-start;
     padding-bottom: 10px;
-    border-bottom: 2.5px solid #1E40AF;
+    border-bottom: 2px solid #1E40AF;
     margin-bottom: 12px;
   }
   .header-left {
     flex: 1;
   }
   .name {
-    font-size: 24pt;
+    font-size: 22pt;
     font-weight: 800;
     color: #0F172A;
-    letter-spacing: -0.6px;
+    letter-spacing: -0.5px;
     line-height: 1.1;
-    margin-bottom: 3px;
+    margin-bottom: 4px;
   }
   .role-subtitle {
-    font-size: 11pt;
+    font-size: 10.5pt;
     font-weight: 700;
     color: #1E40AF;
-    margin-bottom: 6px;
+    margin-bottom: 7px;
   }
   .badges {
     display: flex;
@@ -61,9 +61,9 @@
     flex-wrap: wrap;
   }
   .badge {
-    font-size: 7.5pt;
+    font-size: 7.2pt;
     font-weight: 700;
-    padding: 2.5px 8px;
+    padding: 2.5px 7px;
     border-radius: 4px;
     text-transform: uppercase;
     letter-spacing: 0.4px;
@@ -74,7 +74,7 @@
 
   .contact-box {
     text-align: right;
-    font-size: 8.5pt;
+    font-size: 8.2pt;
     color: #475569;
     line-height: 1.5;
   }
@@ -87,44 +87,27 @@
     font-weight: 600;
   }
 
-  /* Full Width Single Column Layout */
-  .main-container {
-    width: 100%;
-  }
-
-  /* Section Styles */
+  /* Section Styles with Distinct Partitioning */
   .section-title {
-    font-size: 10pt;
+    font-size: 9.5pt;
     font-weight: 800;
     color: #0F172A;
     text-transform: uppercase;
     letter-spacing: 0.6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+    background: #F8FAFC;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border-left: 3.5px solid #1E40AF;
     margin-top: 10px;
-    margin-bottom: 7px;
-    padding-bottom: 3px;
-    border-bottom: 1.5px solid #E2E8F0;
-  }
-  .section-title::before {
-    content: '';
-    display: inline-block;
-    width: 4px;
-    height: 13px;
-    background: #1E40AF;
-    border-radius: 2px;
+    margin-bottom: 8px;
   }
 
   .summary-text {
-    font-size: 8.8pt;
+    font-size: 8.5pt;
     color: #334155;
     line-height: 1.45;
     margin-bottom: 10px;
-    background: #F8FAFC;
-    padding: 8px 11px;
-    border-radius: 6px;
-    border-left: 3.5px solid #1E40AF;
+    padding: 0 4px;
   }
   .summary-text strong {
     color: #0F172A;
@@ -133,6 +116,13 @@
   /* Experience Section */
   .exp-item {
     margin-bottom: 9px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #E2E8F0;
+  }
+  .exp-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 4px;
   }
   .exp-header {
     display: flex;
@@ -141,7 +131,7 @@
     margin-bottom: 3px;
   }
   .exp-title {
-    font-size: 9.8pt;
+    font-size: 9.2pt;
     font-weight: 700;
     color: #0F172A;
   }
@@ -150,11 +140,11 @@
     font-weight: 700;
   }
   .exp-date {
-    font-size: 8pt;
+    font-size: 7.8pt;
     font-weight: 700;
     color: #475569;
     background: #F1F5F9;
-    padding: 1.5px 7px;
+    padding: 1.5px 6px;
     border-radius: 4px;
     border: 1px solid #E2E8F0;
   }
@@ -165,11 +155,11 @@
   }
   .bullet-list li {
     position: relative;
-    padding-left: 12px;
-    font-size: 8.5pt;
+    padding-left: 11px;
+    font-size: 8.2pt;
     color: #334155;
     line-height: 1.38;
-    margin-bottom: 3.5px;
+    margin-bottom: 3px;
   }
   .bullet-list li::before {
     content: '▪';
@@ -177,7 +167,7 @@
     left: 0;
     top: -1px;
     color: #1E40AF;
-    font-size: 8.5pt;
+    font-size: 8pt;
   }
   .bullet-list strong {
     color: #0F172A;
@@ -186,44 +176,47 @@
     background: #EFF6FF;
     color: #1E40AF;
     font-weight: 700;
-    font-size: 7.8pt;
-    padding: 1px 5px;
+    font-size: 7.5pt;
+    padding: 1px 4px;
     border-radius: 3px;
     border: 1px solid #BFDBFE;
   }
 
-  /* Bottom Full-Width Technical Skills Table */
+  /* Full Width Technical Skills Table */
   .skills-table {
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .skills-table tr {
     border-bottom: 1px solid #F1F5F9;
   }
+  .skills-table tr:last-child {
+    border-bottom: none;
+  }
   .skills-table td {
-    padding: 3.5px 0;
-    vertical-align: top;
+    padding: 3px 0;
+    vertical-align: middle;
   }
   .skill-label {
-    width: 22%;
-    font-size: 8.5pt;
+    width: 23%;
+    font-size: 8.2pt;
     font-weight: 700;
     color: #0F172A;
   }
   .skill-chips {
-    width: 78%;
+    width: 77%;
     display: flex;
     flex-wrap: wrap;
     gap: 3.5px;
   }
   .chip {
-    font-size: 7.5pt;
+    font-size: 7.2pt;
     font-weight: 600;
     color: #334155;
     background: #F1F5F9;
-    padding: 2px 6px;
-    border-radius: 4px;
+    padding: 1.5px 5.5px;
+    border-radius: 3.5px;
     border: 1px solid #E2E8F0;
   }
   .chip-bold {
@@ -237,32 +230,33 @@
   .bottom-row {
     display: flex;
     justify-content: space-between;
-    gap: 20px;
-    margin-top: 4px;
+    gap: 16px;
+    margin-top: 2px;
   }
   .bottom-left {
-    flex: 1.4;
+    flex: 1.3;
   }
   .bottom-right {
     flex: 1;
   }
 
   .edu-degree {
-    font-size: 8.8pt;
+    font-size: 8.5pt;
     font-weight: 700;
     color: #0F172A;
   }
   .edu-school {
-    font-size: 8pt;
+    font-size: 7.8pt;
     color: #475569;
+    margin-top: 1px;
   }
   .edu-date {
-    font-size: 7.8pt;
+    font-size: 7.5pt;
     font-weight: 700;
     color: #1E40AF;
     display: inline-block;
     background: #EFF6FF;
-    padding: 1px 5px;
+    padding: 1px 4px;
     border-radius: 3px;
     margin-top: 2px;
   }
@@ -305,11 +299,11 @@
     <!-- Job 1 -->
     <div class="exp-item">
       <div class="exp-header">
-        <div class="exp-title">Android Developer · <span class="exp-company">SmartOnSolution</span></div>
-        <div class="exp-date">Feb 2026 — Present</div>
+        <div class="exp-title">Android Developer - <span class="exp-company">SmartOnSolution</span></div>
+        <div class="exp-date">Feb 2026 - Present</div>
       </div>
       <ul class="bullet-list">
-        <li><strong>Digital Card Wallet — NFC Reader [Live App]</strong>: Independently built complete native Android app with <strong>Jetpack Compose</strong>, implementing hardware NFC card scanning, ISO 7816 APDU protocol reading, local encrypted vault & Material 3 design.</li>
+        <li><strong>Digital Card Wallet - NFC Reader [Live App]</strong>: Independently built complete native Android app with <strong>Jetpack Compose</strong>, implementing hardware NFC card scanning, ISO 7816 APDU protocol reading, local encrypted vault & Material 3 design.</li>
         <li>Optimized state management using <strong>Kotlin Coroutines & Flow</strong>, reducing memory consumption by 25% and ensuring 60fps smooth UI animations.</li>
       </ul>
     </div>
@@ -317,8 +311,8 @@
     <!-- Job 2 -->
     <div class="exp-item">
       <div class="exp-header">
-        <div class="exp-title">Native Android Developer · <span class="exp-company">Susamp Infotech</span></div>
-        <div class="exp-date">Mid 2024 — Feb 2026</div>
+        <div class="exp-title">Native Android Developer - <span class="exp-company">Susamp Infotech</span></div>
+        <div class="exp-date">Mid 2024 - Feb 2026</div>
       </div>
       <ul class="bullet-list">
         <li>Architected 5+ production Android apps using <b>Kotlin, Jetpack Compose & MVVM</b> serving 500k+ active users.</li>
@@ -331,8 +325,8 @@
     <!-- Job 3 -->
     <div class="exp-item">
       <div class="exp-header">
-        <div class="exp-title">Founder & Lead Developer · <span class="exp-company">Setubandh Tech</span></div>
-        <div class="exp-date">2026 — Present</div>
+        <div class="exp-title">Founder & Lead Developer - <span class="exp-company">Setubandh Tech</span></div>
+        <div class="exp-date">2026 - Present</div>
       </div>
       <ul class="bullet-list">
         <li><strong>CashFlow Expense Tracker</strong>: Developed privacy-first budget tracker with Room DB, dynamic category charts & spending limit alerts.</li>
@@ -340,7 +334,7 @@
       </ul>
     </div>
 
-    <!-- TECHNICAL SKILLS (FULL WIDTH BELOW EXPERIENCE) -->
+    <!-- TECHNICAL SKILLS -->
     <div class="section-title">Technical Expertise</div>
     <table class="skills-table">
       <tr>
@@ -411,12 +405,12 @@
       <div class="bottom-left">
         <div class="section-title">Education & Credentials</div>
         <div class="edu-degree">Bachelor of Computer Applications (B.C.A)</div>
-        <div class="edu-school">Swarrnim Startup & Innovation University — Gandhinagar, Gujarat</div>
-        <div class="edu-date">2023 — 2026</div>
+        <div class="edu-school">Swarrnim Startup & Innovation University - Gandhinagar, Gujarat</div>
+        <div class="edu-date">2023 - 2026</div>
       </div>
       <div class="bottom-right">
         <div class="section-title">Languages</div>
-        <div class="skill-chips" style="margin-top: 4px;">
+        <div class="skill-chips" style="margin-top: 3px;">
           <span class="chip">English (Proficient)</span>
           <span class="chip">Hindi (Fluent)</span>
           <span class="chip">Gujarati (Native)</span>
