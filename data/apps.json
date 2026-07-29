@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-07-28T06:07:22.365Z",
+  "fetchedAt": "2026-07-29T06:12:24.359Z",
   "totalApps": 9,
-  "totalInstalls": 1573512,
+  "totalInstalls": 1573640,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -80,7 +80,7 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3771,
+      "ratings": 3773,
       "installs": 1231767,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
@@ -105,7 +105,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2407,
-      "installs": 145491,
+      "installs": 145619,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
