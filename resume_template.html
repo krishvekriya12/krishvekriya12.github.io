@@ -24,9 +24,9 @@
     background: #FFFFFF;
     width: 210mm;
     height: 297mm;
-    padding: 10mm 13mm;
-    font-size: 8.8pt;
-    line-height: 1.45;
+    padding: 10mm 12mm;
+    font-size: 8.6pt;
+    line-height: 1.42;
   }
 
   /* Header Section */
@@ -35,19 +35,19 @@
     justify-content: space-between;
     align-items: flex-start;
     padding-bottom: 10px;
-    border-bottom: 2px solid #1E40AF;
-    margin-bottom: 12px;
+    border-bottom: 2.5px solid #1E40AF;
+    margin-bottom: 11px;
   }
   .header-left {
     flex: 1;
   }
   .name {
-    font-size: 22pt;
+    font-size: 23pt;
     font-weight: 800;
     color: #0F172A;
     letter-spacing: -0.5px;
     line-height: 1.1;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .role-subtitle {
     font-size: 10.5pt;
@@ -61,7 +61,7 @@
     flex-wrap: wrap;
   }
   .badge {
-    font-size: 7.2pt;
+    font-size: 7pt;
     font-weight: 700;
     padding: 2.5px 7px;
     border-radius: 4px;
@@ -74,7 +74,7 @@
 
   .contact-box {
     text-align: right;
-    font-size: 8.2pt;
+    font-size: 8pt;
     color: #475569;
     line-height: 1.5;
   }
@@ -89,25 +89,27 @@
 
   /* Section Styles with Distinct Partitioning */
   .section-title {
-    font-size: 9.5pt;
+    font-size: 9.2pt;
     font-weight: 800;
     color: #0F172A;
     text-transform: uppercase;
     letter-spacing: 0.6px;
     background: #F8FAFC;
-    padding: 4px 8px;
+    padding: 4px 9px;
     border-radius: 4px;
     border-left: 3.5px solid #1E40AF;
-    margin-top: 10px;
+    margin-top: 9px;
     margin-bottom: 8px;
+    display: flex;
+    align-items: center;
   }
 
   .summary-text {
     font-size: 8.5pt;
     color: #334155;
     line-height: 1.45;
-    margin-bottom: 10px;
-    padding: 0 4px;
+    margin-bottom: 9px;
+    padding: 2px 4px;
   }
   .summary-text strong {
     color: #0F172A;
@@ -115,23 +117,23 @@
 
   /* Experience Section */
   .exp-item {
-    margin-bottom: 9px;
-    padding-bottom: 8px;
-    border-bottom: 1px dashed #E2E8F0;
+    margin-bottom: 8px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #F1F5F9;
   }
   .exp-item:last-child {
     border-bottom: none;
     padding-bottom: 0;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
   .exp-header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     margin-bottom: 3px;
   }
   .exp-title {
-    font-size: 9.2pt;
+    font-size: 9pt;
     font-weight: 700;
     color: #0F172A;
   }
@@ -140,12 +142,12 @@
     font-weight: 700;
   }
   .exp-date {
-    font-size: 7.8pt;
+    font-size: 7.5pt;
     font-weight: 700;
     color: #475569;
     background: #F1F5F9;
     padding: 1.5px 6px;
-    border-radius: 4px;
+    border-radius: 3.5px;
     border: 1px solid #E2E8F0;
   }
 
@@ -156,10 +158,10 @@
   .bullet-list li {
     position: relative;
     padding-left: 11px;
-    font-size: 8.2pt;
+    font-size: 8.1pt;
     color: #334155;
-    line-height: 1.38;
-    margin-bottom: 3px;
+    line-height: 1.36;
+    margin-bottom: 2.5px;
   }
   .bullet-list li::before {
     content: '▪';
@@ -176,48 +178,60 @@
     background: #EFF6FF;
     color: #1E40AF;
     font-weight: 700;
-    font-size: 7.5pt;
+    font-size: 7.3pt;
     padding: 1px 4px;
     border-radius: 3px;
     border: 1px solid #BFDBFE;
   }
 
-  /* Full Width Technical Skills Table */
-  .skills-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 6px;
+  /* TECHNICAL EXPERTISE - Grid Card Layout with Clear Partitions */
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 4px;
   }
-  .skills-table tr {
-    border-bottom: 1px solid #F1F5F9;
-  }
-  .skills-table tr:last-child {
-    border-bottom: none;
-  }
-  .skills-table td {
-    padding: 3px 0;
-    vertical-align: middle;
+  .skill-row {
+    display: flex;
+    align-items: center;
+    background: #FAFAFA;
+    border: 1px solid #E2E8F0;
+    border-radius: 5px;
+    padding: 4px 8px;
   }
   .skill-label {
-    width: 23%;
-    font-size: 8.2pt;
+    width: 25%;
+    min-width: 25%;
+    font-size: 8pt;
     font-weight: 700;
     color: #0F172A;
+    border-right: 1.5px solid #CBD5E1;
+    padding-right: 8px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .skill-label::before {
+    content: '•';
+    color: #1E40AF;
+    font-size: 10pt;
   }
   .skill-chips {
-    width: 77%;
+    width: 75%;
     display: flex;
     flex-wrap: wrap;
-    gap: 3.5px;
+    gap: 4px;
+    align-items: center;
   }
   .chip {
-    font-size: 7.2pt;
+    font-size: 7.1pt;
     font-weight: 600;
     color: #334155;
-    background: #F1F5F9;
-    padding: 1.5px 5.5px;
+    background: #FFFFFF;
+    padding: 2px 6px;
     border-radius: 3.5px;
-    border: 1px solid #E2E8F0;
+    border: 1px solid #D1D5DB;
   }
   .chip-bold {
     background: #EFF6FF;
@@ -226,39 +240,57 @@
     font-weight: 700;
   }
 
-  /* Bottom Row (Education & Languages Side by Side) */
+  /* Bottom Row (Education & Languages Side by Side with Partition) */
   .bottom-row {
     display: flex;
     justify-content: space-between;
-    gap: 16px;
+    gap: 14px;
     margin-top: 2px;
   }
   .bottom-left {
-    flex: 1.3;
+    flex: 1.2;
   }
   .bottom-right {
     flex: 1;
   }
 
+  .edu-card {
+    background: #FAFAFA;
+    border: 1px solid #E2E8F0;
+    border-radius: 5px;
+    padding: 5px 8px;
+  }
   .edu-degree {
-    font-size: 8.5pt;
+    font-size: 8.3pt;
     font-weight: 700;
     color: #0F172A;
   }
   .edu-school {
-    font-size: 7.8pt;
+    font-size: 7.6pt;
     color: #475569;
     margin-top: 1px;
   }
   .edu-date {
-    font-size: 7.5pt;
+    font-size: 7.2pt;
     font-weight: 700;
     color: #1E40AF;
     display: inline-block;
     background: #EFF6FF;
-    padding: 1px 4px;
+    padding: 1px 5px;
     border-radius: 3px;
+    border: 1px solid #BFDBFE;
     margin-top: 2px;
+  }
+
+  .lang-card {
+    background: #FAFAFA;
+    border: 1px solid #E2E8F0;
+    border-radius: 5px;
+    padding: 6px 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    align-items: center;
   }
 </style>
 </head>
@@ -334,83 +366,81 @@
       </ul>
     </div>
 
-    <!-- TECHNICAL SKILLS -->
+    <!-- TECHNICAL EXPERTISE WITH CARD ROWS & VERTICAL DIVIDERS -->
     <div class="section-title">Technical Expertise</div>
-    <table class="skills-table">
-      <tr>
-        <td class="skill-label">Core Languages</td>
-        <td>
-          <div class="skill-chips">
-            <span class="chip chip-bold">Kotlin</span>
-            <span class="chip chip-bold">Java</span>
-            <span class="chip">Dart</span>
-            <span class="chip">Object-Oriented Programming (OOP)</span>
-            <span class="chip">Data Structures</span>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="skill-label">Android Architecture</td>
-        <td>
-          <div class="skill-chips">
-            <span class="chip chip-bold">Jetpack Compose</span>
-            <span class="chip chip-bold">MVVM</span>
-            <span class="chip">Clean Architecture</span>
-            <span class="chip">Material Design 3</span>
-            <span class="chip">XML Layouts</span>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="skill-label">Data & Async</td>
-        <td>
-          <div class="skill-chips">
-            <span class="chip chip-bold">Room DB</span>
-            <span class="chip">SQLite</span>
-            <span class="chip chip-bold">Coroutines & Flow</span>
-            <span class="chip">Retrofit / REST APIs</span>
-            <span class="chip">Dependency Injection (Hilt)</span>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="skill-label">Hardware & Services</td>
-        <td>
-          <div class="skill-chips">
-            <span class="chip chip-bold">NFC Scanning (ISO 7816)</span>
-            <span class="chip chip-bold">GPS & Google Maps API</span>
-            <span class="chip">CameraX</span>
-            <span class="chip">Device Sensors</span>
-            <span class="chip">Foreground Services</span>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td class="skill-label">Tools & Workflow</td>
-        <td>
-          <div class="skill-chips">
-            <span class="chip chip-bold">Android Studio</span>
-            <span class="chip chip-bold">Git / GitHub</span>
-            <span class="chip">Google Play Console</span>
-            <span class="chip">Flutter</span>
-            <span class="chip">N8N Cloud</span>
-            <span class="chip">Figma</span>
-          </div>
-        </td>
-      </tr>
-    </table>
+    <div class="skills-container">
 
-    <!-- BOTTOM ROW: EDUCATION & LANGUAGES -->
+      <div class="skill-row">
+        <div class="skill-label">Core Languages</div>
+        <div class="skill-chips">
+          <span class="chip chip-bold">Kotlin</span>
+          <span class="chip chip-bold">Java</span>
+          <span class="chip">Dart</span>
+          <span class="chip">Object-Oriented Programming (OOP)</span>
+          <span class="chip">Data Structures</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-label">Android Architecture</div>
+        <div class="skill-chips">
+          <span class="chip chip-bold">Jetpack Compose</span>
+          <span class="chip chip-bold">MVVM</span>
+          <span class="chip">Clean Architecture</span>
+          <span class="chip">Material Design 3</span>
+          <span class="chip">XML Layouts</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-label">Data & Async</div>
+        <div class="skill-chips">
+          <span class="chip chip-bold">Room DB</span>
+          <span class="chip">SQLite</span>
+          <span class="chip chip-bold">Coroutines & Flow</span>
+          <span class="chip">Retrofit / REST APIs</span>
+          <span class="chip">Dependency Injection (Hilt)</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-label">Hardware & Services</div>
+        <div class="skill-chips">
+          <span class="chip chip-bold">NFC Scanning (ISO 7816)</span>
+          <span class="chip chip-bold">GPS & Google Maps API</span>
+          <span class="chip">CameraX</span>
+          <span class="chip">Device Sensors</span>
+          <span class="chip">Foreground Services</span>
+        </div>
+      </div>
+
+      <div class="skill-row">
+        <div class="skill-label">Tools & Workflow</div>
+        <div class="skill-chips">
+          <span class="chip chip-bold">Android Studio</span>
+          <span class="chip chip-bold">Git / GitHub</span>
+          <span class="chip">Google Play Console</span>
+          <span class="chip">Flutter</span>
+          <span class="chip">N8N Cloud</span>
+          <span class="chip">Figma</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BOTTOM ROW: EDUCATION & LANGUAGES WITH CARDS -->
     <div class="bottom-row">
       <div class="bottom-left">
         <div class="section-title">Education & Credentials</div>
-        <div class="edu-degree">Bachelor of Computer Applications (B.C.A)</div>
-        <div class="edu-school">Swarrnim Startup & Innovation University - Gandhinagar, Gujarat</div>
-        <div class="edu-date">2023 - 2026</div>
+        <div class="edu-card">
+          <div class="edu-degree">Bachelor of Computer Applications (B.C.A)</div>
+          <div class="edu-school">Swarrnim Startup & Innovation University - Gandhinagar, Gujarat</div>
+          <div class="edu-date">2023 - 2026</div>
+        </div>
       </div>
       <div class="bottom-right">
         <div class="section-title">Languages</div>
-        <div class="skill-chips" style="margin-top: 3px;">
+        <div class="lang-card">
           <span class="chip">English (Proficient)</span>
           <span class="chip">Hindi (Fluent)</span>
           <span class="chip">Gujarati (Native)</span>
