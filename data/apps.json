@@ -1,9 +1,9 @@
 {
-  "developer": "Personal Projects",
+  "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-07-29T06:12:24.359Z",
+  "fetchedAt": "2026-07-30T06:04:18.506Z",
   "totalApps": 9,
-  "totalInstalls": 1573640,
+  "totalInstalls": 1573718,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -105,7 +105,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2407,
-      "installs": 145619,
+      "installs": 145697,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -117,7 +117,7 @@
         "https://play-lh.googleusercontent.com/Fnw8d7spSxAOjI5b6-_3RY3JkNxcEf_3j4NqaOoIjr4bRl48iEZC0QadpkXhAxdkKiU3TIlzL0bXjl98ZtD8"
       ],
       "released": "Jun 27, 2021",
-      "updated": 1783913701000,
+      "updated": 1785306558000,
       "free": true,
       "company": "Susamp Infotech"
     },
