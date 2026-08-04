@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-08-03T06:42:40.965Z",
-  "totalApps": 9,
-  "totalInstalls": 1577029,
+  "fetchedAt": "2026-08-04T04:43:32.980Z",
+  "totalApps": 10,
+  "totalInstalls": 1577733,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -70,6 +70,28 @@
       "released": "Jul 21, 2026",
       "updated": 1784687432000,
       "free": true
+    },
+    {
+      "appId": "com.setubandhTech.tip_split",
+      "title": "TipSplit: Bill Splitter & Tip",
+      "summary": "Easy bill splitter and tip calculator. Split dining bills &amp; group expenses.",
+      "icon": "https://play-lh.googleusercontent.com/Xv490obWEgOt8fRHdDTR-TeSBTyhqVECQ6FJytWkHS_90dlxNo57vDvgABHxEeRGFZ-4yfqhU_r-zt6VLvh8",
+      "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.tip_split",
+      "score": null,
+      "ratings": null,
+      "installs": 2,
+      "installsText": "1+",
+      "genre": "Finance",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/aly-UVZbET6w97sa6HI900FPJdsPz9k2wwIxy1WBA-nZ5GbtGvPVN7C4Kcfb-2CxqRg7f8xEW0SngIseG9hL0g0",
+        "https://play-lh.googleusercontent.com/u7ydRQuUxiyrc9sj0fcyJc1ZU0eXqqcJDNDR0NuThH6C4k9bGf5XoGRXV6s2n_6nsqPcIqKQieLzEJrvCFgnNA",
+        "https://play-lh.googleusercontent.com/eMLtI76DNIIUhVrapGI_EV7Tj3YZWYcl9rSiwJHsVNlasTTeI0nDnepluaeW5zsW_HA76A9CW9m_yJcJNuwJ5Q",
+        "https://play-lh.googleusercontent.com/giRx4C6SpgV_ksshEcF_hwx-LPVJejuVxnL8zkWFGraYcgMwBX6yVvSLhWKg5SPYyM8SkSqcuvPThogwzsAL",
+        "https://play-lh.googleusercontent.com/CX0bM7UHbFhwTWTW0xRqRpbVSvhwGcRJz_V5zO33BH0_y8-tdBNx02SUndEF6t5YTEcIh4DwCA03CBTRP8Lmqg"
+      ],
+      "released": "Jul 24, 2026",
+      "updated": 1785257054000,
+      "free": true
     }
   ],
   "workApps": [
@@ -80,8 +102,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3775,
-      "installs": 1233937,
+      "ratings": 3774,
+      "installs": 1234423,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -104,8 +126,8 @@
       "icon": "https://play-lh.googleusercontent.com/JtpN1YkW3k3-ZEQ30Z6yNk8jQ2lwyJCeBrma_1piu_uJbXeqtwuWe2GjcBH85_S8JW0D5mQybynsCrgAHUvX",
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
-      "ratings": 2411,
-      "installs": 145842,
+      "ratings": 2412,
+      "installs": 145910,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -129,7 +151,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.1,
       "ratings": 412,
-      "installs": 108619,
+      "installs": 108638,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -152,8 +174,8 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
-      "ratings": 224,
-      "installs": 51526,
+      "ratings": 226,
+      "installs": 51529,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -201,7 +223,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.9,
       "ratings": 339,
-      "installs": 12950,
+      "installs": 13076,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
