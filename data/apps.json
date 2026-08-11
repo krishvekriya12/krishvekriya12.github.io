@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-08-10T06:33:05.841Z",
+  "fetchedAt": "2026-08-11T04:47:18.529Z",
   "totalApps": 10,
-  "totalInstalls": 1583637,
+  "totalInstalls": 1584259,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -13,7 +13,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.cashflow",
       "score": null,
       "ratings": null,
-      "installs": 144,
+      "installs": 146,
       "installsText": "100+",
       "genre": "Finance",
       "screenshots": [
@@ -103,7 +103,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
       "ratings": 3782,
-      "installs": 1237498,
+      "installs": 1237844,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -127,7 +127,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2413,
-      "installs": 146424,
+      "installs": 146486,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -151,7 +151,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.1,
       "ratings": 412,
-      "installs": 108885,
+      "installs": 108949,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -175,7 +175,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
       "ratings": 235,
-      "installs": 52708,
+      "installs": 52766,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -223,7 +223,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.9,
       "ratings": 340,
-      "installs": 13892,
+      "installs": 13982,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
