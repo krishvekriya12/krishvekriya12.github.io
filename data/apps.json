@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-08-11T04:47:18.529Z",
+  "fetchedAt": "2026-08-12T05:12:24.071Z",
   "totalApps": 10,
-  "totalInstalls": 1584259,
+  "totalInstalls": 1584263,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -102,7 +102,7 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3782,
+      "ratings": 3784,
       "installs": 1237844,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
@@ -150,7 +150,7 @@
       "icon": "https://play-lh.googleusercontent.com/cwMDSGHUhdZei_7yThxaY7FaRBAQ2P6aWKUvpUar2tWqTd9QY2f8eEct0v8Ylce4y_eysBbVntjXGH-r7DMFgw",
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.1,
-      "ratings": 412,
+      "ratings": 413,
       "installs": 108949,
       "installsText": "100,000+",
       "genre": "Photography",
@@ -174,8 +174,8 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
-      "ratings": 235,
-      "installs": 52766,
+      "ratings": 236,
+      "installs": 52770,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
