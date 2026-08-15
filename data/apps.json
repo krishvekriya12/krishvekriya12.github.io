@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-08-14T05:12:39.197Z",
+  "fetchedAt": "2026-08-15T04:01:56.105Z",
   "totalApps": 10,
-  "totalInstalls": 1584784,
+  "totalInstalls": 1585029,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -56,8 +56,8 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhtech.water_reminder",
       "score": null,
       "ratings": null,
-      "installs": 6,
-      "installsText": "5+",
+      "installs": 10,
+      "installsText": "10+",
       "genre": "Health & Fitness",
       "screenshots": [
         "https://play-lh.googleusercontent.com/-OQ4Znm_mqAXozPRig06glbHhL-apGKGmhd7BuTqb-PIbsjVUpS7j-Z27B-RU4N9AUf1PfCt3tG4XqZ3qCuQ8nQ",
@@ -102,7 +102,7 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3785,
+      "ratings": 3787,
       "installs": 1238140,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
@@ -126,8 +126,8 @@
       "icon": "https://play-lh.googleusercontent.com/JtpN1YkW3k3-ZEQ30Z6yNk8jQ2lwyJCeBrma_1piu_uJbXeqtwuWe2GjcBH85_S8JW0D5mQybynsCrgAHUvX",
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
-      "ratings": 2415,
-      "installs": 146530,
+      "ratings": 2414,
+      "installs": 146596,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -174,8 +174,8 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
-      "ratings": 236,
-      "installs": 52829,
+      "ratings": 237,
+      "installs": 52890,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -223,7 +223,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.9,
       "ratings": 338,
-      "installs": 14049,
+      "installs": 14163,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
@@ -235,7 +235,7 @@
         "https://play-lh.googleusercontent.com/4iYxKeroFpcGt6Lb3uaH5E-1Cxg5r5GHfMdXvnB_FwYGLYh5tggRCsOna-70dHIYQT_N0Nol902dvnIQDZsqHdQ"
       ],
       "released": "Apr 21, 2025",
-      "updated": 1781616135000,
+      "updated": 1786710650000,
       "free": true,
       "company": "SmartOnSolution"
     }
