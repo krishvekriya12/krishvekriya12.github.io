@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-08-18T04:04:22.056Z",
+  "fetchedAt": "2026-08-19T04:05:10.200Z",
   "totalApps": 10,
-  "totalInstalls": 1588884,
+  "totalInstalls": 1588975,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -174,7 +174,7 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
-      "ratings": 239,
+      "ratings": 237,
       "installs": 53196,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
@@ -187,7 +187,7 @@
         "https://play-lh.googleusercontent.com/AcIrZtsj9d1XX5gwblraIlUa7uzXEIQ9JlhfNdK8nJNqcztgp4dAFRJpOaFHx2Z3BBJwxbrJec96kSMD_MbX0w"
       ],
       "released": "Dec 11, 2025",
-      "updated": 1779788714000,
+      "updated": 1787028326000,
       "free": true,
       "company": "Susamp Infotech"
     },
@@ -223,7 +223,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.9,
       "ratings": 338,
-      "installs": 14440,
+      "installs": 14531,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
@@ -235,7 +235,7 @@
         "https://play-lh.googleusercontent.com/4iYxKeroFpcGt6Lb3uaH5E-1Cxg5r5GHfMdXvnB_FwYGLYh5tggRCsOna-70dHIYQT_N0Nol902dvnIQDZsqHdQ"
       ],
       "released": "Apr 21, 2025",
-      "updated": 1786710650000,
+      "updated": 1787058439000,
       "free": true,
       "company": "SmartOnSolution"
     }
