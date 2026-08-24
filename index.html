@@ -403,28 +403,29 @@
         </a>
       </div>
 
-      <div class="gh-heatmap-wrap">
-        <div class="gh-heatmap-scroll">
-          <img
-            id="ghHeatmap"
-            src="https://ghchart.rshah.org/10b981/krishvekriya12"
-            alt="Krish Vekariya GitHub contribution graph"
-            class="gh-heatmap-img"
-            loading="lazy"
-          >
-        </div>
-        <div class="gh-heatmap-fade-l" aria-hidden="true"></div>
-        <div class="gh-heatmap-fade-r" aria-hidden="true"></div>
+      <div class="gh-contributions-summary" id="ghSummary">
+        <span id="ghTotalContribs">—</span> contributions in the last year
       </div>
 
-      <div class="gh-legend">
-        <span class="gh-legend-label">Less</span>
-        <span class="gh-legend-cell" style="--gh-op:0.12"></span>
-        <span class="gh-legend-cell" style="--gh-op:0.35"></span>
-        <span class="gh-legend-cell" style="--gh-op:0.60"></span>
-        <span class="gh-legend-cell" style="--gh-op:0.80"></span>
-        <span class="gh-legend-cell" style="--gh-op:1.00"></span>
-        <span class="gh-legend-label">More</span>
+      <div class="gh-heatmap-outer">
+        <div class="gh-heatmap-scroll">
+          <div class="gh-canvas-wrap" id="ghCanvasWrap">
+            <canvas id="ghCanvas" aria-label="GitHub contribution graph"></canvas>
+            <div class="gh-tooltip" id="ghTooltip"></div>
+          </div>
+          <div class="gh-bottom-row">
+            <a class="gh-learn-link" href="https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-for-your-profile/why-are-my-contributions-not-showing-up-on-my-profile" target="_blank" rel="noopener">Learn how we count contributions</a>
+            <div class="gh-legend">
+              <span class="gh-legend-label">Less</span>
+              <span class="gh-legend-cell" style="background:#161b22"></span>
+              <span class="gh-legend-cell" style="background:#0e4429"></span>
+              <span class="gh-legend-cell" style="background:#006d32"></span>
+              <span class="gh-legend-cell" style="background:#26a641"></span>
+              <span class="gh-legend-cell" style="background:#39d353"></span>
+              <span class="gh-legend-label">More</span>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="gh-stats-row" id="ghStatsRow">
@@ -441,7 +442,7 @@
           <span class="gh-stat-lbl">Following</span>
         </div>
         <div class="gh-stat">
-          <span class="gh-stat-num" id="ghYear">2025</span>
+          <span class="gh-stat-num" id="ghYear">—</span>
           <span class="gh-stat-lbl">Member Since</span>
         </div>
       </div>

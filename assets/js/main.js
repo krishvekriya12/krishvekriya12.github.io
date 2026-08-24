@@ -469,71 +469,227 @@
     }, { passive: true });
   }
 
-  /* ---------- GitHub live heatmap + stats ---------- */
+  /* ---------- GitHub canvas heatmap + live stats ---------- */
   (function initGitHub() {
     const GH_USER = 'krishvekriya12';
-    const heatmapImg = $('#ghHeatmap');
-    const reposEl   = $('#ghRepos');
-    const followersEl = $('#ghFollowers');
-    const followingEl = $('#ghFollowing');
-    const yearEl    = $('#ghYear');
-    const lastUpdateEl = $('#ghLastUpdate');
+    const canvas   = document.getElementById('ghCanvas');
+    const tooltip  = document.getElementById('ghTooltip');
+    const reposEl  = document.getElementById('ghRepos');
+    const followersEl = document.getElementById('ghFollowers');
+    const followingEl = document.getElementById('ghFollowing');
+    const yearEl   = document.getElementById('ghYear');
+    const totalEl  = document.getElementById('ghTotalContribs');
 
-    if (!heatmapImg) return;
+    if (!canvas) return;
 
-    /* --- Cache-bust heatmap once per day so it stays fresh --- */
-    const todayKey = new Date().toISOString().slice(0, 10); // "2026-08-24"
-    heatmapImg.classList.add('loading');
-    const freshSrc = `https://ghchart.rshah.org/10b981/${GH_USER}?cb=${todayKey}`;
-    const tmp = new Image();
-    tmp.onload = () => {
-      heatmapImg.src = freshSrc;
-      heatmapImg.classList.remove('loading');
-    };
-    tmp.onerror = () => {
-      heatmapImg.classList.remove('loading'); // fallback: keep existing src
-    };
-    tmp.src = freshSrc;
+    /* ---- Colors matching GitHub dark theme ---- */
+    const COLORS = ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'];
+    const BG     = '#0d1117';
+    const TEXT   = '#8b949e';
+    const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const DAYS   = ['', 'Mon', '', 'Wed', '', 'Fri', ''];
 
-    /* --- Fetch live GitHub profile stats --- */
-    const cacheKey  = `gh_stats_${GH_USER}`;
-    const cacheTime = `gh_stats_ts_${GH_USER}`;
-    const CACHE_TTL = 6 * 60 * 60 * 1000; // 6 hours
+    const CELL = 11, GAP = 3, STEP = CELL + GAP;
+    const LEFT = 30; // day labels width
+    const TOP  = 20; // month labels height
 
-    function applyStats(data) {
-      if (reposEl)    reposEl.textContent    = data.public_repos    ?? '—';
-      if (followersEl) followersEl.textContent = data.followers       ?? '—';
-      if (followingEl) followingEl.textContent = data.following       ?? '—';
-      if (yearEl && data.created_at) {
-        yearEl.textContent = new Date(data.created_at).getFullYear();
+    /* ---- Build contribution weeks from flat array ---- */
+    function buildWeeks(contributions) {
+      if (!contributions || !contributions.length) return [];
+      const weeks = [];
+      let week = [];
+
+      // Pad first week so Sunday is col 0
+      const firstDow = new Date(contributions[0].date).getDay();
+      for (let i = 0; i < firstDow; i++) week.push(null);
+
+      for (const c of contributions) {
+        const dow = new Date(c.date).getDay();
+        if (dow === 0 && week.length > 0) { weeks.push(week); week = []; }
+        week.push(c);
       }
-      if (lastUpdateEl) {
-        const now = new Date();
-        lastUpdateEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-      }
+      // pad last week
+      while (week.length < 7) week.push(null);
+      weeks.push(week);
+      return weeks;
     }
 
-    function fetchStats() {
-      const cached = localStorage.getItem(cacheKey);
-      const cachedTs = parseInt(localStorage.getItem(cacheTime) || '0', 10);
-      if (cached && Date.now() - cachedTs < CACHE_TTL) {
-        try { applyStats(JSON.parse(cached)); return; } catch(e) {}
-      }
+    /* ---- Render canvas ---- */
+    function render(weeks) {
+      const dpr = window.devicePixelRatio || 1;
+      const W = LEFT + weeks.length * STEP;
+      const H = TOP + 7 * STEP;
 
-      fetch(`https://api.github.com/users/${GH_USER}`, {
-        headers: { 'Accept': 'application/vnd.github.v3+json' }
+      canvas.width  = W * dpr;
+      canvas.height = H * dpr;
+      canvas.style.width  = W + 'px';
+      canvas.style.height = H + 'px';
+
+      const ctx = canvas.getContext('2d');
+      ctx.scale(dpr, dpr);
+
+      // Background
+      ctx.fillStyle = BG;
+      ctx.fillRect(0, 0, W, H);
+
+      // Font
+      ctx.font = `11px -apple-system, "Segoe UI", sans-serif`;
+      ctx.fillStyle = TEXT;
+
+      // Month labels
+      let lastMonth = -1;
+      weeks.forEach((week, wi) => {
+        const day = week.find(d => d !== null);
+        if (day) {
+          const m = new Date(day.date).getMonth();
+          if (m !== lastMonth) {
+            ctx.fillText(MONTHS[m], LEFT + wi * STEP, TOP - 6);
+            lastMonth = m;
+          }
+        }
+      });
+
+      // Day labels (Mon, Wed, Fri)
+      DAYS.forEach((lbl, i) => {
+        if (lbl) ctx.fillText(lbl, 0, TOP + i * STEP + CELL);
+      });
+
+      // Cells
+      weeks.forEach((week, wi) => {
+        week.forEach((day, di) => {
+          if (!day) return;
+          const level = Math.min(4, day.level || 0);
+          ctx.fillStyle = COLORS[level];
+          const x = LEFT + wi * STEP;
+          const y = TOP + di * STEP;
+          ctx.beginPath();
+          const r = 2;
+          ctx.moveTo(x + r, y);
+          ctx.lineTo(x + CELL - r, y);
+          ctx.quadraticCurveTo(x + CELL, y, x + CELL, y + r);
+          ctx.lineTo(x + CELL, y + CELL - r);
+          ctx.quadraticCurveTo(x + CELL, y + CELL, x + CELL - r, y + CELL);
+          ctx.lineTo(x + r, y + CELL);
+          ctx.quadraticCurveTo(x, y + CELL, x, y + CELL - r);
+          ctx.lineTo(x, y + r);
+          ctx.quadraticCurveTo(x, y, x + r, y);
+          ctx.closePath();
+          ctx.fill();
+        });
+      });
+
+      // Store weeks on canvas for tooltip lookup
+      canvas._weeks = weeks;
+    }
+
+    /* ---- Tooltip on hover ---- */
+    canvas.addEventListener('mousemove', (e) => {
+      const weeks = canvas._weeks;
+      if (!weeks || !tooltip) return;
+      const rect = canvas.getBoundingClientRect();
+      const mx = e.clientX - rect.left;
+      const my = e.clientY - rect.top;
+      const wi = Math.floor((mx - LEFT) / STEP);
+      const di = Math.floor((my - TOP) / STEP);
+      if (wi < 0 || wi >= weeks.length || di < 0 || di > 6) {
+        tooltip.classList.remove('show'); return;
+      }
+      const day = weeks[wi] && weeks[wi][di];
+      if (!day) { tooltip.classList.remove('show'); return; }
+      const count = day.count || 0;
+      const label = count === 0
+        ? `No contributions on ${day.date}`
+        : `${count} contribution${count > 1 ? 's' : ''} on ${day.date}`;
+      tooltip.textContent = label;
+
+      // Position tooltip above the cell
+      const cellX = LEFT + wi * STEP;
+      const cellY = TOP + di * STEP;
+      tooltip.style.left = (cellX + CELL / 2 - tooltip.offsetWidth / 2) + 'px';
+      tooltip.style.top  = (cellY - tooltip.offsetHeight - 8) + 'px';
+      tooltip.classList.add('show');
+    });
+    canvas.addEventListener('mouseleave', () => {
+      if (tooltip) tooltip.classList.remove('show');
+    });
+
+    /* ---- Fetch contributions via github-contributions-api ---- */
+    const API_URL = `https://github-contributions-api.jogruber.de/v4/${GH_USER}?y=last`;
+    const CONTRIBS_KEY = `gh_contribs_${GH_USER}`;
+    const CONTRIBS_TS  = `gh_contribs_ts_${GH_USER}`;
+    const TTL = 6 * 60 * 60 * 1000; // 6 h
+
+    function tryCache(key, ts) {
+      const raw = localStorage.getItem(key);
+      const t   = parseInt(localStorage.getItem(ts) || '0', 10);
+      if (raw && Date.now() - t < TTL) {
+        try { return JSON.parse(raw); } catch(_) {}
+      }
+      return null;
+    }
+
+    function drawFallback() {
+      // Draw placeholder grid of 53 weeks × 7 days at level 0
+      const today = new Date();
+      const fake = [];
+      for (let i = 364; i >= 0; i--) {
+        const d = new Date(today); d.setDate(d.getDate() - i);
+        fake.push({ date: d.toISOString().slice(0, 10), count: 0, level: 0 });
+      }
+      render(buildWeeks(fake));
+    }
+
+    // Try cache first
+    const cached = tryCache(CONTRIBS_KEY, CONTRIBS_TS);
+    if (cached) {
+      const weeks = buildWeeks(cached.contributions || cached);
+      render(weeks);
+      if (totalEl) totalEl.textContent = (cached.contributions || cached)
+        .reduce((s, d) => s + (d.count || 0), 0).toLocaleString();
+    } else {
+      drawFallback();
+    }
+
+    fetch(API_URL)
+      .then(r => r.ok ? r.json() : null)
+      .then(data => {
+        if (!data) return;
+        const contribs = data.contributions || data;
+        localStorage.setItem(CONTRIBS_KEY, JSON.stringify(data));
+        localStorage.setItem(CONTRIBS_TS,  String(Date.now()));
+        render(buildWeeks(contribs));
+        if (totalEl) totalEl.textContent = contribs
+          .reduce((s, d) => s + (d.count || 0), 0).toLocaleString();
       })
-        .then(r => r.ok ? r.json() : null)
-        .then(data => {
-          if (!data) return;
-          applyStats(data);
-          localStorage.setItem(cacheKey, JSON.stringify(data));
-          localStorage.setItem(cacheTime, String(Date.now()));
-        })
-        .catch(() => {}); // silently fail — placeholders stay
+      .catch(() => { if (!cached) drawFallback(); });
+
+    /* ---- GitHub profile stats ---- */
+    const STATS_KEY = `gh_stats_${GH_USER}`;
+    const STATS_TS  = `gh_stats_ts_${GH_USER}`;
+
+    function applyStats(d) {
+      if (reposEl)    reposEl.textContent    = d.public_repos ?? '—';
+      if (followersEl) followersEl.textContent = d.followers ?? '—';
+      if (followingEl) followingEl.textContent = d.following ?? '—';
+      if (yearEl && d.created_at)
+        yearEl.textContent = new Date(d.created_at).getFullYear();
     }
 
-    fetchStats();
+    const cachedStats = tryCache(STATS_KEY, STATS_TS);
+    if (cachedStats) applyStats(cachedStats);
+
+    fetch(`https://api.github.com/users/${GH_USER}`, {
+      headers: { Accept: 'application/vnd.github.v3+json' }
+    })
+      .then(r => r.ok ? r.json() : null)
+      .then(d => {
+        if (!d) return;
+        applyStats(d);
+        localStorage.setItem(STATS_KEY, JSON.stringify(d));
+        localStorage.setItem(STATS_TS, String(Date.now()));
+      })
+      .catch(() => {});
+
   })();
 
 })();
