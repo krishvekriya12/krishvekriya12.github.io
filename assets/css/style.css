@@ -906,7 +906,239 @@ footer {
   .cta-card { min-height: 0; }
 }
 
+
 @media (max-width: 1020px) {
   .cta-card { grid-template-columns: 1fr; }
   .cta-form { padding-top: 0; }
+}
+
+/* --- github heatmap ------------------------------------------------------ */
+
+#github { scroll-margin-top: 80px; }
+
+.gh-card {
+  background: var(--panel);
+  border: 1px solid var(--line-2);
+  border-radius: 20px;
+  padding: 28px 28px 22px;
+  margin-top: 40px;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
+}
+
+.gh-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gh-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gh-logo {
+  color: var(--fg);
+  flex-shrink: 0;
+}
+
+.gh-username {
+  display: block;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  line-height: 1.2;
+}
+
+.gh-live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-jakarta);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--emerald);
+  background: rgba(16,185,129,0.10);
+  border-radius: 999px;
+  padding: 3px 9px 3px 6px;
+  margin-top: 4px;
+}
+
+.gh-live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--emerald);
+  box-shadow: 0 0 6px rgba(16,185,129,0.8);
+  animation: ctaPulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+.gh-profile-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-jakarta);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--line-2);
+  border-radius: 999px;
+  padding: 7px 16px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.gh-profile-btn:hover {
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+}
+
+/* heatmap area */
+.gh-heatmap-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f0f0ef;
+  border: 1px solid var(--line);
+}
+
+.gh-heatmap-scroll {
+  overflow-x: auto;
+  padding: 14px 16px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.15) transparent;
+}
+
+.gh-heatmap-scroll::-webkit-scrollbar { height: 4px; }
+.gh-heatmap-scroll::-webkit-scrollbar-track { background: transparent; }
+.gh-heatmap-scroll::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 2px; }
+
+.gh-heatmap-img {
+  display: block;
+  min-width: 680px;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  transition: opacity 0.4s ease;
+}
+
+.gh-heatmap-img.loading { opacity: 0.4; }
+
+/* subtle fade edges */
+.gh-heatmap-fade-l,
+.gh-heatmap-fade-r {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 24px;
+  pointer-events: none;
+  z-index: 1;
+}
+.gh-heatmap-fade-l {
+  left: 0;
+  background: linear-gradient(to right, #f0f0ef, transparent);
+}
+.gh-heatmap-fade-r {
+  right: 0;
+  background: linear-gradient(to left, #f0f0ef, transparent);
+}
+
+/* legend */
+.gh-legend {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 12px;
+  justify-content: flex-end;
+}
+
+.gh-legend-label {
+  font-family: var(--font-jakarta);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.gh-legend-cell {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  background: var(--emerald);
+  opacity: var(--gh-op);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+/* stats row */
+.gh-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 20px;
+  background: var(--line);
+}
+
+.gh-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 16px 12px;
+  background: var(--panel);
+  text-align: center;
+}
+
+.gh-stat-num {
+  font-family: var(--font-smooch);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  line-height: 1;
+}
+
+.gh-stat-lbl {
+  font-family: var(--font-jakarta);
+  font-size: 11.5px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* update note */
+.gh-update-note {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-jakarta);
+  font-size: 11.5px;
+  color: var(--muted);
+  margin-top: 16px;
+  letter-spacing: 0.02em;
+}
+
+.gh-update-note svg { flex-shrink: 0; color: var(--muted); }
+
+/* responsive */
+@media (max-width: 760px) {
+  .gh-card { padding: 20px 16px 18px; border-radius: 14px; }
+  .gh-stats-row { grid-template-columns: repeat(2, 1fr); }
+  .gh-card-header { flex-direction: column; align-items: flex-start; }
+  .gh-profile-btn { align-self: flex-start; }
+  .gh-legend { justify-content: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .gh-stats-row { grid-template-columns: repeat(2, 1fr); }
 }

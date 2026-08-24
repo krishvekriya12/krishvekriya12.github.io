@@ -468,4 +468,72 @@
       if (!ticking) { requestAnimationFrame(parallax); ticking = true; }
     }, { passive: true });
   }
+
+  /* ---------- GitHub live heatmap + stats ---------- */
+  (function initGitHub() {
+    const GH_USER = 'krishvekriya12';
+    const heatmapImg = $('#ghHeatmap');
+    const reposEl   = $('#ghRepos');
+    const followersEl = $('#ghFollowers');
+    const followingEl = $('#ghFollowing');
+    const yearEl    = $('#ghYear');
+    const lastUpdateEl = $('#ghLastUpdate');
+
+    if (!heatmapImg) return;
+
+    /* --- Cache-bust heatmap once per day so it stays fresh --- */
+    const todayKey = new Date().toISOString().slice(0, 10); // "2026-08-24"
+    heatmapImg.classList.add('loading');
+    const freshSrc = `https://ghchart.rshah.org/10b981/${GH_USER}?cb=${todayKey}`;
+    const tmp = new Image();
+    tmp.onload = () => {
+      heatmapImg.src = freshSrc;
+      heatmapImg.classList.remove('loading');
+    };
+    tmp.onerror = () => {
+      heatmapImg.classList.remove('loading'); // fallback: keep existing src
+    };
+    tmp.src = freshSrc;
+
+    /* --- Fetch live GitHub profile stats --- */
+    const cacheKey  = `gh_stats_${GH_USER}`;
+    const cacheTime = `gh_stats_ts_${GH_USER}`;
+    const CACHE_TTL = 6 * 60 * 60 * 1000; // 6 hours
+
+    function applyStats(data) {
+      if (reposEl)    reposEl.textContent    = data.public_repos    ?? '—';
+      if (followersEl) followersEl.textContent = data.followers       ?? '—';
+      if (followingEl) followingEl.textContent = data.following       ?? '—';
+      if (yearEl && data.created_at) {
+        yearEl.textContent = new Date(data.created_at).getFullYear();
+      }
+      if (lastUpdateEl) {
+        const now = new Date();
+        lastUpdateEl.textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      }
+    }
+
+    function fetchStats() {
+      const cached = localStorage.getItem(cacheKey);
+      const cachedTs = parseInt(localStorage.getItem(cacheTime) || '0', 10);
+      if (cached && Date.now() - cachedTs < CACHE_TTL) {
+        try { applyStats(JSON.parse(cached)); return; } catch(e) {}
+      }
+
+      fetch(`https://api.github.com/users/${GH_USER}`, {
+        headers: { 'Accept': 'application/vnd.github.v3+json' }
+      })
+        .then(r => r.ok ? r.json() : null)
+        .then(data => {
+          if (!data) return;
+          applyStats(data);
+          localStorage.setItem(cacheKey, JSON.stringify(data));
+          localStorage.setItem(cacheTime, String(Date.now()));
+        })
+        .catch(() => {}); // silently fail — placeholders stay
+    }
+
+    fetchStats();
+  })();
+
 })();
