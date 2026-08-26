@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-08-25T04:06:39.524Z",
+  "fetchedAt": "2026-08-26T04:08:49.748Z",
   "totalApps": 10,
-  "totalInstalls": 1592683,
+  "totalInstalls": 1593081,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -103,7 +103,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
       "ratings": 3796,
-      "installs": 1243198,
+      "installs": 1243556,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -126,7 +126,7 @@
       "icon": "https://play-lh.googleusercontent.com/JtpN1YkW3k3-ZEQ30Z6yNk8jQ2lwyJCeBrma_1piu_uJbXeqtwuWe2GjcBH85_S8JW0D5mQybynsCrgAHUvX",
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
-      "ratings": 2423,
+      "ratings": 2422,
       "installs": 147321,
       "installsText": "100,000+",
       "genre": "Productivity",
@@ -151,7 +151,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.1,
       "ratings": 414,
-      "installs": 109539,
+      "installs": 109572,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -163,7 +163,7 @@
         "https://play-lh.googleusercontent.com/AGRspOJZtqhQSpfUCLE3rHeciU5TQfKUxyYBtbbZWUgjCWYFbPtMao5irxAxTlAG0_DKK0aIaR7Sw-WDyeyF"
       ],
       "released": "Dec 23, 2020",
-      "updated": 1782890616000,
+      "updated": 1787657911000,
       "free": true,
       "company": "Susamp Infotech"
     },
@@ -175,7 +175,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
       "ratings": 244,
-      "installs": 53462,
+      "installs": 53469,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
