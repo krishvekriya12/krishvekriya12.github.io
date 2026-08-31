@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-08-30T09:22:12.945Z",
+  "fetchedAt": "2026-08-31T09:57:14.929Z",
   "totalApps": 10,
-  "totalInstalls": 1595716,
+  "totalInstalls": 1596457,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -102,8 +102,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3798,
-      "installs": 1244883,
+      "ratings": 3799,
+      "installs": 1245624,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -222,7 +222,7 @@
       "icon": "https://play-lh.googleusercontent.com/KxNwsIT_rdhcdSgeL4Y2MryhAPM3sKtx30ku1-npjmo44kCKM-5o2M8DV9DGEOSDRdI3wNEFeDwMz0bhGZV0yg",
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.9,
-      "ratings": 340,
+      "ratings": 341,
       "installs": 15613,
       "installsText": "10,000+",
       "genre": "Finance",
