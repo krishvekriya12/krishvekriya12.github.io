@@ -1,7 +1,7 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-09-07T08:31:08.909Z",
+  "fetchedAt": "2026-09-08T08:13:52.486Z",
   "totalApps": 10,
   "totalInstalls": 1598273,
   "myApps": [
@@ -51,7 +51,7 @@
     {
       "appId": "com.setubandhtech.water_reminder",
       "title": "Water Reminder: Drink Tracker",
-      "summary": "Smart water tracker &amp; drink reminder app to log daily intake and stay hydrated.",
+      "summary": "Water tracker &amp; drink reminder to log daily intake and stay hydrated.",
       "icon": "https://play-lh.googleusercontent.com/7xiCKGRen23B2eE6WPehJdHsfRbn0HU5V6fAo72TadgxhxpRR7amv6la-gSaO-7Vt4CWWIA78ccUDC2EhipXsg",
       "url": "https://play.google.com/store/apps/details?id=com.setubandhtech.water_reminder",
       "score": null,
@@ -74,7 +74,7 @@
     {
       "appId": "com.setubandhTech.tip_split",
       "title": "TipSplit: Bill Splitter & Tip",
-      "summary": "Split bills &amp; calculate tips easily. Manage group expenses, dining &amp; trip costs.",
+      "summary": "Split bills &amp; calculate tips easily. Manage group expenses &amp; trip costs.",
       "icon": "https://play-lh.googleusercontent.com/Xv490obWEgOt8fRHdDTR-TeSBTyhqVECQ6FJytWkHS_90dlxNo57vDvgABHxEeRGFZ-4yfqhU_r-zt6VLvh8",
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.tip_split",
       "score": null,
@@ -174,7 +174,7 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.4,
-      "ratings": 247,
+      "ratings": 248,
       "installs": 53925,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
