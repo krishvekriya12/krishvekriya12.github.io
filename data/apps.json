@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-09-10T08:16:52.236Z",
+  "fetchedAt": "2026-09-11T08:11:44.110Z",
   "totalApps": 10,
-  "totalInstalls": 1599787,
+  "totalInstalls": 1600316,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -102,8 +102,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3802,
-      "installs": 1247217,
+      "ratings": 3803,
+      "installs": 1247746,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -174,7 +174,7 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.4,
-      "ratings": 249,
+      "ratings": 251,
       "installs": 54109,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
