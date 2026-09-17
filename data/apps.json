@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-09-16T08:44:08.002Z",
+  "fetchedAt": "2026-09-17T08:48:07.744Z",
   "totalApps": 10,
-  "totalInstalls": 1604323,
+  "totalInstalls": 1605652,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -13,7 +13,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.cashflow",
       "score": null,
       "ratings": null,
-      "installs": 156,
+      "installs": 158,
       "installsText": "100+",
       "genre": "Finance",
       "screenshots": [
@@ -34,8 +34,8 @@
       "url": "https://play.google.com/store/apps/details?id=com.nexaserve.checkinapps",
       "score": null,
       "ratings": null,
-      "installs": 48,
-      "installsText": "10+",
+      "installs": 50,
+      "installsText": "50+",
       "genre": "Health & Fitness",
       "screenshots": [
         "https://play-lh.googleusercontent.com/2enTLtV1SavunMD_-SoZqBuXLn306MNCI8UCsA33beyIGVSYZG4Y84pZN-s_Hi4R5C2Gsl0XMmcg7yR_LkrNCw",
@@ -102,8 +102,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3810,
-      "installs": 1250114,
+      "ratings": 3813,
+      "installs": 1251081,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -127,7 +127,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2429,
-      "installs": 148402,
+      "installs": 148580,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -151,7 +151,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.2,
       "ratings": 414,
-      "installs": 109821,
+      "installs": 109860,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -174,8 +174,8 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.4,
-      "ratings": 252,
-      "installs": 54465,
+      "ratings": 251,
+      "installs": 54606,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
