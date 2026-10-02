@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-10-01T10:20:09.975Z",
+  "fetchedAt": "2026-10-02T09:57:03.125Z",
   "totalApps": 10,
-  "totalInstalls": 1611621,
+  "totalInstalls": 1612269,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -34,7 +34,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.nexaserve.checkinapps",
       "score": null,
       "ratings": null,
-      "installs": 51,
+      "installs": 52,
       "installsText": "50+",
       "genre": "Health & Fitness",
       "screenshots": [
@@ -79,7 +79,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.tip_split",
       "score": null,
       "ratings": null,
-      "installs": 10,
+      "installs": 11,
       "installsText": "10+",
       "genre": "Finance",
       "screenshots": [
@@ -102,8 +102,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3827,
-      "installs": 1254945,
+      "ratings": 3829,
+      "installs": 1255396,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -127,7 +127,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2438,
-      "installs": 149124,
+      "installs": 149177,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -174,8 +174,8 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
-      "ratings": 260,
-      "installs": 55078,
+      "ratings": 261,
+      "installs": 55117,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -199,7 +199,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.sharemylocation.printgpscoordinatesonimage",
       "score": null,
       "ratings": null,
-      "installs": 24108,
+      "installs": 24112,
       "installsText": "10,000+",
       "genre": "Tools",
       "screenshots": [
@@ -223,7 +223,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.9,
       "ratings": 345,
-      "installs": 18153,
+      "installs": 18252,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
