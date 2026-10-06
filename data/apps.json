@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-10-05T10:42:29.137Z",
+  "fetchedAt": "2026-10-06T10:35:44.619Z",
   "totalApps": 10,
-  "totalInstalls": 1615866,
+  "totalInstalls": 1615939,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -102,8 +102,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3831,
-      "installs": 1257710,
+      "ratings": 3832,
+      "installs": 1257763,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -127,7 +127,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2439,
-      "installs": 149496,
+      "installs": 149500,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -151,7 +151,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.2,
       "ratings": 414,
-      "installs": 110081,
+      "installs": 110082,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -173,9 +173,9 @@
       "summary": "Digital Compass with accurate GPS Direction, Live Location &amp; Qibla Finder.",
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
-      "score": 3.6,
-      "ratings": 263,
-      "installs": 55419,
+      "score": 3.7,
+      "ratings": 265,
+      "installs": 55427,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -217,22 +217,22 @@
     },
     {
       "appId": "com.cardswallet.nfcreader",
-      "title": "Digital Card Wallet",
+      "title": "Digital Card Vault",
       "summary": "Securely store &amp; manage credit, debit &amp; loyalty cards in a digital card vault.",
       "icon": "https://play-lh.googleusercontent.com/KxNwsIT_rdhcdSgeL4Y2MryhAPM3sKtx30ku1-npjmo44kCKM-5o2M8DV9DGEOSDRdI3wNEFeDwMz0bhGZV0yg",
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.9,
       "ratings": 345,
-      "installs": 18788,
+      "installs": 18795,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
-        "https://play-lh.googleusercontent.com/nnHMpFWb4w-g2iYnHnLVQA2TrIIS9_kQwdIQxotl9krC1jANAryNDfD3SUCR52spE94BQYwDl0-XhFKYqMI7",
-        "https://play-lh.googleusercontent.com/XqqV0HpgxbKoeL0aYdnRDuZfU3GHoJA73NLVp-Yb-OCyl8LySyxChcUZ-qQ8Hfp5zR6vRKctijQmaOFLNyODLko",
-        "https://play-lh.googleusercontent.com/28OjUTHdDhPx75MSv7n7OBoi5n7RuV0ygnXJsNW4-X7u0TPlrPACAuxvuH4fW99jTo96HYZQCx9N1sgyCD7Y",
-        "https://play-lh.googleusercontent.com/GqU6ezae17oGT9s36T3l-dMuzzc_4ISLuZXguK2_fPpYc5-_sdUK95i3dM04_KJKk2KNM1_A89jCuBtCK5nlSw",
-        "https://play-lh.googleusercontent.com/cRfjfDDQcqyCpjaUpi0JJQo29z0ivnz-132CcEvqyq8hRFBZj0tyTLFPrGC-6H58Lq0NgCbmbZepIeh_h_kDfhQ",
-        "https://play-lh.googleusercontent.com/4iYxKeroFpcGt6Lb3uaH5E-1Cxg5r5GHfMdXvnB_FwYGLYh5tggRCsOna-70dHIYQT_N0Nol902dvnIQDZsqHdQ"
+        "https://play-lh.googleusercontent.com/o69UJzO48BDGARhBX0EqDr8e0mxYgBZ2hmURk81t4eWWfbPQtYtQFbRc_A1oUp65oa7w0QNdtuSZAi5jJSaO",
+        "https://play-lh.googleusercontent.com/CPAhMKfogNideWbYykMAW2n8om2roHFIio97_zxSOlM8jLyFFhWAB93go4Ld_F3g4HFiNOv-V7f2A-ZrhcSu9g",
+        "https://play-lh.googleusercontent.com/szBu8nO9jrlL-P6-r2C6YMpyxrT-KEfxBhaxnuyfweMEcEUqM-HPAZUVnjfoHw5izyJjV7EaDuZEIHtFQDG4Ig",
+        "https://play-lh.googleusercontent.com/0EkhtSABbGpI84HuzULpT5q0-Wv7hJjG8mHoKni8hEjK1i_yw9qVyFMH8Vsz2nN29ssHfjuptP8t5in_gpxjSfo",
+        "https://play-lh.googleusercontent.com/od_LkEXTnrPc0lHWVYK3mURXewrnBadvKGjtv9tt4mciJcbmsOG70iw1gChP2Oo2ob_uBYmoMrpjan8JQg_QpgE",
+        "https://play-lh.googleusercontent.com/kb4gwuHpTFw-TWMUwp7he_C66tvRp4pBKZjzdSm2jKAT48JQbb6WwMl56pkANGhwBnQniAjrx4mA2cB0ZFKb"
       ],
       "released": "Apr 21, 2025",
       "updated": 1789477941000,
