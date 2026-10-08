@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://setubandhtech.digital/sitemap.xml

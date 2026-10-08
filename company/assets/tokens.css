@@ -1,0 +1,37 @@
+/* Material 3 Expressive web adaptation: semantic color, type, shape, space and motion roles. */
+:root {
+  color-scheme: light;
+  --primary:#5c3894; --on-primary:#ffffff; --primary-container:#eaddff; --on-primary-container:#271143;
+  --secondary:#625871; --on-secondary:#ffffff; --secondary-container:#e9dff3; --on-secondary-container:#292134;
+  --tertiary:#4a6021; --on-tertiary:#ffffff; --tertiary-container:#d8ed80; --on-tertiary-container:#263400;
+  --surface:#f9f6fd; --on-surface:#211a2a; --on-surface-variant:#635b6b;
+  --surface-container-lowest:#ffffff; --surface-container-low:#f2eef7; --surface-container:#eee8f3; --surface-container-high:#e7e1ec; --surface-container-highest:#e1dbe6;
+  --outline:#7c7386; --outline-variant:#cfc4da; --error:#a72c36; --error-container:#ffdadb;
+  --money-container:var(--primary-container); --money-ink:var(--on-primary-container);
+  --safety-container:var(--secondary-container); --safety-ink:var(--on-secondary-container);
+  --water-container:#d8e9fd; --water-ink:#152c46; --bills-container:var(--tertiary-container); --bills-ink:var(--on-tertiary-container);
+  --brand-panel:var(--tertiary-container); --brand-ink:var(--on-tertiary-container);
+  --font:'Roboto Flex',system-ui,sans-serif;
+  --display-large:clamp(4rem,7.8vw,7.5rem); --display-medium:clamp(3rem,4.5vw,4.5rem); --display-small:2.5rem;
+  --headline-large:2rem; --headline-medium:1.75rem; --title-large:1.375rem; --title-medium:1.125rem;
+  --body-large:1.125rem; --body-medium:1rem; --body-small:.875rem; --label-large:1rem; --label-small:.75rem;
+  --weight-display:760; --weight-emphasized:700; --weight-label:600; --weight-body:400;
+  --tracking-display:-.055em; --tracking-headline:-.035em; --tracking-label:.08em;
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px; --space-6:24px; --space-8:32px; --space-12:48px; --space-16:64px; --space-24:96px;
+  --shape-small:12px; --shape-medium:16px; --shape-large:24px; --shape-extra-large:32px; --shape-extra-large-increased:48px; --shape-full:999px;
+  --touch-target:48px; --icon-small:20px; --icon-default:24px; --icon-large:32px; --icon-display:48px;
+  --page-max:1360px; --reading-max:840px; --header-height:96px;
+  --motion-fast-time:0s; --motion-default-time:0s; --motion-slow-time:0s; --motion-effects-time:0s; --motion-spatial-curve:linear; --motion-effects-curve:linear;
+}
+[data-theme="dark"] {
+  color-scheme:dark;
+  --primary:#d2b5ff; --on-primary:#321359; --primary-container:#4a287c; --on-primary-container:#ecdeff;
+  --secondary:#cdbeda; --on-secondary:#352a42; --secondary-container:#4d405a; --on-secondary-container:#ecdef8;
+  --tertiary:#bfd56d; --on-tertiary:#263400; --tertiary-container:#394b0e; --on-tertiary-container:#d8ed80;
+  --surface:#16111d; --on-surface:#ebe1f3; --on-surface-variant:#cdc2d7;
+  --surface-container-lowest:#110d17; --surface-container-low:#1f1828; --surface-container:#251e2e; --surface-container-high:#302638; --surface-container-highest:#3b3144;
+  --outline:#978ba3; --outline-variant:#504357; --error:#ffb3b8; --error-container:#80212b;
+  --water-container:#253f59; --water-ink:#d8e9fd;
+  --brand-panel:#d8ed80; --brand-ink:#263400;
+}
+@media (max-width:600px) { :root {--display-large:clamp(3.65rem,12vw,5.25rem);--display-medium:2.75rem;--header-height:80px;} }
