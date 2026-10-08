@@ -28,3 +28,4 @@ test('company, www and portfolio remain distinct; upstream receives no visitor c
     assert.equal((await worker.fetch(new Request('https://setubandhtech.digital/'))).status,503);
   } finally {globalThis.fetch = original;}
 });
+

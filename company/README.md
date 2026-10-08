@@ -9,8 +9,8 @@ Both websites are managed in `krishvekriya12/krishvekriya12.github.io`:
 ## Hosting
 
 The root `CNAME`, original HTML, portfolio assets and existing data workflow stay unchanged.
-GitHub Pages publishes both the root and the `company/` folder automatically on pushes to `main`.
-The Cloudflare Worker `setubandh-company` uses the checked-in `hosting/worker.js` to serve the company folder on the main domain. It handles only `setubandhtech.digital/*` and `www.setubandhtech.digital/*`. The `www` host redirects to the main domain.
+GitHub Pages publishes both the original portfolio and the `company/` folder automatically on pushes to `main`.
+The Cloudflare Worker `setubandh-company` uses the checked-in `hosting/worker.js` to serve that published company folder on the main domain. It handles only `setubandhtech.digital/*` and `www.setubandhtech.digital/*`. The `www` host redirects to the main domain.
 
 Company HTML, CSS, JavaScript, brand assets and product updates are published by GitHub Pages, so routine website changes need only a commit in this repository. Only routing-code edits need a Cloudflare Worker redeployment.
 
