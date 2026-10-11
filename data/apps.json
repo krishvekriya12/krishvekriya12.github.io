@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-10-10T10:01:45.466Z",
+  "fetchedAt": "2026-10-11T10:11:38.918Z",
   "totalApps": 10,
-  "totalInstalls": 1619483,
+  "totalInstalls": 1619494,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -102,8 +102,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 3880,
-      "installs": 1260123,
+      "ratings": 3905,
+      "installs": 1260127,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -127,7 +127,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2437,
-      "installs": 149766,
+      "installs": 149767,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -174,8 +174,8 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
-      "ratings": 266,
-      "installs": 55622,
+      "ratings": 265,
+      "installs": 55625,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -199,7 +199,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.sharemylocation.printgpscoordinatesonimage",
       "score": null,
       "ratings": null,
-      "installs": 24133,
+      "installs": 24135,
       "installsText": "10,000+",
       "genre": "Tools",
       "screenshots": [
@@ -222,8 +222,8 @@
       "icon": "https://play-lh.googleusercontent.com/KxNwsIT_rdhcdSgeL4Y2MryhAPM3sKtx30ku1-npjmo44kCKM-5o2M8DV9DGEOSDRdI3wNEFeDwMz0bhGZV0yg",
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.9,
-      "ratings": 345,
-      "installs": 19410,
+      "ratings": 346,
+      "installs": 19411,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
