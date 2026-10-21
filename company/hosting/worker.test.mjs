@@ -29,3 +29,28 @@ test('company, www and portfolio remain distinct; upstream receives no visitor c
   } finally {globalThis.fetch = original;}
 });
 
+
+test('ads.txt proxies the root file for GET and HEAD with plain-text content', async () => {
+  const original = globalThis.fetch;
+  const requests = [];
+  const content = 'google.com, pub-5832096195010647, DIRECT, f08c47fec0942fa0';
+  globalThis.fetch = async (url, options) => {
+    requests.push({url, options});
+    return new Response(options.method === 'HEAD' ? null : content);
+  };
+  try {
+    for (const method of ['GET', 'HEAD']) {
+      const response = await worker.fetch(new Request('https://setubandhtech.digital/ads.txt', {method}));
+      assert.equal(response.status, 200);
+      assert.equal(response.headers.get('content-type'), 'text/plain; charset=utf-8');
+      assert.equal(await response.text(), method === 'HEAD' ? '' : content);
+    }
+    assert.deepEqual(requests.map(({url, options}) => [url, options.method]), [
+      ['https://portfolio.setubandhtech.digital/ads.txt', 'GET'],
+      ['https://portfolio.setubandhtech.digital/ads.txt', 'HEAD']
+    ]);
+    const redirect = await worker.fetch(new Request('https://www.setubandhtech.digital/ads.txt'));
+    assert.equal(redirect.status, 308);
+    assert.equal(redirect.headers.get('location'), 'https://setubandhtech.digital/ads.txt');
+  } finally { globalThis.fetch = original; }
+});
