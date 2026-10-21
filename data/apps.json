@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-10-20T08:44:34.349Z",
+  "fetchedAt": "2026-10-21T08:45:15.548Z",
   "totalApps": 10,
-  "totalInstalls": 1624588,
+  "totalInstalls": 1626123,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -73,8 +73,8 @@
     },
     {
       "appId": "com.setubandhTech.tip_split",
-      "title": "TipSplit: Bill Splitter & Tip",
-      "summary": "Split bills &amp; calculate tips easily. Manage group expenses &amp; trip costs.",
+      "title": "TipSplit: Tip & Bill Split",
+      "summary": "Split bills with friends, calculate tips, and see what each person owes.",
       "icon": "https://play-lh.googleusercontent.com/Xv490obWEgOt8fRHdDTR-TeSBTyhqVECQ6FJytWkHS_90dlxNo57vDvgABHxEeRGFZ-4yfqhU_r-zt6VLvh8",
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.tip_split",
       "score": null,
@@ -102,8 +102,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 4065,
-      "installs": 1263714,
+      "ratings": 4081,
+      "installs": 1264944,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -151,7 +151,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.2,
       "ratings": 415,
-      "installs": 110377,
+      "installs": 110428,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -175,7 +175,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
       "ratings": 272,
-      "installs": 55941,
+      "installs": 56063,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -199,7 +199,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.sharemylocation.printgpscoordinatesonimage",
       "score": null,
       "ratings": null,
-      "installs": 24144,
+      "installs": 24149,
       "installsText": "10,000+",
       "genre": "Tools",
       "screenshots": [
@@ -223,7 +223,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.9,
       "ratings": 352,
-      "installs": 20014,
+      "installs": 20141,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
