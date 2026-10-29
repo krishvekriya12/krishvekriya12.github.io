@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-10-28T09:54:48.043Z",
+  "fetchedAt": "2026-10-29T10:15:51.914Z",
   "totalApps": 10,
-  "totalInstalls": 1629370,
+  "totalInstalls": 1629373,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -104,8 +104,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 4183,
-      "installs": 1267254,
+      "ratings": 4197,
+      "installs": 1267256,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -152,7 +152,7 @@
       "icon": "https://play-lh.googleusercontent.com/cwMDSGHUhdZei_7yThxaY7FaRBAQ2P6aWKUvpUar2tWqTd9QY2f8eEct0v8Ylce4y_eysBbVntjXGH-r7DMFgw",
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.2,
-      "ratings": 415,
+      "ratings": 416,
       "installs": 110549,
       "installsText": "100,000+",
       "genre": "Photography",
@@ -176,7 +176,7 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
-      "ratings": 274,
+      "ratings": 275,
       "installs": 56294,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
@@ -224,8 +224,8 @@
       "icon": "https://play-lh.googleusercontent.com/KxNwsIT_rdhcdSgeL4Y2MryhAPM3sKtx30ku1-npjmo44kCKM-5o2M8DV9DGEOSDRdI3wNEFeDwMz0bhGZV0yg",
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.8,
-      "ratings": 368,
-      "installs": 20384,
+      "ratings": 365,
+      "installs": 20385,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
