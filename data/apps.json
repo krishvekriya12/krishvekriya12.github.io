@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-10-30T10:17:28.384Z",
+  "fetchedAt": "2026-10-31T09:51:17.261Z",
   "totalApps": 10,
-  "totalInstalls": 1629373,
+  "totalInstalls": 1629734,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -36,7 +36,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.nexaserve.checkinapps",
       "score": null,
       "ratings": null,
-      "installs": 57,
+      "installs": 60,
       "installsText": "50+",
       "genre": "Health & Fitness",
       "screenshots": [
@@ -104,7 +104,7 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 4203,
+      "ratings": 4222,
       "installs": 1267256,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
@@ -129,7 +129,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2443,
-      "installs": 150477,
+      "installs": 150585,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -153,7 +153,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.2,
       "ratings": 416,
-      "installs": 110549,
+      "installs": 110588,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -177,7 +177,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
       "ratings": 275,
-      "installs": 56294,
+      "installs": 56403,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -219,22 +219,22 @@
     },
     {
       "appId": "com.cardswallet.nfcreader",
-      "title": "Digital Card Vault",
-      "summary": "Securely store &amp; manage credit, debit &amp; loyalty cards in a digital card vault.",
+      "title": "Card Wallet: NFC Card Holder",
+      "summary": "Organize credit, debit &amp; loyalty cards with NFC card reader &amp; secure lock.",
       "icon": "https://play-lh.googleusercontent.com/KxNwsIT_rdhcdSgeL4Y2MryhAPM3sKtx30ku1-npjmo44kCKM-5o2M8DV9DGEOSDRdI3wNEFeDwMz0bhGZV0yg",
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.8,
-      "ratings": 365,
-      "installs": 20385,
+      "ratings": 361,
+      "installs": 20487,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
-        "https://play-lh.googleusercontent.com/o69UJzO48BDGARhBX0EqDr8e0mxYgBZ2hmURk81t4eWWfbPQtYtQFbRc_A1oUp65oa7w0QNdtuSZAi5jJSaO",
-        "https://play-lh.googleusercontent.com/CPAhMKfogNideWbYykMAW2n8om2roHFIio97_zxSOlM8jLyFFhWAB93go4Ld_F3g4HFiNOv-V7f2A-ZrhcSu9g",
-        "https://play-lh.googleusercontent.com/szBu8nO9jrlL-P6-r2C6YMpyxrT-KEfxBhaxnuyfweMEcEUqM-HPAZUVnjfoHw5izyJjV7EaDuZEIHtFQDG4Ig",
-        "https://play-lh.googleusercontent.com/0EkhtSABbGpI84HuzULpT5q0-Wv7hJjG8mHoKni8hEjK1i_yw9qVyFMH8Vsz2nN29ssHfjuptP8t5in_gpxjSfo",
-        "https://play-lh.googleusercontent.com/od_LkEXTnrPc0lHWVYK3mURXewrnBadvKGjtv9tt4mciJcbmsOG70iw1gChP2Oo2ob_uBYmoMrpjan8JQg_QpgE",
-        "https://play-lh.googleusercontent.com/kb4gwuHpTFw-TWMUwp7he_C66tvRp4pBKZjzdSm2jKAT48JQbb6WwMl56pkANGhwBnQniAjrx4mA2cB0ZFKb"
+        "https://play-lh.googleusercontent.com/SNZgg55m905dOU1GnTRpuDg5iWOsmLYfoWTLAqMiMzDEWuXVf00CX9qD4POZ9dIJKPF0ia2XvwVeiP_z1oMjKQ",
+        "https://play-lh.googleusercontent.com/6wDEa7gme10d9kIl9CwwdTzY2QDn6vC5TiNW7yw2eqNY2P0w0px8gqr1ZW-svddMvkibzbF0z88G_jbhCmi6Qw",
+        "https://play-lh.googleusercontent.com/7Uj4_ER0Vy0Z-MJzTTaZtTKc1prXrt38K3_1hqPq_c5boRw0VxfC3M1xPnFmHGy3rjDw704HDWxDNlMJQNnj7A",
+        "https://play-lh.googleusercontent.com/2pVjhW4mdIMzkVtvnZsmOW_ftjrfc7cWKSWTYZVYgJxdq0VBUC-o6wFLM7Hk1bWJ2N48L0N6SnZtVdIiWfFc",
+        "https://play-lh.googleusercontent.com/gBCti3A8R2FbJ9f6kHitT-vFrLYvnxZdpWa3DTVDK3Pmr8duWusf1QgAzYOHMo5mkWESbAEWftHHHVQnawHngQ",
+        "https://play-lh.googleusercontent.com/J72QgCb_ruGLB5d2L64IoIjg6xX5Uajd1-eahxW2XzHTbeaAsANidMDOY--3aK4Mq73uIzyqKrp7biA_9JWeqw"
       ],
       "released": "Apr 21, 2025",
       "updated": 1789477941000,
