@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-10-31T09:51:17.261Z",
+  "fetchedAt": "2026-11-01T10:41:20.560Z",
   "totalApps": 10,
-  "totalInstalls": 1629734,
+  "totalInstalls": 1630648,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -13,7 +13,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.cashflow",
       "score": null,
       "ratings": null,
-      "installs": 168,
+      "installs": 169,
       "installsText": "100+",
       "genre": "Finance",
       "screenshots": [
@@ -25,7 +25,7 @@
         "https://play-lh.googleusercontent.com/qq5UIB_kEHd1wSNRtyOJQTjzxEPnGYHmPgD37JYJBPTR239Ngoby5_cTfr02QqbCXLXKnND8DLjlr6OnL5DI9w"
       ],
       "released": "May 7, 2026",
-      "updated": 1793122302000,
+      "updated": 1793524846000,
       "free": true
     },
     {
@@ -104,8 +104,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 4222,
-      "installs": 1267256,
+      "ratings": 4236,
+      "installs": 1268164,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -201,7 +201,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.sharemylocation.printgpscoordinatesonimage",
       "score": null,
       "ratings": null,
-      "installs": 24158,
+      "installs": 24163,
       "installsText": "10,000+",
       "genre": "Tools",
       "screenshots": [
@@ -224,7 +224,7 @@
       "icon": "https://play-lh.googleusercontent.com/KxNwsIT_rdhcdSgeL4Y2MryhAPM3sKtx30ku1-npjmo44kCKM-5o2M8DV9DGEOSDRdI3wNEFeDwMz0bhGZV0yg",
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.8,
-      "ratings": 361,
+      "ratings": 356,
       "installs": 20487,
       "installsText": "10,000+",
       "genre": "Finance",
