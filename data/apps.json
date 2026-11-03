@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-11-02T11:30:11.514Z",
+  "fetchedAt": "2026-11-03T11:08:54.370Z",
   "totalApps": 10,
-  "totalInstalls": 1630651,
+  "totalInstalls": 1632437,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -58,7 +58,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhtech.water_reminder",
       "score": null,
       "ratings": null,
-      "installs": 18,
+      "installs": 20,
       "installsText": "10+",
       "genre": "Health & Fitness",
       "screenshots": [
@@ -104,8 +104,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 4246,
-      "installs": 1268164,
+      "ratings": 4258,
+      "installs": 1269431,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -129,7 +129,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2443,
-      "installs": 150585,
+      "installs": 150765,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -153,7 +153,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.2,
       "ratings": 416,
-      "installs": 110588,
+      "installs": 110667,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -165,7 +165,7 @@
         "https://play-lh.googleusercontent.com/AGRspOJZtqhQSpfUCLE3rHeciU5TQfKUxyYBtbbZWUgjCWYFbPtMao5irxAxTlAG0_DKK0aIaR7Sw-WDyeyF"
       ],
       "released": "Dec 23, 2020",
-      "updated": 1787657911000,
+      "updated": 1793694953000,
       "free": true,
       "company": "Susamp Infotech"
     },
@@ -177,7 +177,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
       "ratings": 275,
-      "installs": 56403,
+      "installs": 56540,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -201,7 +201,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.sharemylocation.printgpscoordinatesonimage",
       "score": null,
       "ratings": null,
-      "installs": 24163,
+      "installs": 24172,
       "installsText": "10,000+",
       "genre": "Tools",
       "screenshots": [
@@ -224,8 +224,8 @@
       "icon": "https://play-lh.googleusercontent.com/KxNwsIT_rdhcdSgeL4Y2MryhAPM3sKtx30ku1-npjmo44kCKM-5o2M8DV9DGEOSDRdI3wNEFeDwMz0bhGZV0yg",
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.8,
-      "ratings": 354,
-      "installs": 20487,
+      "ratings": 352,
+      "installs": 20599,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
