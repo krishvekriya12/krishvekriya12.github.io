@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-11-10T11:28:20.006Z",
+  "fetchedAt": "2026-11-11T11:17:00.658Z",
   "totalApps": 11,
-  "totalInstalls": 1635693,
+  "totalInstalls": 1636533,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -36,7 +36,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.nexaserve.checkinapps",
       "score": null,
       "ratings": null,
-      "installs": 62,
+      "installs": 64,
       "installsText": "50+",
       "genre": "Health & Fitness",
       "screenshots": [
@@ -127,8 +127,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 4296,
-      "installs": 1271670,
+      "ratings": 4305,
+      "installs": 1272258,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -152,7 +152,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2444,
-      "installs": 151007,
+      "installs": 151098,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -176,7 +176,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.2,
       "ratings": 416,
-      "installs": 110763,
+      "installs": 110783,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -200,7 +200,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
       "ratings": 280,
-      "installs": 56720,
+      "installs": 56758,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -224,7 +224,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.sharemylocation.printgpscoordinatesonimage",
       "score": null,
       "ratings": null,
-      "installs": 24175,
+      "installs": 24177,
       "installsText": "10,000+",
       "genre": "Tools",
       "screenshots": [
@@ -246,9 +246,9 @@
       "summary": "Organize credit, debit &amp; loyalty cards with NFC card reader &amp; secure lock.",
       "icon": "https://play-lh.googleusercontent.com/KxNwsIT_rdhcdSgeL4Y2MryhAPM3sKtx30ku1-npjmo44kCKM-5o2M8DV9DGEOSDRdI3wNEFeDwMz0bhGZV0yg",
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
-      "score": 4.8,
-      "ratings": 359,
-      "installs": 21064,
+      "score": 4.9,
+      "ratings": 367,
+      "installs": 21163,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
