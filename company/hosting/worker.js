@@ -11,6 +11,7 @@ export default {
     let originPath;
     if (url.pathname === '/' || url.pathname === '/index.html') originPath = '/company/index.html';
     else if (url.pathname === '/ads.txt') originPath = '/ads.txt';
+    else if (url.pathname === '/app-ads.txt') originPath = '/app-ads.txt';
     else if (url.pathname === '/data/apps.json') originPath = '/data/apps.json';
     else if (url.pathname.startsWith('/assets/') || ['/robots.txt','/sitemap.xml'].includes(url.pathname)) originPath = '/company' + url.pathname;
     else return new Response('Not found', {status:404,headers:{'Content-Type':'text/plain; charset=utf-8'}});
