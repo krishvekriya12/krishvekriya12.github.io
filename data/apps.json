@@ -1,8 +1,8 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-11-13T11:19:47.760Z",
-  "totalApps": 11,
+  "fetchedAt": "2026-11-14T10:43:59.536Z",
+  "totalApps": 12,
   "totalInstalls": 1636533,
   "myApps": [
     {
@@ -117,6 +117,29 @@
       "released": "Jul 24, 2026",
       "updated": 1785257054000,
       "free": true
+    },
+    {
+      "appId": "com.setubandhTech.udharsetu",
+      "title": "Udhar Setu: Udhar Bahi Khata",
+      "summary": "Shop udhar &amp; cash ledger in Gujarati, Hindi, English. Data stays on your phone.",
+      "icon": "https://play-lh.googleusercontent.com/X6A5qBD4lLGN0o6OsN-pcu235jy3vkyWUCIsQluKHsH1cMpHsArE0cKlYy5KXrZLF7rqXQOnBXY21wvgOxnscZA",
+      "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.udharsetu",
+      "score": null,
+      "ratings": null,
+      "installs": 0,
+      "installsText": "0+",
+      "genre": "Business",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/nT72MxoAtrOisCPKiQJH9Z_p3LmIqsABxoRIxgjSv3JM-zQto996M28pgJAMAOhdxWsRyIaLF3dGRhawtgbdZAI",
+        "https://play-lh.googleusercontent.com/-4U0VME3wZkuAQPeQdWRhA8JCq9zVDTCyG-eFlL4wAd1LhI5bDNHuXNk6_Z7XC-QX6tJBi4HQMxjdQXfhtCK",
+        "https://play-lh.googleusercontent.com/QdECl3aYmNjJ69NA4CeNGuBbm4nMWUhjpkaPiJvffWtO7-EgWDoGpNPtSQweG3jkkDD6dTBe7e2K3lBUjKu9-w",
+        "https://play-lh.googleusercontent.com/kCZcYa8gRhEWtMMqWen3l5tCkqF8sYWntTU1OSjeBCAAXiZQzaNhwlTBVDQ8fqpmxl6RMgbI8BFcjVRFwW1_",
+        "https://play-lh.googleusercontent.com/Z1ILfBobB5bOBx1WuAvR_xIIckh3sX3LVksJuJsQdRi99DtnJSNelBcydDMLsVQUz860GxrwPYBc9GW3Mqk5",
+        "https://play-lh.googleusercontent.com/IgGh39cF6EqAcsWMA9gr6K7Bdt-mWsRFKy_7EPJWJmohwrpYVz-SrK5AdURwZKCThriBxQFlNdKjs-7gsgDD"
+      ],
+      "released": "Nov 13, 2026",
+      "updated": 1794636896000,
+      "free": true
     }
   ],
   "workApps": [
@@ -127,7 +150,7 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 4323,
+      "ratings": 4332,
       "installs": 1272258,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
