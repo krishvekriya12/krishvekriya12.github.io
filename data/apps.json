@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-11-16T11:50:42.977Z",
+  "fetchedAt": "2026-11-17T12:11:57.788Z",
   "totalApps": 12,
-  "totalInstalls": 1636533,
+  "totalInstalls": 1639341,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -13,7 +13,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.cashflow",
       "score": null,
       "ratings": null,
-      "installs": 180,
+      "installs": 183,
       "installsText": "100+",
       "genre": "Finance",
       "screenshots": [
@@ -25,7 +25,7 @@
         "https://play-lh.googleusercontent.com/qq5UIB_kEHd1wSNRtyOJQTjzxEPnGYHmPgD37JYJBPTR239Ngoby5_cTfr02QqbCXLXKnND8DLjlr6OnL5DI9w"
       ],
       "released": "May 7, 2026",
-      "updated": 1794072364000,
+      "updated": 1794842269000,
       "free": true
     },
     {
@@ -81,7 +81,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.shaketorch",
       "score": null,
       "ratings": null,
-      "installs": 18,
+      "installs": 22,
       "installsText": "10+",
       "genre": "Tools",
       "screenshots": [
@@ -126,8 +126,8 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.udharsetu",
       "score": null,
       "ratings": null,
-      "installs": 0,
-      "installsText": "0+",
+      "installs": 4,
+      "installsText": "1+",
       "genre": "Business",
       "screenshots": [
         "https://play-lh.googleusercontent.com/nT72MxoAtrOisCPKiQJH9Z_p3LmIqsABxoRIxgjSv3JM-zQto996M28pgJAMAOhdxWsRyIaLF3dGRhawtgbdZAI",
@@ -138,7 +138,7 @@
         "https://play-lh.googleusercontent.com/IgGh39cF6EqAcsWMA9gr6K7Bdt-mWsRFKy_7EPJWJmohwrpYVz-SrK5AdURwZKCThriBxQFlNdKjs-7gsgDD"
       ],
       "released": "Nov 13, 2026",
-      "updated": 1794636896000,
+      "updated": 1794832995000,
       "free": true
     }
   ],
@@ -150,8 +150,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 4340,
-      "installs": 1272258,
+      "ratings": 4344,
+      "installs": 1274397,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -175,7 +175,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2445,
-      "installs": 151098,
+      "installs": 151283,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -199,7 +199,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.2,
       "ratings": 416,
-      "installs": 110783,
+      "installs": 110853,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -223,7 +223,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
       "ratings": 278,
-      "installs": 56758,
+      "installs": 56870,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -247,7 +247,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.sharemylocation.printgpscoordinatesonimage",
       "score": null,
       "ratings": null,
-      "installs": 24177,
+      "installs": 24182,
       "installsText": "10,000+",
       "genre": "Tools",
       "screenshots": [
@@ -269,9 +269,9 @@
       "summary": "Organize credit, debit &amp; loyalty cards with NFC card reader &amp; secure lock.",
       "icon": "https://play-lh.googleusercontent.com/KxNwsIT_rdhcdSgeL4Y2MryhAPM3sKtx30ku1-npjmo44kCKM-5o2M8DV9DGEOSDRdI3wNEFeDwMz0bhGZV0yg",
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
-      "score": 4.9,
-      "ratings": 375,
-      "installs": 21163,
+      "score": 4.8,
+      "ratings": 378,
+      "installs": 21449,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
