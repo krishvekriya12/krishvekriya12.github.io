@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-11-17T12:11:57.788Z",
+  "fetchedAt": "2026-11-18T11:59:55.881Z",
   "totalApps": 12,
-  "totalInstalls": 1639341,
+  "totalInstalls": 1640884,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -25,7 +25,7 @@
         "https://play-lh.googleusercontent.com/qq5UIB_kEHd1wSNRtyOJQTjzxEPnGYHmPgD37JYJBPTR239Ngoby5_cTfr02QqbCXLXKnND8DLjlr6OnL5DI9w"
       ],
       "released": "May 7, 2026",
-      "updated": 1794842269000,
+      "updated": 1794929864000,
       "free": true
     },
     {
@@ -51,29 +51,6 @@
       "free": true
     },
     {
-      "appId": "com.setubandhtech.water_reminder",
-      "title": "Water Reminder & Drink Tracker",
-      "summary": "Water intake tracker &amp; drink reminder. Log hydration &amp; reach your daily goal.",
-      "icon": "https://play-lh.googleusercontent.com/7xiCKGRen23B2eE6WPehJdHsfRbn0HU5V6fAo72TadgxhxpRR7amv6la-gSaO-7Vt4CWWIA78ccUDC2EhipXsg",
-      "url": "https://play.google.com/store/apps/details?id=com.setubandhtech.water_reminder",
-      "score": null,
-      "ratings": null,
-      "installs": 23,
-      "installsText": "10+",
-      "genre": "Health & Fitness",
-      "screenshots": [
-        "https://play-lh.googleusercontent.com/-OQ4Znm_mqAXozPRig06glbHhL-apGKGmhd7BuTqb-PIbsjVUpS7j-Z27B-RU4N9AUf1PfCt3tG4XqZ3qCuQ8nQ",
-        "https://play-lh.googleusercontent.com/QATMJCWtAOlhi9RDckTgcwkm3SbvFJfDQf3FBt7CIJpcbkgyvJJKrDQYBtJrr92BaVVGONLiTpE5DvG5dGfX",
-        "https://play-lh.googleusercontent.com/KJLb2a-d8N_SPY5VjUKCriNFGmZFeslCZr-0eSD3TiQ_vEDgt7Uf-j7jkeiEpk8Yxva92G3Ir-2zBzcS1sQrXHk",
-        "https://play-lh.googleusercontent.com/AevgJ_0DjnjwB1COQgy04dIa1vpwcUKQiz3cOqPiM0vNKj7hmKS23ycTZMQKOrG1o8WfeSj9COBfjIIy2i20Vw",
-        "https://play-lh.googleusercontent.com/aCEGBJg8yw59nBC2PSWenzxZ0g8XuHZnSgEpSQ5zrmYu2LDA-s6XEdTJX7vsIQKGl3wojs5hemRfo_1psIbiNjg",
-        "https://play-lh.googleusercontent.com/2oNDjmfckn9ORh_iy5dsThcGJdRGpWTIDwo0zqYD4R1UakC184whD6BDRgiIAC3DPnDCPBYyWEcZdNx962MM2w"
-      ],
-      "released": "Jul 21, 2026",
-      "updated": 1784687432000,
-      "free": true
-    },
-    {
       "appId": "com.setubandhTech.shaketorch",
       "title": "Shake Flashlight & Flash Alert",
       "summary": "Shake to toggle flashlight. Get flash alerts for calls, SMS &amp; app notifications.",
@@ -81,7 +58,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.setubandhTech.shaketorch",
       "score": null,
       "ratings": null,
-      "installs": 22,
+      "installs": 24,
       "installsText": "10+",
       "genre": "Tools",
       "screenshots": [
@@ -94,6 +71,29 @@
       ],
       "released": "Oct 29, 2026",
       "updated": 1793293029000,
+      "free": true
+    },
+    {
+      "appId": "com.setubandhtech.water_reminder",
+      "title": "Water Reminder & Drink Tracker",
+      "summary": "Water intake tracker &amp; drink reminder. Log hydration &amp; reach your daily goal.",
+      "icon": "https://play-lh.googleusercontent.com/7xiCKGRen23B2eE6WPehJdHsfRbn0HU5V6fAo72TadgxhxpRR7amv6la-gSaO-7Vt4CWWIA78ccUDC2EhipXsg",
+      "url": "https://play.google.com/store/apps/details?id=com.setubandhtech.water_reminder",
+      "score": null,
+      "ratings": null,
+      "installs": 24,
+      "installsText": "10+",
+      "genre": "Health & Fitness",
+      "screenshots": [
+        "https://play-lh.googleusercontent.com/-OQ4Znm_mqAXozPRig06glbHhL-apGKGmhd7BuTqb-PIbsjVUpS7j-Z27B-RU4N9AUf1PfCt3tG4XqZ3qCuQ8nQ",
+        "https://play-lh.googleusercontent.com/QATMJCWtAOlhi9RDckTgcwkm3SbvFJfDQf3FBt7CIJpcbkgyvJJKrDQYBtJrr92BaVVGONLiTpE5DvG5dGfX",
+        "https://play-lh.googleusercontent.com/KJLb2a-d8N_SPY5VjUKCriNFGmZFeslCZr-0eSD3TiQ_vEDgt7Uf-j7jkeiEpk8Yxva92G3Ir-2zBzcS1sQrXHk",
+        "https://play-lh.googleusercontent.com/AevgJ_0DjnjwB1COQgy04dIa1vpwcUKQiz3cOqPiM0vNKj7hmKS23ycTZMQKOrG1o8WfeSj9COBfjIIy2i20Vw",
+        "https://play-lh.googleusercontent.com/aCEGBJg8yw59nBC2PSWenzxZ0g8XuHZnSgEpSQ5zrmYu2LDA-s6XEdTJX7vsIQKGl3wojs5hemRfo_1psIbiNjg",
+        "https://play-lh.googleusercontent.com/2oNDjmfckn9ORh_iy5dsThcGJdRGpWTIDwo0zqYD4R1UakC184whD6BDRgiIAC3DPnDCPBYyWEcZdNx962MM2w"
+      ],
+      "released": "Jul 21, 2026",
+      "updated": 1784687432000,
       "free": true
     },
     {
@@ -150,8 +150,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 4344,
-      "installs": 1274397,
+      "ratings": 4360,
+      "installs": 1275624,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -174,8 +174,8 @@
       "icon": "https://play-lh.googleusercontent.com/JtpN1YkW3k3-ZEQ30Z6yNk8jQ2lwyJCeBrma_1piu_uJbXeqtwuWe2GjcBH85_S8JW0D5mQybynsCrgAHUvX",
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
-      "ratings": 2445,
-      "installs": 151283,
+      "ratings": 2447,
+      "installs": 151333,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -199,7 +199,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.2,
       "ratings": 416,
-      "installs": 110853,
+      "installs": 110925,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -222,8 +222,8 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
-      "ratings": 278,
-      "installs": 56870,
+      "ratings": 279,
+      "installs": 56933,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -247,7 +247,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.sharemylocation.printgpscoordinatesonimage",
       "score": null,
       "ratings": null,
-      "installs": 24182,
+      "installs": 24186,
       "installsText": "10,000+",
       "genre": "Tools",
       "screenshots": [
@@ -270,8 +270,8 @@
       "icon": "https://play-lh.googleusercontent.com/KxNwsIT_rdhcdSgeL4Y2MryhAPM3sKtx30ku1-npjmo44kCKM-5o2M8DV9DGEOSDRdI3wNEFeDwMz0bhGZV0yg",
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.8,
-      "ratings": 378,
-      "installs": 21449,
+      "ratings": 380,
+      "installs": 21573,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
