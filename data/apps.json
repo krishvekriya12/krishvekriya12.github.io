@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-11-18T11:59:55.881Z",
+  "fetchedAt": "2026-11-19T11:57:02.357Z",
   "totalApps": 12,
-  "totalInstalls": 1640884,
+  "totalInstalls": 1640900,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -47,7 +47,7 @@
         "https://play-lh.googleusercontent.com/ZI9kNPJttxNY_eLzimToJp6OeOxzS-tlj6ncadnO6tAUUIn_cPjEwYDHQUH-zd6nU6djBrovCZKS1hMrWC054qM"
       ],
       "released": "Apr 13, 2026",
-      "updated": 1788282189000,
+      "updated": 1795058091000,
       "free": true
     },
     {
@@ -138,7 +138,7 @@
         "https://play-lh.googleusercontent.com/IgGh39cF6EqAcsWMA9gr6K7Bdt-mWsRFKy_7EPJWJmohwrpYVz-SrK5AdURwZKCThriBxQFlNdKjs-7gsgDD"
       ],
       "released": "Nov 13, 2026",
-      "updated": 1794832995000,
+      "updated": 1795017299000,
       "free": true
     }
   ],
@@ -150,8 +150,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 4360,
-      "installs": 1275624,
+      "ratings": 4364,
+      "installs": 1275640,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -163,7 +163,7 @@
         "https://play-lh.googleusercontent.com/b6Hhr3aCZOYu4PY-ZaRNi35U3b1NFu5Au-vQhZ_jRATOAj9AFAgmwMOniH1ZlRh7kFyGFxaL_v4xhamTtVDLUw"
       ],
       "released": "Jun 22, 2020",
-      "updated": 1791888703000,
+      "updated": 1795083545000,
       "free": true,
       "company": "Susamp Infotech"
     },
@@ -222,7 +222,7 @@
       "icon": "https://play-lh.googleusercontent.com/YJZg48cj3pU37-Vqu-Qtg3sCZVSaXB0ROHGv7YU4Vgue2cg2tubO22_EZ_St7CJs_xZflUeKkgs1jn9pFDWy",
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
-      "ratings": 279,
+      "ratings": 280,
       "installs": 56933,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
