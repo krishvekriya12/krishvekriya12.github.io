@@ -1,9 +1,9 @@
 {
   "developer": "Setubandh Tech",
   "devUrl": "https://play.google.com/store/apps/dev?id=7084161944711464301",
-  "fetchedAt": "2026-11-23T13:23:09.462Z",
+  "fetchedAt": "2026-11-24T14:02:54.043Z",
   "totalApps": 12,
-  "totalInstalls": 1644144,
+  "totalInstalls": 1644719,
   "myApps": [
     {
       "appId": "com.setubandhTech.cashflow",
@@ -150,8 +150,8 @@
       "icon": "https://play-lh.googleusercontent.com/H-ZE98ir6DXSjiYzz2xRUQP3paIf8Kcb9WyUyApHQs25og-9-4BFJ3BfQC0Z1vc79RghiGfKTLlqIdXTH0DW",
       "url": "https://play.google.com/store/apps/details?id=com.gpsmapcameralite.geotagphotolocation",
       "score": 4.4,
-      "ratings": 4400,
-      "installs": 1278298,
+      "ratings": 4412,
+      "installs": 1278745,
       "installsText": "1,000,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -175,7 +175,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.hourlychime.easytimereminder",
       "score": 3.3,
       "ratings": 2448,
-      "installs": 151471,
+      "installs": 151507,
       "installsText": "100,000+",
       "genre": "Productivity",
       "screenshots": [
@@ -199,7 +199,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.fieldsurveyingwithtimestamp.gpsmapcamera",
       "score": 4.2,
       "ratings": 417,
-      "installs": 111013,
+      "installs": 111024,
       "installsText": "100,000+",
       "genre": "Photography",
       "screenshots": [
@@ -223,7 +223,7 @@
       "url": "https://play.google.com/store/apps/details?id=com.compass.digitalcompass.gpsdirection",
       "score": 3.7,
       "ratings": 280,
-      "installs": 57046,
+      "installs": 57072,
       "installsText": "50,000+",
       "genre": "Maps & Navigation",
       "screenshots": [
@@ -270,8 +270,8 @@
       "icon": "https://play-lh.googleusercontent.com/KxNwsIT_rdhcdSgeL4Y2MryhAPM3sKtx30ku1-npjmo44kCKM-5o2M8DV9DGEOSDRdI3wNEFeDwMz0bhGZV0yg",
       "url": "https://play.google.com/store/apps/details?id=com.cardswallet.nfcreader",
       "score": 4.8,
-      "ratings": 375,
-      "installs": 21783,
+      "ratings": 377,
+      "installs": 21838,
       "installsText": "10,000+",
       "genre": "Finance",
       "screenshots": [
